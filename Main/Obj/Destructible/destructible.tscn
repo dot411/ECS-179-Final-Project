@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chfanvnf08yvy"]
+
+[ext_resource type="Script" path="res://Main/Obj/Destructible/destructible.gd" id="1_wo85r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdaly"]
+size = Vector2(64, 64)
+
+[node name="Destructible" type="Node2D"]
+script = ExtResource("1_wo85r")
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_vdaly")

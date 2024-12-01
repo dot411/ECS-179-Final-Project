@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1n188a6bnla2"]
+
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region.gd" id="1_ws337"]
+
+[sub_resource type="Animation" id="Animation_e6egr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b16sh"]
+resource_name = "fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxkv"]
+_data = {
+"RESET": SubResource("Animation_e6egr"),
+"fade": SubResource("Animation_b16sh")
+}
+
+[node name="EffectRegion" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_ws337")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(1, 0.6, 0.701961, 0)
+
+[node name="Border1" type="Node2D" parent="CollisionShape2D"]
+
+[node name="rect" type="ColorRect" parent="CollisionShape2D/Border1"]
+offset_top = -1.0
+offset_right = 32.0
+offset_bottom = 1.0
+color = Color(1, 0.6, 0.701961, 1)
+
+[node name="Border2" type="Node2D" parent="CollisionShape2D"]
+
+[node name="rect" type="ColorRect" parent="CollisionShape2D/Border2"]
+offset_top = -1.0
+offset_right = 32.0
+offset_bottom = 1.0
+color = Color(1, 0.6, 0.701961, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vaxkv")
+}

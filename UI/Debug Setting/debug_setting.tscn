@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv0h77i3d58qm"]
+
+[ext_resource type="Script" path="res://UI/Debug Setting/debug_setting.gd" id="1_ckdmp"]
+[ext_resource type="Resource" uid="uid://dvjxmqbgqapc1" path="res://Properties/System/debug_setting.tres" id="2_l6bqb"]
+
+[node name="Debug Setting" type="Node"]
+script = ExtResource("1_ckdmp")
+data = ExtResource("2_l6bqb")

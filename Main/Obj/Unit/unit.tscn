@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://tefdnqav7d07"]
+
+[ext_resource type="Script" path="res://Main/Obj/Unit/unit.gd" id="1_gea68"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ke0b"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8f46"]
+radius = 0.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1a22"]
+radius = 48.0
+
+[node name="Unit" type="Node2D"]
+script = ExtResource("1_gea68")
+
+[node name="AI Target" type="Node2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="ColorRect" type="ColorRect" parent="AI Target"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0, 0.470588, 1, 1)
+
+[node name="Body" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+safe_margin = 8.0
+
+[node name="Sprite" type="Node2D" parent="Body"]
+
+[node name="Border" type="ColorRect" parent="Body/Sprite"]
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 19.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Body/Sprite"]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(1, 0, 0, 1)
+
+[node name="Dir" type="ColorRect" parent="Body"]
+visible = false
+offset_top = -1.0
+offset_right = 36.0
+offset_bottom = 1.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("CircleShape2D_8ke0b")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="ProximityArea" type="Area2D" parent="Body"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/ProximityArea"]
+shape = SubResource("CircleShape2D_y8f46")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="InteractZone" type="Area2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/InteractZone"]
+shape = SubResource("CircleShape2D_y1a22")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[connection signal="body_entered" from="Body/ProximityArea" to="." method="_on_proximity_area_body_entered"]
+[connection signal="body_exited" from="Body/ProximityArea" to="." method="_on_proximity_area_body_exited"]

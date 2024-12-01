@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://mf11wmnw57ci"]
+
+[ext_resource type="Texture2D" uid="uid://buw65hldrptud" path="res://Main/Lighting/camera_light_mask.tres" id="1_n8scy"]
+
+[node name="UnitCamera" type="Camera2D"]
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="Light" type="PointLight2D" parent="."]
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("1_n8scy")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chch4wqt4he35"]
+
+[ext_resource type="Script" path="res://Main/Obj/Interactable Object/interactable_object.gd" id="1_ainya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybbh4"]
+size = Vector2(64, 64)
+
+[node name="InteractableObject" type="Node2D"]
+script = ExtResource("1_ainya")
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_ybbh4")

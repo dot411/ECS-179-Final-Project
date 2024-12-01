@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dylow4q0hhe1f"]
+
+[ext_resource type="PackedScene" uid="uid://dtm38asas4na1" path="res://Main/Game Scene/game_scene.tscn" id="1_eknvq"]
+[ext_resource type="PackedScene" uid="uid://dpululjkubu7" path="res://UI/ui.tscn" id="2_4khsj"]
+[ext_resource type="PackedScene" uid="uid://bgakx5ov5kts5" path="res://Main/Lighting/lighting.tscn" id="2_ybk7p"]
+
+[node name="World" type="Node"]
+
+[node name="GameScene" parent="." instance=ExtResource("1_eknvq")]
+
+[node name="Lighting" parent="." instance=ExtResource("2_ybk7p")]
+
+[node name="Static Canvas" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="UI" parent="Static Canvas" instance=ExtResource("2_4khsj")]

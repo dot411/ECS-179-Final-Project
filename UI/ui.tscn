@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpululjkubu7"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_5aa0b"]
+[ext_resource type="PackedScene" uid="uid://cv0h77i3d58qm" path="res://UI/Debug Setting/debug_setting.tscn" id="1_h68dx"]
+
+[node name="UI" type="Node"]
+script = ExtResource("1_5aa0b")
+
+[node name="Debug Setting" parent="." instance=ExtResource("1_h68dx")]
