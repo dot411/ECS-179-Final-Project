@@ -1,0 +1,2 @@
+class_name placement_controller
+extends Node2D

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://btd6fkuos8ws2"]
+
+[ext_resource type="PackedScene" uid="uid://cpyx6synupfuo" path="res://Levels/Placeable Entities/Base Entities/player_trigger_zone_entity.tscn" id="1_51tra"]
+[ext_resource type="Script" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.gd" id="2_8b05g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ddem"]
+size = Vector2(64, 64)
+
+[node name="MapTransitionZone" instance=ExtResource("1_51tra")]
+script = ExtResource("2_8b05g")
+path = null
+pos = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_8ddem")

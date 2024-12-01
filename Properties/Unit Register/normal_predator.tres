@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://b6x28pdlgk6t2"]
+
+[ext_resource type="Resource" uid="uid://c8ccrwk1r6ldg" path="res://Properties/Unit AI Register/predator_AI.tres" id="1_ctusu"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="1_xxcqb"]
+[ext_resource type="Script" path="res://Main/Obj/Unit/unit_data.gd" id="2_ksros"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="3_fyvsl"]
+[ext_resource type="Resource" uid="uid://hswmaj0aaw2p" path="res://Properties/Ability Register/For Units/short_range_charge.tres" id="3_pf76x"]
+
+[resource]
+script = ExtResource("2_ksros")
+asset_path = null
+speed = 2.0
+max_fatigue = 100.0
+attack = 15
+ability_power = 10
+vision = 6.0
+AI_data = ExtResource("1_ctusu")
+abilities = Array[ExtResource("1_xxcqb")]([ExtResource("3_pf76x")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 40
+triggers = Array[ExtResource("3_fyvsl")]([])

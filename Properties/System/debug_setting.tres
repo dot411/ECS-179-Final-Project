@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DebugSettingData" load_steps=2 format=3 uid="uid://dvjxmqbgqapc1"]
+
+[ext_resource type="Script" path="res://Main/Utility/debug_setting_data.gd" id="1_r54jo"]
+
+[resource]
+script = ExtResource("1_r54jo")
+reset = false
+debug_mode_on = true
+general/status = true
+general/show_effect_region = true
+unit/status = false
+unit/show_collision = false
+player/status = false
+player/show_interact_range = false
+game_AI/status = false
+game_AI/show_aggro_range = false
+game_AI/show_raycast = false
+game_AI/show_targeting = false

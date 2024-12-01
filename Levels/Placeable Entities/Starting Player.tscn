@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceutv8wcd58qj"]
+
+[ext_resource type="Script" path="res://Levels/Placeable Entities/starting_player.gd" id="1_rqwg0"]
+
+[node name="StartingPlayer" type="Node2D"]
+script = ExtResource("1_rqwg0")
+
+[node name="EditorOnlyVisual" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 1, 0, 1)

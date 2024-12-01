@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityItem" load_steps=3 format=3 uid="uid://b7tqo64ouhnvo"]
+
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="1_5jonu"]
+[ext_resource type="Resource" uid="uid://unr0vnejt3ob" path="res://Properties/Ability Register/For Items/shotgun_shot.tres" id="1_teabr"]
+
+[resource]
+resource_name = "shotgun ammo"
+script = ExtResource("1_5jonu")
+ability_data = ExtResource("1_teabr")
+consumable = false
+cost_resource = true
+resource_name = "shotgun ammo"
+cost_amount = 5
+name = "shotgun"
+description = ""
+asset_path = null
+stack_limit = 1
+amount = 1

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=2 format=3 uid="uid://b6hhycrlt0oaw"]
+
+[ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="1_t20yp"]
+
+[resource]
+script = ExtResource("1_t20yp")
+name = "shotgun ammo"
+description = ""
+asset_path = null
+stack_limit = 60
+amount = 20

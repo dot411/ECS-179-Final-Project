@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=22 format=3 uid="uid://bat4lhigy1b11"]
+
+[ext_resource type="Script" path="res://Main/Obj/Unit/Controller/unit_AI_data.gd" id="1_8xn4w"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="1_bk36v"]
+[ext_resource type="Script" path="res://Main/Obj/Unit/unit_data.gd" id="2_bt841"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="3_15bwd"]
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="3_wwoor"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="4_q2kps"]
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="5_aydgn"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="6_bu3dg"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="7_uv05j"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_unit.gd" id="8_gacst"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="9_v8iha"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="10_3dejg"]
+
+[sub_resource type="Resource" id="Resource_1neov"]
+script = ExtResource("1_8xn4w")
+wander_range = 5.0
+chase_coefficient = 1.0
+surround_coefficient = 1.0
+
+[sub_resource type="Resource" id="Resource_d2aw8"]
+script = ExtResource("5_aydgn")
+outer_radius = 1.0
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_bwg75"]
+script = ExtResource("8_gacst")
+function = "triggering_caster"
+
+[sub_resource type="Resource" id="Resource_oqus0"]
+script = ExtResource("7_uv05j")
+function = "unit_attribute"
+unit = SubResource("Resource_bwg75")
+attribute = 0
+modifier = 0.0
+multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_pdahw"]
+script = ExtResource("6_bu3dg")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_oqus0")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_gxfbh"]
+script = ExtResource("9_v8iha")
+area_shape = SubResource("Resource_d2aw8")
+effect = SubResource("Resource_pdahw")
+follow_parent = true
+targets_limit = false
+wait_for_collision_to_trigger = false
+periodic = false
+
+[sub_resource type="Resource" id="Resource_dyd8f"]
+script = ExtResource("4_q2kps")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_effect_region"
+data = SubResource("Resource_gxfbh")
+
+[sub_resource type="Resource" id="Resource_30qpt"]
+script = ExtResource("3_wwoor")
+channeling_time = 0.5
+self_effects = Array[ExtResource("10_3dejg")]([])
+position_effects = Array[ExtResource("4_q2kps")]([SubResource("Resource_dyd8f")])
+
+[sub_resource type="Resource" id="Resource_tb2vf"]
+script = ExtResource("1_bk36v")
+stationary = true
+AI_cast_range = 1.0
+cooldown = 1.5
+channeling_track = Array[ExtResource("3_wwoor")]([SubResource("Resource_30qpt")])
+
+[resource]
+script = ExtResource("2_bt841")
+asset_path = null
+speed = 1.0
+max_fatigue = 100.0
+attack = 10
+ability_power = 10
+vision = 5.0
+AI_data = SubResource("Resource_1neov")
+abilities = Array[ExtResource("1_bk36v")]([SubResource("Resource_tb2vf")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 40
+triggers = Array[ExtResource("3_15bwd")]([])

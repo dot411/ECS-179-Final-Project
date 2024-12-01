@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=24 format=3 uid="uid://h78s4g1iavx4"]
+
+[ext_resource type="Script" path="res://Main/Obj/Unit/Controller/unit_AI_data.gd" id="1_3k4bd"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="1_c3dnd"]
+[ext_resource type="Script" path="res://Main/Obj/Unit/unit_data.gd" id="2_o1xbq"]
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="3_1a1be"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="3_kdtx8"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="4_402r4"]
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="5_4bgme"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="6_wemk4"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="7_jnmqq"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_unit.gd" id="8_1vbgq"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="9_rd8y8"]
+[ext_resource type="Script" path="res://Main/Obj/Projectile/projectile_data.gd" id="10_lirrk"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="11_jhwfa"]
+
+[sub_resource type="Resource" id="Resource_k6vrp"]
+script = ExtResource("1_3k4bd")
+wander_range = 5.0
+chase_coefficient = -0.1
+surround_coefficient = 1.0
+
+[sub_resource type="Resource" id="Resource_ctj1k"]
+script = ExtResource("5_4bgme")
+outer_radius = 0.3
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_hc4m4"]
+script = ExtResource("8_1vbgq")
+function = "triggering_caster"
+
+[sub_resource type="Resource" id="Resource_0buff"]
+script = ExtResource("7_jnmqq")
+function = "unit_attribute"
+unit = SubResource("Resource_hc4m4")
+attribute = 0
+modifier = 1.0
+multiplier = 0.0
+
+[sub_resource type="Resource" id="Resource_pg3u0"]
+script = ExtResource("6_wemk4")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_0buff")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_iorrv"]
+script = ExtResource("9_rd8y8")
+area_shape = SubResource("Resource_ctj1k")
+effect = SubResource("Resource_pg3u0")
+follow_parent = true
+targets_limit = false
+wait_for_collision_to_trigger = true
+one_shot = true
+finite_duration = false
+
+[sub_resource type="Resource" id="Resource_fhxpl"]
+script = ExtResource("10_lirrk")
+asset_path = null
+effect_region_data = SubResource("Resource_iorrv")
+speed = 1.0
+
+[sub_resource type="Resource" id="Resource_5vxta"]
+script = ExtResource("4_402r4")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_projectile"
+data = SubResource("Resource_fhxpl")
+
+[sub_resource type="Resource" id="Resource_u2im6"]
+script = ExtResource("3_1a1be")
+channeling_time = 0.5
+self_effects = Array[ExtResource("11_jhwfa")]([])
+position_effects = Array[ExtResource("4_402r4")]([SubResource("Resource_5vxta")])
+
+[sub_resource type="Resource" id="Resource_khcwg"]
+script = ExtResource("1_c3dnd")
+stationary = false
+AI_cast_range = 1.0
+cooldown = 1.0
+channeling_track = Array[ExtResource("3_1a1be")]([SubResource("Resource_u2im6")])
+
+[resource]
+script = ExtResource("2_o1xbq")
+asset_path = null
+speed = 1.0
+max_fatigue = 100.0
+attack = 10
+ability_power = 10
+vision = 5.0
+AI_data = SubResource("Resource_k6vrp")
+abilities = Array[ExtResource("1_c3dnd")]([SubResource("Resource_khcwg")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 30
+triggers = Array[ExtResource("3_kdtx8")]([])

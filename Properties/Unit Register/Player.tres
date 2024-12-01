@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://clda4cxqp70pi"]
+
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="1_8rsc3"]
+[ext_resource type="Script" path="res://Main/Obj/Unit/Controller/player_data.gd" id="3_1rter"]
+[ext_resource type="Script" path="res://Main/Obj/Unit/unit_data.gd" id="3_duopv"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="4_lfm3v"]
+
+[sub_resource type="Resource" id="Resource_60yjr"]
+script = ExtResource("3_1rter")
+interact_range = 0.8
+run_speed_multiplier = 2.0
+run_fatigue_drain_per_second = 30.0
+fatigue_recovery_per_second = 15.0
+
+[resource]
+script = ExtResource("3_duopv")
+asset_path = null
+speed = 1.0
+max_fatigue = 100.0
+attack = 10
+ability_power = 10
+vision = 8.0
+player_data = SubResource("Resource_60yjr")
+abilities = Array[ExtResource("1_8rsc3")]([])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 100
+triggers = Array[ExtResource("4_lfm3v")]([])

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityItem" load_steps=3 format=3 uid="uid://bi33ejnsyausq"]
+
+[ext_resource type="Resource" uid="uid://dni6xuvv7vsph" path="res://Properties/Ability Register/For Items/bandage.tres" id="1_ai0sg"]
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="1_ttsvi"]
+
+[resource]
+script = ExtResource("1_ttsvi")
+ability_data = ExtResource("1_ai0sg")
+consumable = true
+name = "bandage"
+description = ""
+asset_path = null
+stack_limit = 5
+amount = 2

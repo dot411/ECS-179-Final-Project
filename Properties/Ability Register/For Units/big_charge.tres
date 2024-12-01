@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=20 format=3 uid="uid://b28hg2ih5av3q"]
+
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="1_aml5f"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="2_m8v15"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="2_ne1ol"]
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="3_ic1nb"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="3_v0ri7"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="4_3us3g"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="4_x08uo"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_unit.gd" id="6_ya3y8"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="7_eio73"]
+
+[sub_resource type="Resource" id="Resource_a6y76"]
+script = ExtResource("3_ic1nb")
+outer_radius = 1.4
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_smaqi"]
+script = ExtResource("6_ya3y8")
+function = "triggering_caster"
+
+[sub_resource type="Resource" id="Resource_n1im0"]
+script = ExtResource("4_3us3g")
+function = "unit_attribute"
+unit = SubResource("Resource_smaqi")
+attribute = 0
+modifier = 10.0
+multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_v0qo4"]
+script = ExtResource("4_x08uo")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_n1im0")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_tatx0"]
+script = ExtResource("7_eio73")
+area_shape = SubResource("Resource_a6y76")
+effect = SubResource("Resource_v0qo4")
+follow_parent = true
+targets_limit = false
+wait_for_collision_to_trigger = true
+one_shot = false
+finite_duration = true
+lifetime = 1.8
+
+[sub_resource type="Resource" id="Resource_elq7p"]
+script = ExtResource("2_m8v15")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_effect_region"
+data = SubResource("Resource_tatx0")
+
+[sub_resource type="Resource" id="Resource_r2wtl"]
+script = ExtResource("4_3us3g")
+function = "raw_value"
+value = 4.0
+
+[sub_resource type="Resource" id="Resource_aquys"]
+script = ExtResource("3_v0ri7")
+function = "charge"
+distance = SubResource("Resource_r2wtl")
+
+[sub_resource type="Resource" id="Resource_v6dl7"]
+script = ExtResource("1_aml5f")
+channeling_time = 0.0
+self_effects = Array[ExtResource("3_v0ri7")]([SubResource("Resource_aquys"), null])
+position_effects = Array[ExtResource("2_m8v15")]([SubResource("Resource_elq7p")])
+
+[sub_resource type="Resource" id="Resource_hvebe"]
+script = ExtResource("1_aml5f")
+channeling_time = 1.8
+self_effects = Array[ExtResource("3_v0ri7")]([])
+position_effects = Array[ExtResource("2_m8v15")]([])
+
+[resource]
+script = ExtResource("2_ne1ol")
+stationary = false
+AI_cast_range = 6.0
+cooldown = 12.0
+channeling_track = Array[ExtResource("1_aml5f")]([SubResource("Resource_v6dl7"), SubResource("Resource_hvebe")])

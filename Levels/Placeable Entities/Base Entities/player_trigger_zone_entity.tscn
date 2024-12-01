@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpyx6synupfuo"]
+
+[ext_resource type="PackedScene" uid="uid://cfnjbwnuajo2d" path="res://Main/Obj/Player Trigger Zone/player_trigger_zone.tscn" id="1_kc6un"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nahud"]
+size = Vector2(64, 64)
+
+[node name="PlayerTriggerZone" instance=ExtResource("1_kc6un")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_nahud")

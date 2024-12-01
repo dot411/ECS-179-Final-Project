@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=19 format=3 uid="uid://bpdsc4yolk15t"]
+
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="1_qh68m"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="2_fclmr"]
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="3_gbkju"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="4_636tl"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="5_48170"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_unit.gd" id="6_bgbxd"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="7_5b5xw"]
+[ext_resource type="Script" path="res://Main/Obj/Projectile/projectile_data.gd" id="8_wxief"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="9_h2xow"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="10_1gxma"]
+
+[sub_resource type="Resource" id="Resource_ctj1k"]
+script = ExtResource("3_gbkju")
+outer_radius = 0.3
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_hc4m4"]
+script = ExtResource("6_bgbxd")
+function = "triggering_caster"
+
+[sub_resource type="Resource" id="Resource_0buff"]
+script = ExtResource("5_48170")
+function = "unit_attribute"
+unit = SubResource("Resource_hc4m4")
+attribute = 0
+modifier = 1.0
+multiplier = 0.0
+
+[sub_resource type="Resource" id="Resource_pg3u0"]
+script = ExtResource("4_636tl")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_0buff")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_iorrv"]
+script = ExtResource("7_5b5xw")
+area_shape = SubResource("Resource_ctj1k")
+effect = SubResource("Resource_pg3u0")
+follow_parent = true
+targets_limit = true
+max_affected = 1
+wait_for_collision_to_trigger = true
+one_shot = true
+finite_duration = false
+
+[sub_resource type="Resource" id="Resource_fhxpl"]
+script = ExtResource("8_wxief")
+asset_path = null
+effect_region_data = SubResource("Resource_iorrv")
+speed = 3.0
+
+[sub_resource type="Resource" id="Resource_5vxta"]
+script = ExtResource("2_fclmr")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_projectile"
+data = SubResource("Resource_fhxpl")
+
+[sub_resource type="Resource" id="Resource_u2im6"]
+script = ExtResource("1_qh68m")
+channeling_time = 0.5
+self_effects = Array[ExtResource("9_h2xow")]([])
+position_effects = Array[ExtResource("2_fclmr")]([SubResource("Resource_5vxta")])
+
+[resource]
+script = ExtResource("10_1gxma")
+stationary = false
+AI_cast_range = 5.0
+cooldown = 3.0
+channeling_track = Array[ExtResource("1_qh68m")]([SubResource("Resource_u2im6")])

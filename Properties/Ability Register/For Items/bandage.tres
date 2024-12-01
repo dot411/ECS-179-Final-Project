@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=9 format=3 uid="uid://dni6xuvv7vsph"]
+
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="1_kd8q6"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="2_jttj7"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="2_nq76w"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="3_75a3h"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="4_h38fe"]
+
+[sub_resource type="Resource" id="Resource_dsqbn"]
+script = ExtResource("4_h38fe")
+function = "raw_value"
+value = 60.0
+
+[sub_resource type="Resource" id="Resource_o8ye2"]
+script = ExtResource("3_75a3h")
+function = "heal"
+value = SubResource("Resource_dsqbn")
+
+[sub_resource type="Resource" id="Resource_mmajp"]
+script = ExtResource("1_kd8q6")
+channeling_time = 2.0
+self_effects = Array[ExtResource("3_75a3h")]([SubResource("Resource_o8ye2")])
+position_effects = Array[ExtResource("2_nq76w")]([])
+
+[resource]
+script = ExtResource("2_jttj7")
+stationary = true
+AI_cast_range = 10.0
+cooldown = 5.0
+channeling_track = Array[ExtResource("1_kd8q6")]([SubResource("Resource_mmajp")])

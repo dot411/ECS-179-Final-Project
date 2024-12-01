@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityItem" load_steps=3 format=3 uid="uid://dwkqlmjonhfdp"]
+
+[ext_resource type="Resource" uid="uid://co7er44eby16y" path="res://Properties/Ability Register/For Items/pistol_shot.tres" id="1_d2sb6"]
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="1_v401e"]
+
+[resource]
+resource_name = "pistol ammo"
+script = ExtResource("1_v401e")
+ability_data = ExtResource("1_d2sb6")
+consumable = false
+cost_resource = true
+resource_name = "pistol ammo"
+cost_amount = 1
+name = "pistol"
+description = ""
+asset_path = null
+stack_limit = 1
+amount = 1

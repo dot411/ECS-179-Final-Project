@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitAIData" load_steps=2 format=3 uid="uid://dse3uwry6r3p2"]
+
+[ext_resource type="Script" path="res://Main/Obj/Unit/Controller/unit_AI_data.gd" id="1_n4ohb"]
+
+[resource]
+script = ExtResource("1_n4ohb")
+wander_range = 5.0
+chase_coefficient = 1.0
+surround_coefficient = 1.0

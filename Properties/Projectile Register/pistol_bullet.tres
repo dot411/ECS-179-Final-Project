@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=10 format=3 uid="uid://cjcduluuf55um"]
+
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="1_i8hsj"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="2_8770m"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="3_w2oav"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="4_oxb7c"]
+[ext_resource type="Script" path="res://Main/Obj/Projectile/projectile_data.gd" id="5_mqhyb"]
+
+[sub_resource type="Resource" id="Resource_hwpwd"]
+script = ExtResource("1_i8hsj")
+outer_radius = 0.3
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_emx05"]
+script = ExtResource("3_w2oav")
+function = "raw_value"
+value = 30.0
+
+[sub_resource type="Resource" id="Resource_vlasu"]
+script = ExtResource("2_8770m")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_emx05")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_0m0eu"]
+script = ExtResource("4_oxb7c")
+area_shape = SubResource("Resource_hwpwd")
+effect = SubResource("Resource_vlasu")
+follow_parent = true
+targets_limit = true
+max_affected = 1
+wait_for_collision_to_trigger = true
+one_shot = true
+finite_duration = false
+
+[resource]
+script = ExtResource("5_mqhyb")
+asset_path = null
+effect_region_data = SubResource("Resource_0m0eu")
+speed = 4.0
