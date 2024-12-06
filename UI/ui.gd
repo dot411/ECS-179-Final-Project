@@ -32,6 +32,19 @@ func player_gains_new_item(player_inventory: Array[ItemData], item: ItemData):
 			print("Inventory Full")
 	else:
 		print("Error: InventoryInterface node not found.")
+# this function will serve as keybinds for UI
+var selected_slot = -1
+func _input(event):
+	for i in range(1,11):
+		if event.is_action_pressed("select_slot_%d"%i):
+			selected_slot = i - 1
+			print("Selected Slot: %d" %selected_slot)
+			
+			var inventory_interface =  get_node("InventoryInterface")
+			if inventory_interface:
+				inventory_interface.highlight_slot(selected_slot)
+			
+
 
 # Update visual for HP
 func player_HP_update_request(current_HP: int, max_HP: int):

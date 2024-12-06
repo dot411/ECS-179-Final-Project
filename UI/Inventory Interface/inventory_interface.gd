@@ -80,6 +80,7 @@ func _on_slot_pressed(slot_index: int):
 		print("Selected item: %s" % inventory[slot_index].name)
 	else:
 		print("Empty slot.")
+		
 
 # Get the current state of the inventory
 func get_inventory() -> Array:
@@ -88,3 +89,12 @@ func get_inventory() -> Array:
 # Check if a slot index is valid
 func is_valid_slot(slot_index: int) -> bool:
 	return slot_index >= 0 and slot_index < inventory.size() and inventory[slot_index] != null
+	
+func highlight_slot(slot_index: int):
+	for i in range(grid.get_child_count()):
+		var button = grid.get_child(i) as Button
+		button.modulate = Color(1,1,1,1)
+	
+	if slot_index >= 0 and slot_index < grid.get_child_count():
+		var selected_button = grid.get_child(slot_index) as Button
+		selected_button.modulate = Color(1,0,0,1)
