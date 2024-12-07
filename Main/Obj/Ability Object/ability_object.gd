@@ -43,6 +43,7 @@ func cast():
 		pos = new_pos()
 		if vision_intersect_ray(space_state, position, pos).size() == 0:
 			break
+	if pos != null: position = pos
 	update_facing_angle(randf_range(0.0, deg_to_rad(data.max_aim_angle)))
 	ability_controller.track_caster_aim(position)
 	ability_controller.use()
@@ -54,11 +55,11 @@ func _on_spawned_unit_exited():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !data.disable_when_player_is_nearby: return
 	var target = body.get_parent()
-	if target is not CharacterBody2D or target.controller is not Player: return
+	if body is not CharacterBody2D or target.controller is not Player: return
 	temporary_active_flag = false
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if !data.disable_when_player_is_nearby: return
 	var target = body.get_parent()
-	if target is not CharacterBody2D or target.controller is not Player: return
+	if body is not CharacterBody2D or target.controller is not Player: return
 	temporary_active_flag = true

@@ -42,7 +42,9 @@ func _set(property: StringName, value: Variant) -> bool:
 	if property == "reset":
 		properties.clear()
 		_init()
-		_set("debug_mode_on", value)
+		_set("debug_mode_on", false)
+		set_property(property, false)
+		return true
 	elif property == "debug_mode_on":
 		notify_property_list_changed()
 	elif property == "general/status":
