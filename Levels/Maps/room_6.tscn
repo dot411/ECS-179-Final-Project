@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bh8n0tyninbyn"]
+[gd_scene load_steps=34 format=4 uid="uid://bh8n0tyninbyn"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_ocsjf"]
 [ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_68hd8"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="17_xxcbt"]
 [ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="18_rokoi"]
 [ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="19_al3o8"]
+[ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="20_67a2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxvej"]
 texture = ExtResource("1_ocsjf")
@@ -155,6 +156,12 @@ data = SubResource("Resource_p6ewg")
 position = Vector2(-834, -5)
 start_status = true
 data = SubResource("Resource_aj5et")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-132, 7)
+rotation = 1.5708
+stream = ExtResource("20_67a2v")
+autoplay = true
 
 [editable path="MapTransitionZoneToRoom7"]
 [editable path="MapTransitionZoneToRoom5"]

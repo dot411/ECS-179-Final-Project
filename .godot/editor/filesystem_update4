@@ -37,3 +37,9 @@ res://Main/Obj/Unit/Controller/unit_AI.gd
 res://Main/Ability/ability_controller.gd
 res://Main/Obj/Unit/Controller/player.gd
 res://Main/Obj/Unit/unit.gd
+res://Main/Ability/ability_data.gd
+res://Properties/Ability Register/For Units/normal_melee_attack.tres
+res://Levels/Maps/room_10.tscn
+res://Levels/Maps/room_7.tscn
+res://Levels/Maps/room_9.tscn
+res://Properties/Unit Register/normal_predator.tres

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c6t837fl1x8sb"]
+[gd_scene load_steps=22 format=4 uid="uid://c6t837fl1x8sb"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_7452t"]
 [ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_trb74"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="10_hfbwv"]
 [ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="11_h3n38"]
 [ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="12_wdvs6"]
+[ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="13_8em8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dv36i"]
 texture = ExtResource("1_7452t")
@@ -93,6 +94,12 @@ pos = Vector2(-1100, 0)
 
 [node name="CollisionShape2D" parent="MapTransitionZoneToRoom6/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_05uhj")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-132, 7)
+rotation = 1.5708
+stream = ExtResource("13_8em8x")
+autoplay = true
 
 [editable path="MapTransitionZoneToRoom8"]
 [editable path="MapTransitionZoneToRoom6"]

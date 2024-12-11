@@ -107,7 +107,7 @@ position_effects = Array[ExtResource("2_6ssra")]([SubResource("Resource_ndhcf"),
 
 [resource]
 script = ExtResource("2_cpfql")
-cast_animation = "Shoot"
+cast_animation = ""
 stationary = false
 AI_cast_range = 3.0
 cooldown = 10.0

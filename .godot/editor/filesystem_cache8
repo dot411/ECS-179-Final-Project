@@ -1,42 +1,46 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733915218
+::res://::1733953044
 icon.svg::CompressedTexture2D::1506181827028067559::1733914954::1733915000::1::::<><>::
 ProjectDocumentTemplate.md::TextFile::-1::1733914954::0::1::::<><>::
 README.md::TextFile::-1::1733914954::0::1::::<><>::
-::res://Audio/::1733915218
+::res://Audio/::1733915225
 764373__klankbeeld__horror-nightmare.wav::AudioStreamWAV::1669293593238487493::1733878937::1733915225::1::::<><>::
 door.mp3::AudioStreamMP3::3449538585469029532::1733890758::1733915225::1::::<><>::
 gunshot.wav::AudioStreamWAV::5855228977598522885::1733877856::1733915225::1::::<><>::
 item_get.mp3::AudioStreamMP3::6942804208518786547::1733890784::1733915225::1::::<><>::
 zombiemusic.wav::AudioStreamWAV::7522382698637200561::1733877877::1733915225::1::::<><>::
 ::res://Levels/::1733914954
-::res://Levels/Maps/::1733914954
-room_6.tscn::PackedScene::2946702056417709641::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>res://Main/Item/item_data.gd<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://b7tqo64ouhnvo::::res://Properties/Item Register/Ability Item Register/shotgun.tres<>uid://b6hhycrlt0oaw::::res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>res://Main/Obj/Destructible/destructible_data.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://bat4lhigy1b11::::res://Properties/Unit Register/normal_zombie.tres<>res://Main/Obj/Ability Object/ability_object_data.gd
+::res://Levels/Maps/::1733953239
+room2.tscn::PackedScene::3770804468031581834::1733953238::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://mcdhh0uekpu0::::res://Main/Obj/Unit/CharacterSprites/Walk.png<>uid://bpe8nqm1k5ydg::::res://Audio/door.mp3<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd
+room3.tscn::PackedScene::4273853819402287935::1733953239::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://bpe8nqm1k5ydg::::res://Audio/door.mp3
+room4.tscn::PackedScene::7260732911885961900::1733953239::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://bat4lhigy1b11::::res://Properties/Unit Register/normal_zombie.tres<>res://Main/Obj/Ability Object/ability_object_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://bpe8nqm1k5ydg::::res://Audio/door.mp3
+room5.tscn::PackedScene::5945734253525455197::1733953238::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>res://Main/Item/item_data.gd<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Obj/Destructible/destructible_data.gd<>res://Main/Item/ability_item.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://bpe8nqm1k5ydg::::res://Audio/door.mp3
+room_6.tscn::PackedScene::2946702056417709641::1733953238::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>res://Main/Item/item_data.gd<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://b7tqo64ouhnvo::::res://Properties/Item Register/Ability Item Register/shotgun.tres<>uid://b6hhycrlt0oaw::::res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>res://Main/Obj/Destructible/destructible_data.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://bat4lhigy1b11::::res://Properties/Unit Register/normal_zombie.tres<>res://Main/Obj/Ability Object/ability_object_data.gd
 room_7.tscn::PackedScene::6989974049489676001::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>res://Main/Item/item_data.gd<>uid://b7tqo64ouhnvo::::res://Properties/Item Register/Ability Item Register/shotgun.tres<>uid://b6hhycrlt0oaw::::res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>res://Main/Obj/Destructible/destructible_data.gd
-room_8.tscn::PackedScene::312310943831015975::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd
+room_8.tscn::PackedScene::312310943831015975::1733953239::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd
 room_9.tscn::PackedScene::7059213135309516831::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>res://Main/Item/item_data.gd<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>res://Main/Obj/Destructible/destructible_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://b6x28pdlgk6t2::::res://Properties/Unit Register/normal_predator.tres<>res://Main/Obj/Ability Object/ability_object_data.gd
 room_10.tscn::PackedScene::1219652520764383417::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd
-start_level.tscn::PackedScene::8256943837113608483::1733914954::0::1::::<><>::uid://ceutv8wcd58qj::::res://Levels/Placeable Entities/Starting Player.tscn<>uid://vpuuhnsp7m3p::::res://icon.svg<>uid://clda4cxqp70pi::::res://Properties/Unit Register/Player.tres<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd
-::res://Levels/Maps/Test Maps/::1733914954
-test_map_1.tscn::PackedScene::2847564436289480279::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>res://Main/Item/item_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://b7tqo64ouhnvo::::res://Properties/Item Register/Ability Item Register/shotgun.tres<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>uid://b6hhycrlt0oaw::::res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres<>res://Main/Obj/Destructible/destructible_data.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://bat4lhigy1b11::::res://Properties/Unit Register/normal_zombie.tres<>res://Main/Obj/Ability Object/ability_object_data.gd
-test_map_2.tscn::PackedScene::6560075234741748000::1733914954::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://b6x28pdlgk6t2::::res://Properties/Unit Register/normal_predator.tres<>res://Main/Obj/Ability Object/ability_object_data.gd<>res://Main/Trigger/trigger_editable.gd
-::res://Levels/Placeable Entities/::1733914954
+start_level.tscn::PackedScene::4998314743837955962::1733953238::0::1::::<><>::uid://ceutv8wcd58qj::::res://Levels/Placeable Entities/Starting Player.tscn<>uid://vpuuhnsp7m3p::::res://icon.svg<>uid://sl3yj1wf43e6::::res://Main/Game Scene/BackgroundSprites/16x16-ALL_ASSETS-demo.png<>uid://clda4cxqp70pi::::res://Properties/Unit Register/Player.tres<>uid://cwlfo0nyuw34y::::res://Main/Game Scene/BackgroundSprites/BackgroundTileSet.png<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>uid://2qev6wkqu5mv::::res://Main/Game Scene/BackgroundSprites/OCDoor.png<>uid://fiv1e6uyrpq3::::res://Main/Game Scene/BackgroundSprites/OCDrawers.png<>res://Main/Item/item_data.gd<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd<>res://Main/Utility/scene_file_path.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>res://Main/Trigger/trigger_editable.gd
+::res://Levels/Maps/Test Maps/::1733915570
+test_map_1.tscn::PackedScene::2847564436289480279::1733915570::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://dgbg1uhecu4ml::::res://Levels/Placeable Entities/Base Entities/interactable_object.tscn<>res://Main/Item/item_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd<>res://Main/Item/resource_item.gd<>res://Main/Obj/Interactable Object/interactable_object_data.gd<>uid://ukc1pysdk0eg::::res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn<>uid://b7tqo64ouhnvo::::res://Properties/Item Register/Ability Item Register/shotgun.tres<>uid://bi33ejnsyausq::::res://Properties/Item Register/Ability Item Register/bandage.tres<>uid://b6hhycrlt0oaw::::res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres<>res://Main/Obj/Destructible/destructible_data.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://bat4lhigy1b11::::res://Properties/Unit Register/normal_zombie.tres<>res://Main/Obj/Ability Object/ability_object_data.gd
+test_map_2.tscn::PackedScene::6560075234741748000::1733915570::0::1::::<><>::uid://vpuuhnsp7m3p::::res://icon.svg<>uid://btd6fkuos8ws2::::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn<>res://Main/Utility/scene_file_path.gd<>uid://d0o3yq8o6yb63::::res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn<>res://Main/Effect/position_effect.gd<>uid://b6x28pdlgk6t2::::res://Properties/Unit Register/normal_predator.tres<>res://Main/Obj/Ability Object/ability_object_data.gd<>res://Main/Trigger/trigger_editable.gd
+::res://Levels/Placeable Entities/::1733915253
 placement_controller.gd::GDScript::-1::1733914954::0::1::::placement_controller<>Node2D<>::
 Starting Player.tscn::PackedScene::5096077188906442381::1733914954::0::1::::<><>::res://Levels/Placeable Entities/starting_player.gd
-starting_player.gd::GDScript::-1::1733914954::0::1::::<>Node2D<>::
-::res://Levels/Placeable Entities/Base Entities/::1733914954
-ability_object_entity.tscn::PackedScene::8944628257468744046::1733914954::0::1::::<><>::uid://b7xe4b1eqh826::::res://Main/Obj/Ability Object/ability_object.tscn
+starting_player.gd::GDScript::-1::1733915253::0::1::::<>Node2D<>::
+::res://Levels/Placeable Entities/Base Entities/::1733915638
+ability_object_entity.tscn::PackedScene::8944628257468744046::1733915570::0::1::::<><>::uid://b7xe4b1eqh826::::res://Main/Obj/Ability Object/ability_object.tscn
 destructible_entity.tscn::PackedScene::1424589340676132530::1733914954::0::1::::<><>::uid://chfanvnf08yvy::::res://Main/Obj/Destructible/destructible.tscn
-interactable_object.tscn::PackedScene::7582871284725551511::1733914954::0::1::::<><>::uid://chch4wqt4he35::::res://Main/Obj/Interactable Object/interactable_object.tscn
+interactable_object.tscn::PackedScene::7582871284725551511::1733915638::0::1::::<><>::uid://chch4wqt4he35::::res://Main/Obj/Interactable Object/interactable_object.tscn
 player_trigger_zone_entity.tscn::PackedScene::5876671921612394786::1733914954::0::1::::<><>::uid://cfnjbwnuajo2d::::res://Main/Obj/Player Trigger Zone/player_trigger_zone.tscn
 ::res://Levels/Placeable Entities/Base Entities/Extended Entities/::1733914954
 ::res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/::1733914954
 map_transition_zone.gd::GDScript::-1::1733914954::0::1::::<>PlayerTriggerZone<>::
 map_transition_zone.tscn::PackedScene::3728093558614243391::1733914954::0::1::::<><>::uid://cpyx6synupfuo::::res://Levels/Placeable Entities/Base Entities/player_trigger_zone_entity.tscn<>res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.gd
-::res://Main/::1733914954
-world.tscn::PackedScene::8867393328090921553::1733914954::0::1::::<><>::uid://dtm38asas4na1::::res://Main/Game Scene/game_scene.tscn<>uid://dpululjkubu7::::res://UI/Value Indicator/ui.tscn<>uid://bgakx5ov5kts5::::res://Main/Lighting/lighting.tscn
-::res://Main/Ability/::1733914954
-ability_controller.gd::GDScript::-1::1733914954::0::1::::AbilityController<>Node<>::
+::res://Main/::1733953237
+world.tscn::PackedScene::8867393328090921553::1733953237::0::1::::<><>::uid://dtm38asas4na1::::res://Main/Game Scene/game_scene.tscn<>uid://dpululjkubu7::::res://UI/Value Indicator/ui.tscn<>uid://bgakx5ov5kts5::::res://Main/Lighting/lighting.tscn<>uid://x1vay7ytcy6h::::res://Audio/764373__klankbeeld__horror-nightmare.wav
+::res://Main/Ability/::1733916615
+ability_controller.gd::GDScript::-1::1733916615::0::1::::AbilityController<>Node<>::
 ability_data.gd::GDScript::-1::1733914954::0::1::::AbilityData<>BaseData<>::
 channeling_interval.gd::GDScript::-1::1733914954::0::1::::ChannelingInterval<>BaseData<>::
 ::res://Main/Effect/::1733914954
@@ -52,11 +56,11 @@ line_shape.gd::GDScript::-1::1733914954::0::1::::LineShape<>AreaShape<>::
 effect_region.gd::GDScript::-1::1733914954::0::1::::EffectRegion<>Area2D<>::
 effect_region.tscn::PackedScene::9012648204162624799::1733914954::0::1::::<><>::res://Main/Effect/Effect Region/effect_region.gd
 effect_region_data.gd::GDScript::-1::1733914954::0::1::::EffectRegionData<>BaseData<>::
-::res://Main/Game Scene/::1733914954
+::res://Main/Game Scene/::1733915637
 game_scene.gd::GDScript::-1::1733914954::0::1::::GameScene<>Node<>::
-game_scene.tscn::PackedScene::8519381648078646742::1733914954::0::1::::<><>::res://Main/Game Scene/game_scene.gd
-::res://Main/Game Scene/BackgroundSprites/::1733915000
-16x16-ALL_ASSETS-demo.png::CompressedTexture2D::1287850789512918415::1733914954::1733915000::1::::<><>::
+game_scene.tscn::PackedScene::8519381648078646742::1733915637::0::1::::<><>::res://Main/Game Scene/game_scene.gd
+::res://Main/Game Scene/BackgroundSprites/::1733951879
+16x16-ALL_ASSETS-demo.png::CompressedTexture2D::1287850789512918415::1733951872::1733951879::1::::<><>::
 BackgroundTileSet.png::CompressedTexture2D::6340034003080358930::1733914954::1733915000::1::::<><>::
 OCDoor.png::CompressedTexture2D::1928410854621007877::1733914954::1733915000::1::::<><>::
 OCDrawers.png::CompressedTexture2D::368780986636067264::1733914954::1733915000::1::::<><>::
@@ -65,10 +69,10 @@ ability_item.gd::GDScript::-1::1733914954::0::1::::AbilityItem<>ItemData<>::
 collectable.gd::GDScript::-1::1733914954::0::1::::Collectable<>ItemData<>::
 item_data.gd::GDScript::-1::1733914954::0::1::::ItemData<>BaseData<>::
 resource_item.gd::GDScript::-1::1733914954::0::1::::ResourceItem<>ItemData<>::
-::res://Main/Lighting/::1733914954
-camera_light_mask.tres::GradientTexture2D::3837550052451906847::1733914954::0::1::::<><>::
+::res://Main/Lighting/::1733953238
+camera_light_mask.tres::GradientTexture2D::3837550052451906847::1733915253::0::1::::<><>::
 lighting.tscn::PackedScene::2808203587031188382::1733914954::0::1::::<><>::
-unit_camera.tscn::PackedScene::854214259552775100::1733914954::0::1::::<><>::uid://buw65hldrptud::::res://Main/Lighting/camera_light_mask.tres
+unit_camera.tscn::PackedScene::854214259552775100::1733953238::0::1::::<><>::uid://buw65hldrptud::::res://Main/Lighting/camera_light_mask.tres
 ::res://Main/Obj/::1733914954
 HP_obj.gd::GDScript::-1::1733914954::0::1::::HP_Obj<>Obj<>::
 HP_obj_data.gd::GDScript::-1::1733914954::0::1::::HP_ObjData<>ObjData<>::
@@ -96,8 +100,8 @@ player_trigger_zone.tscn::PackedScene::5151171911613184089::1733914954::0::1::::
 projectile.gd::GDScript::-1::1733914954::0::1::::Projectile<>Node2D<>::
 projectile.tscn::PackedScene::2556187866655241174::1733914954::0::1::::<><>::res://Main/Obj/Projectile/projectile.gd<>uid://d1n188a6bnla2::::res://Main/Effect/Effect Region/effect_region.tscn
 projectile_data.gd::GDScript::-1::1733914954::0::1::::ProjectileData<>BaseData<>::
-::res://Main/Obj/Unit/::1733914954
-unit.gd::GDScript::-1::1733914954::0::1::::Unit<>HP_Obj<>::
+::res://Main/Obj/Unit/::1733918911
+unit.gd::GDScript::-1::1733918911::0::1::::Unit<>HP_Obj<>::
 unit.tscn::PackedScene::1342155190034149070::1733914954::0::1::::<><>::res://Main/Obj/Unit/unit.gd
 unit_data.gd::GDScript::-1::1733914954::0::1::::UnitData<>HP_ObjData<>::
 ::res://Main/Obj/Unit/CharacterSprites/::1733915000
@@ -106,16 +110,17 @@ Idle.png::CompressedTexture2D::2809510008960444621::1733914954::1733915000::1:::
 Shoot.png::CompressedTexture2D::3277345446769773935::1733914954::1733915000::1::::<><>::
 Stab.png::CompressedTexture2D::6177283574075926176::1733914954::1733915000::1::::<><>::
 Walk.png::CompressedTexture2D::846589937898168141::1733914954::1733915000::1::::<><>::
-::res://Main/Obj/Unit/Controller/::1733914954
-player.gd::GDScript::-1::1733914954::0::1::::Player<>UnitController<>::
+::res://Main/Obj/Unit/Controller/::1733916878
+player.gd::GDScript::-1::1733916878::0::1::::Player<>UnitController<>::
 player_data.gd::GDScript::-1::1733914954::0::1::::PlayerData<>Resource<>::
-unit_AI.gd::GDScript::-1::1733914954::0::1::::UnitAI<>UnitController<>::
+unit_AI.gd::GDScript::-1::1733916371::0::1::::UnitAI<>UnitController<>::
 unit_AI_data.gd::GDScript::-1::1733914954::0::1::::UnitAIData<>Resource<>::
 unit_controller.gd::GDScript::-1::1733914954::0::1::::UnitController<>Node2D<>::
 ::res://Main/Obj/Unit/EnemySprites/::1733914954
-::res://Main/Obj/Unit/EnemySprites/Nurse/::1733915000
+::res://Main/Obj/Unit/EnemySprites/Nurse/::1733953559
 NurseAttack.png::CompressedTexture2D::4949508644573701362::1733914954::1733915000::1::::<><>::
-NurseDeath.png::CompressedTexture2D::2585916028808441845::1733914954::1733915000::1::::<><>::
+NurseCorpse.png::CompressedTexture2D::3520411709782938663::1733953559::1733953584::1::::<><>::
+NurseDeath.png::CompressedTexture2D::2585916028808441845::1733953572::1733953584::1::::<><>::
 NurseIdle.png::CompressedTexture2D::563957429424666254::1733914954::1733915000::1::::<><>::
 NurseWalk.png::CompressedTexture2D::2460547241165743232::1733914954::1733915000::1::::<><>::
 ::res://Main/Obj/Unit/EnemySprites/Patient/::1733915000
@@ -144,29 +149,29 @@ scene_file_path.gd::GDScript::-1::1733914954::0::1::::SceneFilePath<>Resource<>:
 utility.gd::GDScript::-1::1733914954::0::1::::<>Node<>::
 ::res://Properties/::1733914954
 ::res://Properties/Ability Register/::1733914954
-::res://Properties/Ability Register/For Items/::1733914954
-bandage.tres::Resource/AbilityData::8090156424347424341::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Ability/ability_data.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/self_effect.gd<>res://Main/Trigger/float_point.gd
-pistol_shot.tres::Resource/AbilityData::5821820061076552110::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Ability/ability_data.gd<>uid://cjcduluuf55um::::res://Properties/Projectile Register/pistol_bullet.tres<>res://Main/Effect/self_effect.gd
-shotgun_shot.tres::Resource/AbilityData::1431691740555435829::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Ability/ability_data.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd<>uid://dq5buexxp1fve::::res://Properties/Projectile Register/shotgun_bullet.tres<>res://Main/Effect/self_effect.gd
-::res://Properties/Ability Register/For Units/::1733914954
+::res://Properties/Ability Register/For Items/::1733915869
+bandage.tres::Resource/AbilityData::8090156424347424341::1733915869::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Ability/ability_data.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/self_effect.gd<>res://Main/Trigger/float_point.gd
+pistol_shot.tres::Resource/AbilityData::5821820061076552110::1733915534::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Ability/ability_data.gd<>uid://cjcduluuf55um::::res://Properties/Projectile Register/pistol_bullet.tres<>res://Main/Effect/self_effect.gd
+shotgun_shot.tres::Resource/AbilityData::1431691740555435829::1733915869::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Ability/ability_data.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd<>uid://dq5buexxp1fve::::res://Properties/Projectile Register/shotgun_bullet.tres<>res://Main/Effect/self_effect.gd
+::res://Properties/Ability Register/For Units/::1733915253
 big_charge.tres::Resource/AbilityData::4350081092363795164::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Ability/ability_data.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/self_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd
 normal_melee_attack.tres::Resource/AbilityData::8136363199147047411::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Effect/self_effect.gd<>res://Main/Ability/ability_data.gd
 normal_ranged_attack.tres::Resource/AbilityData::3446544509887052215::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd<>res://Main/Effect/self_effect.gd<>res://Main/Ability/ability_data.gd
-short_range_charge.tres::Resource/AbilityData::529837923446175325::1733914954::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/self_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Ability/ability_data.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd
+short_range_charge.tres::Resource/AbilityData::529837923446175325::1733915253::0::1::::<><>::res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/self_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Ability/ability_data.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd
 ::res://Properties/General/::1733914954
 damage.gd::GDScript::-1::1733914954::0::1::::Damage<>Node<>::
 ::res://Properties/Item Register/::1733914954
-::res://Properties/Item Register/Ability Item Register/::1733914954
-bandage.tres::Resource/AbilityItem::3007441722526656580::1733914954::0::1::::<><>::uid://dni6xuvv7vsph::::res://Properties/Ability Register/For Items/bandage.tres<>res://Main/Item/ability_item.gd
-pistol.tres::Resource/AbilityItem::8725052149111021457::1733914954::0::1::::<><>::uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd
+::res://Properties/Item Register/Ability Item Register/::1733915869
+bandage.tres::Resource/AbilityItem::3007441722526656580::1733915869::0::1::::<><>::uid://dni6xuvv7vsph::::res://Properties/Ability Register/For Items/bandage.tres<>res://Main/Item/ability_item.gd
+pistol.tres::Resource/AbilityItem::8725052149111021457::1733915569::0::1::::<><>::uid://co7er44eby16y::::res://Properties/Ability Register/For Items/pistol_shot.tres<>res://Main/Item/ability_item.gd
 shotgun.tres::Resource/AbilityItem::4672685004122501124::1733914954::0::1::::<><>::res://Main/Item/ability_item.gd<>uid://unr0vnejt3ob::::res://Properties/Ability Register/For Items/shotgun_shot.tres
-::res://Properties/Item Register/Resource Item Register/::1733914954
-pistol ammo.tres::Resource/ResourceItem::3548037141406358732::1733914954::0::1::::<><>::res://Main/Item/resource_item.gd
-shotgun_ammo.tres::Resource/ResourceItem::4577193490588160358::1733914954::0::1::::<><>::res://Main/Item/resource_item.gd
-::res://Properties/Projectile Register/::1733915000
+::res://Properties/Item Register/Resource Item Register/::1733915869
+pistol ammo.tres::Resource/ResourceItem::3548037141406358732::1733915534::0::1::::<><>::res://Main/Item/resource_item.gd
+shotgun_ammo.tres::Resource/ResourceItem::4577193490588160358::1733915869::0::1::::<><>::res://Main/Item/resource_item.gd
+::res://Properties/Projectile Register/::1733915534
 Bullet.png::CompressedTexture2D::1238271154879080001::1733914954::1733915000::1::::<><>::
-pistol_bullet.tres::Resource/ProjectileData::5408888192062554988::1733914954::0::1::::<><>::res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd
-shotgun_bullet.tres::Resource/ProjectileData::8344311561470469314::1733914954::0::1::::<><>::res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Obj/Projectile/projectile_data.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd
+pistol_bullet.tres::Resource/ProjectileData::5408888192062554988::1733915534::0::1::::<><>::res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd
+shotgun_bullet.tres::Resource/ProjectileData::8344311561470469314::1733915534::0::1::::<><>::res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Obj/Projectile/projectile_data.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Effect/Effect Region/effect_region_data.gd
 ::res://Properties/System/::1733914954
 debug_setting.tres::Resource/DebugSettingData::8653225929837426714::1733914954::0::1::::<><>::res://Main/Utility/debug_setting_data.gd
 system_constants.gd::GDScript::-1::1733914954::0::1::::SystemConstants<>Node<>::
@@ -175,22 +180,22 @@ normal_melee_AI.tres::Resource/UnitAIData::8432655722163640001::1733914954::0::1
 normal_ranged_AI.tres::Resource/UnitAIData::6826265322485383772::1733914954::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd
 predator_AI.tres::Resource/UnitAIData::7093354927598323808::1733914954::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd
 suicider_AI.tres::Resource/UnitAIData::5550007930237541991::1733914954::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd
-::res://Properties/Unit Register/::1733914954
+::res://Properties/Unit Register/::1733915870
 normal_predator.tres::Resource/UnitData::4611454607811938541::1733914954::0::1::::<><>::uid://c8ccrwk1r6ldg::::res://Properties/Unit AI Register/predator_AI.tres<>res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Trigger/trigger_editable.gd<>uid://hswmaj0aaw2p::::res://Properties/Ability Register/For Units/short_range_charge.tres
 normal_spitter.tres::Resource/UnitData::559419332285738431::1733914954::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd<>res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Ability/channeling_interval.gd<>res://Main/Trigger/trigger_editable.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Obj/Projectile/projectile_data.gd<>res://Main/Effect/self_effect.gd
-normal_zombie.tres::Resource/UnitData::2427424677871013026::1733914954::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd<>res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Trigger/trigger_editable.gd<>res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Effect/self_effect.gd
-Player.tres::Resource/UnitData::5551163710015480474::1733914954::0::1::::<><>::res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/Controller/player_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Trigger/trigger_editable.gd
+normal_zombie.tres::Resource/UnitData::2427424677871013026::1733915870::0::1::::<><>::res://Main/Obj/Unit/Controller/unit_AI_data.gd<>res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Trigger/trigger_editable.gd<>res://Main/Ability/channeling_interval.gd<>res://Main/Effect/position_effect.gd<>res://Main/Effect/Area Shape/circle_shape.gd<>res://Main/Effect/area_effect.gd<>res://Main/Trigger/float_point.gd<>res://Main/Trigger/trigger_unit.gd<>res://Main/Effect/Effect Region/effect_region_data.gd<>res://Main/Effect/self_effect.gd
+Player.tres::Resource/UnitData::5551163710015480474::1733915596::0::1::::<><>::res://Main/Ability/ability_data.gd<>res://Main/Obj/Unit/Controller/player_data.gd<>res://Main/Obj/Unit/unit_data.gd<>res://Main/Trigger/trigger_editable.gd
 ::res://UI/::1733914954
-::res://UI/Debug Setting/::1733914954
+::res://UI/Debug Setting/::1733915570
 debug_setting.gd::GDScript::-1::1733914954::0::1::::<>Node<>::
-debug_setting.tscn::PackedScene::6298900386373757136::1733914954::0::1::::<><>::res://UI/Debug Setting/debug_setting.gd<>uid://dvjxmqbgqapc1::::res://Properties/System/debug_setting.tres
-::res://UI/Game Message Manager/::1733914954
-game_message.tscn::PackedScene::6444860359682246729::1733914954::0::1::::<><>::res://UI/Game Message Manager/game_message_manager.gd
+debug_setting.tscn::PackedScene::6298900386373757136::1733915570::0::1::::<><>::res://UI/Debug Setting/debug_setting.gd<>uid://dvjxmqbgqapc1::::res://Properties/System/debug_setting.tres
+::res://UI/Game Message Manager/::1733953238
+game_message.tscn::PackedScene::6444860359682246729::1733953238::0::1::::<><>::res://UI/Game Message Manager/game_message_manager.gd
 game_message_manager.gd::GDScript::-1::1733914954::0::1::::GameMessageManager<>Control<>::
-::res://UI/Inventory Interface/::1733914954
-inventory.tscn::PackedScene::1187178834642052427::1733914954::0::1::::<><>::res://UI/Inventory Interface/inventory_interface.gd<>uid://vdac66syin7::::res://UI/temp_png/RareBorderV11.png
-inventory_interface.gd::GDScript::-1::1733914954::0::1::::InventoryInterface<>Control<>::
-slot.tscn::PackedScene::2746920659472153279::1733914954::0::1::::<><>::uid://c6akt6kjxyob1::::res://UI/temp_png/UniqueBorderV11.png
+::res://UI/Inventory Interface/::1733915637
+inventory.tscn::PackedScene::1187178834642052427::1733915637::0::1::::<><>::res://UI/Inventory Interface/inventory_interface.gd<>uid://vdac66syin7::::res://UI/temp_png/RareBorderV11.png
+inventory_interface.gd::GDScript::-1::1733915253::0::1::::InventoryInterface<>Control<>::
+slot.tscn::PackedScene::2746920659472153279::1733915637::0::1::::<><>::uid://c6akt6kjxyob1::::res://UI/temp_png/UniqueBorderV11.png
 ::res://UI/Inventory Interface/InventorySprites/::1733914999
 Bandage.png::CompressedTexture2D::4003728355118336572::1733914954::1733914999::1::::<><>::
 Dirty Bandage.png::CompressedTexture2D::2343212274939590792::1733914954::1733914999::1::::<><>::
@@ -201,8 +206,8 @@ Match64px.png::CompressedTexture2D::3226670424622907430::1733914954::1733914999:
 pistol ammo.png::CompressedTexture2D::9175490178998159125::1733914954::1733914999::1::::<><>::
 pistol.png::CompressedTexture2D::697297657405477125::1733914954::1733914999::1::::<><>::
 Wedding Ring.png::CompressedTexture2D::7826826720895499839::1733914954::1733914999::1::::<><>::
-::res://UI/Main Menu/::1733914954
-main_menu.tscn::PackedScene::7305856177622365298::1733914954::0::1::::<><>::
+::res://UI/Main Menu/::1733953238
+main_menu.tscn::PackedScene::7305856177622365298::1733953238::0::1::::<><>::
 ::res://UI/temp_png/::1733915009
 brown-concrete-wall-with-scratches-vector.png::CompressedTexture2D::1998888571458178422::1733914954::1733915009::1::::<><>::
 Gun.png::CompressedTexture2D::1503200255576934809::1733914954::1733914999::1::::<><>::
@@ -212,6 +217,6 @@ inventory-background.png::CompressedTexture2D::621912540819082555::1733914954::1
 inventory-slot.png::CompressedTexture2D::1534533604008022030::1733914954::1733915000::1::::<><>::
 RareBorderV11.png::CompressedTexture2D::43534238182697082::1733914954::1733915000::1::::<><>::
 UniqueBorderV11.png::CompressedTexture2D::6949338264289576388::1733914954::1733915000::1::::<><>::
-::res://UI/Value Indicator/::1733914954
-ui.tscn::PackedScene::242767248696198508::1733914954::0::1::::<><>::uid://cv0h77i3d58qm::::res://UI/Debug Setting/debug_setting.tscn<>res://UI/Value Indicator/value_indicator.gd<>uid://q6cwrhtyh68v::::res://UI/Inventory Interface/inventory.tscn<>uid://b2dx54o0sfvei::::res://UI/temp_png/healthbarUnder.png<>uid://0as3fmv1talq::::res://UI/temp_png/healthbarProgress.png<>uid://cx2655inol7k4::::res://UI/Game Message Manager/game_message.tscn
+::res://UI/Value Indicator/::1733915637
+ui.tscn::PackedScene::242767248696198508::1733915637::0::1::::<><>::uid://cv0h77i3d58qm::::res://UI/Debug Setting/debug_setting.tscn<>res://UI/Value Indicator/value_indicator.gd<>uid://q6cwrhtyh68v::::res://UI/Inventory Interface/inventory.tscn<>uid://b2dx54o0sfvei::::res://UI/temp_png/healthbarUnder.png<>uid://0as3fmv1talq::::res://UI/temp_png/healthbarProgress.png<>uid://cx2655inol7k4::::res://UI/Game Message Manager/game_message.tscn
 value_indicator.gd::GDScript::-1::1733914954::0::1::::ValueIndicator<>Control<>::

@@ -247,6 +247,20 @@ func get_collision_radius():
 
 func death():
 	play_sprite_animation("Death")
+	var my_timer = Timer.new()
+	my_timer.wait_time = 3.0
+	await my_timer.timeout
+	data = ObjData.new()
+	data.triggers.append(TriggerEditable.new())
+	var _trigger = data.triggers[0]
+	_trigger.one_shot = false
+	_trigger.event = Event.new()
+	_trigger.event._set("function", "object_activated")
+	var action = Action.new()
+	action._set("function", "go_to_map")
+	action._set("path", "res://Levels/Maps/start_level.tscn")
+	action._set("pos", Vector2(0,0))
+	_trigger.actions.append(action)
 
 func HP_changed():
 	super()

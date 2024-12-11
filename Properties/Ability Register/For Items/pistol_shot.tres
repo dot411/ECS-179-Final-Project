@@ -21,7 +21,7 @@ position_effects = Array[ExtResource("2_qi2lj")]([SubResource("Resource_7kfeq")]
 
 [resource]
 script = ExtResource("2_uxfwe")
-cast_animation = "Shoot"
+cast_animation = ""
 stationary = false
 AI_cast_range = 5.0
 cooldown = 1.0

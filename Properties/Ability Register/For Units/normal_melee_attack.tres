@@ -59,7 +59,7 @@ position_effects = Array[ExtResource("2_7xqo5")]([SubResource("Resource_dyd8f")]
 
 [resource]
 script = ExtResource("9_1ege7")
-cast_animation = "Attack"
+cast_animation = ""
 stationary = true
 AI_cast_range = 1.0
 cooldown = 1.5

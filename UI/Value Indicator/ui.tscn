@@ -24,10 +24,10 @@ func _ready():
 	else:
 		print(\"Error: InventoryInterface node not found.\")
 # Receiver Functions
-	game_message_manager.add_message(\"Welcome To Resident Medieval\",5.0)
-	game_message_manager.add_message(\"Here is how to play\", 3.0)
-	game_message_manager.add_message(\"Use 'WASD' to move , 'i' for inventory, 'inventory Keybinds are #'s 0-9\", 8.0)
-	await get_tree().create_timer(20).timeout
+	#game_message_manager.add_message(\"Welcome To Resident Medieval\",5.0)
+	#game_message_manager.add_message(\"Here is how to play\", 3.0)
+	game_message_manager.add_message(\"'WASD' to move , 'E' to interact, 'shift' to run, 'i' for inventory, inventory Keybinds are #'s 0-9\", 6.0)
+	await get_tree().create_timer(6).timeout
 	game_message_manager.clear_messages()
 # Append a game message (dialogue) that lasts _time seconds to the queue
 # Game messages should be displayed from the queue one by one until the queue becomes empty
