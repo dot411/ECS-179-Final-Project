@@ -15,8 +15,13 @@ func go_to_map(path_resource, pos):
 
 func load_map(path):
 	if current_map_node != null:
+		get_node("Instances").queue_free()
+		await(get_node("Instances").tree_exited)
 		current_map_node.queue_free()
 		await current_map_node.tree_exited
+	var instances_node = Node2D.new()
+	instances_node.name = "Instances"
+	add_child(instances_node)
 	var map = load(path).instantiate()
 	current_map_node = map
 	add_child(map)
@@ -25,13 +30,13 @@ func load_map(path):
 		var player_inst = unit_scene.instantiate()
 		if save_data.player != null:
 			player_inst.data = save_data.player.data
-			player_inst.position = save_data.player.pos
+			player_inst.get_node("Body").position = save_data.player.pos
 		elif map.has_node("StartingPlayer"):
 			player_inst.data = map.get_node("StartingPlayer").unit_data
 			player_inst.get_node("Body").position = map.get_node("StartingPlayer").position
 			map.get_node("StartingPlayer").queue_free()
 			player_inst.data.team = 1
-		add_instance(player_inst)
+		add_child(player_inst)
 		player_inst.set_controller(Player.new())
 		player_node = player_inst
 		save_data.player = {"pos": player_inst.position, "data": player_inst.data}
