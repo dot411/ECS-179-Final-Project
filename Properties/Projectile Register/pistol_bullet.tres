@@ -39,4 +39,4 @@ finite_duration = false
 script = ExtResource("5_mqhyb")
 asset_path = null
 effect_region_data = SubResource("Resource_0m0eu")
-speed = 4.0
+speed = 8.0

@@ -50,6 +50,13 @@ func spawn_effect_region(data:EffectRegionData):
 
 func spawn_projectile(data:ProjectileData):
 	var projectile = load("res://Main/Obj/Projectile/projectile.tscn").instantiate()
+	#AUDIO
+	var gunshot_audio = AudioStreamPlayer2D.new()
+	gunshot_audio.stream = load("res://Audio/gunshot.wav")
+	gunshot_audio.autoplay = false
+	add_child(gunshot_audio)
+	if not gunshot_audio.is_playing():
+		gunshot_audio.play()
 	projectile.get_node("EffectRegion").trigger_buffer.triggering_caster = caster.data
 	projectile.get_node("EffectRegion").data = data.effect_region_data
 	projectile.data = data.duplicate(true)

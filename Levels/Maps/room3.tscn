@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=4 uid="uid://b15j0ow55hdn8"]
+
+[ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_klfaw"]
+[ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_fwqh6"]
+[ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_v05fk"]
+[ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="4_47xrf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uja7g"]
+texture = ExtResource("1_klfaw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_s73mo"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_uja7g")
+
+[sub_resource type="Resource" id="Resource_p20g6"]
+script = ExtResource("3_v05fk")
+path = "res://Levels/Maps/room2.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sng5s"]
+size = Vector2(328, 88.75)
+
+[sub_resource type="Resource" id="Resource_sgrgp"]
+script = ExtResource("3_v05fk")
+path = "res://Levels/Maps/room4.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jm8h"]
+size = Vector2(76.25, 357)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9//n/AAAAAAAAAAD9//r/AAAAAAEAAAD9//v/AAAAAAAAAAD9//z/AAAAAAEAAAD9//3/AAAAAAAAAAD9//7/AAAAAAEAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAEAAAD9/wYAAAAAAAEAAAD+//n/AAABAAAAAAD+//r/AAABAAEAAAD+//v/AAABAAAAAAD+//z/AAABAAEAAAD+//3/AAABAAAAAAD+//7/AAABAAEAAAD+/wEAAAABAAAAAAD+/wIAAAABAAEAAAD+/wMAAAABAAAAAAD+/wQAAAABAAEAAAD+/wUAAAABAAAAAAD+/wYAAAABAAEAAAD9/wUAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wkAAAABAAAAAAD//wkAAAAAAAAAAAAAAAkAAAABAAAAAAABAAkAAAAAAAAAAAACAAkAAAABAAAAAAADAAkAAAAAAAAAAAAEAAkAAAABAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAABAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAABAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAABAAAAAAALAAkAAAAAAAAAAAAMAAkAAAABAAAAAAANAAkAAAAAAAAAAAAOAAkAAAABAAAAAAD9/woAAAAAAAEAAAD+/woAAAABAAEAAAD//woAAAAAAAEAAAAAAAoAAAABAAEAAAABAAoAAAAAAAEAAAACAAoAAAABAAEAAAADAAoAAAAAAAEAAAAEAAoAAAABAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAABAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAABAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAABAAEAAAALAAoAAAAAAAEAAAAMAAoAAAABAAEAAAANAAoAAAAAAAEAAAAOAAoAAAABAAEAAAAPAPf/AAAAAAAAAAAPAPj/AAAAAAEAAAAPAPn/AAAAAAAAAAAPAPr/AAAAAAEAAAAPAPv/AAAAAAAAAAAPAPz/AAAAAAEAAAAPAP3/AAAAAAAAAAAPAP7/AAAAAAEAAAAPAP//AAAAAAAAAAAPAAAAAAAAAAEAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAEAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAEAAAAQAPf/AAABAAAAAAAQAPj/AAABAAEAAAAQAPn/AAABAAAAAAAQAPr/AAABAAEAAAAQAPv/AAABAAAAAAAQAPz/AAABAAEAAAAQAP3/AAABAAAAAAAQAP7/AAABAAEAAAAQAP//AAABAAAAAAAQAAAAAAABAAEAAAAQAAEAAAABAAAAAAAQAAIAAAABAAEAAAAQAAMAAAABAAAAAAAQAAQAAAABAAEAAAAQAAUAAAABAAAAAAAQAAYAAAABAAEAAAD9//X/AAAAAAAAAAD9//b/AAAAAAEAAAD+//X/AAABAAAAAAD+//b/AAABAAEAAAD///X/AAAAAAAAAAD///b/AAAAAAEAAAAAAPX/AAABAAAAAAAAAPb/AAABAAEAAAABAPX/AAAAAAAAAAABAPb/AAAAAAEAAAACAPX/AAABAAAAAAACAPb/AAABAAEAAAADAPX/AAAAAAAAAAADAPb/AAAAAAEAAAAEAPX/AAABAAAAAAAEAPb/AAABAAEAAAAIAPX/AAABAAAAAAAIAPb/AAABAAEAAAAJAPX/AAAAAAAAAAAJAPb/AAAAAAEAAAAKAPX/AAABAAAAAAAKAPb/AAABAAEAAAALAPX/AAAAAAAAAAALAPb/AAAAAAEAAAAMAPX/AAABAAAAAAAMAPb/AAABAAEAAAD9/wcAAAAAAAAAAAD9/wgAAAAAAAEAAAD+/wcAAAABAAAAAAD+/wgAAAABAAEAAAD9//f/AAAAAAAAAAD9//j/AAAAAAEAAAD+//f/AAABAAAAAAD+//j/AAABAAEAAAAFAPX/AAAAAAAAAAAFAPb/AAAAAAEAAAANAPX/AAAAAAAAAAANAPb/AAAAAAEAAAAOAPX/AAABAAAAAAAOAPb/AAABAAEAAAAPAPX/AAAAAAAAAAAPAPb/AAAAAAEAAAAQAPX/AAABAAAAAAAQAPb/AAABAAEAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAEAAAAQAAkAAAABAAAAAAAQAAoAAAABAAEAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAEAAAAQAAcAAAABAAAAAAAQAAgAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_s73mo")
+
+[node name="MapTransitionZoneToStartMap" parent="." instance=ExtResource("2_fwqh6")]
+position = Vector2(-827, -761)
+path = SubResource("Resource_p20g6")
+pos = Vector2(2000, 0)
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToStartMap/Area2D" index="0"]
+position = Vector2(703, 748)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_sng5s")
+
+[node name="MapTransitionZoneToTest2" parent="." instance=ExtResource("2_fwqh6")]
+position = Vector2(-1130, -552)
+path = SubResource("Resource_sgrgp")
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToTest2/Area2D" index="0"]
+position = Vector2(1590, -87)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_7jm8h")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-132, 7)
+rotation = 1.5708
+stream = ExtResource("4_47xrf")
+autoplay = true
+
+[editable path="MapTransitionZoneToStartMap"]
+[editable path="MapTransitionZoneToTest2"]

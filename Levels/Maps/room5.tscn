@@ -1,0 +1,127 @@
+[gd_scene load_steps=25 format=4 uid="uid://cqyfmy5jv21fd"]
+
+[ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_o2epm"]
+[ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="2_2e1bq"]
+[ext_resource type="PackedScene" uid="uid://dgbg1uhecu4ml" path="res://Levels/Placeable Entities/Base Entities/interactable_object.tscn" id="2_rsrax"]
+[ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_xurda"]
+[ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_q0mxc"]
+[ext_resource type="Script" path="res://Main/Item/item_data.gd" id="3_svev2"]
+[ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="4_7kyxn"]
+[ext_resource type="Resource" uid="uid://co7er44eby16y" path="res://Properties/Ability Register/For Items/pistol_shot.tres" id="4_ntbdm"]
+[ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="5_rbf4x"]
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="5_wp0ex"]
+[ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="6_0nyc1"]
+[ext_resource type="Script" path="res://Main/Obj/Interactable Object/interactable_object_data.gd" id="7_fiugb"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="8_j34jw"]
+[ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="14_2w6x4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dkvw"]
+texture = ExtResource("1_o2epm")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_3q1ai"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1dkvw")
+
+[sub_resource type="Resource" id="Resource_jwb1d"]
+script = ExtResource("5_rbf4x")
+drop_items = Array[ExtResource("3_svev2")]([ExtResource("4_7kyxn")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 10
+triggers = Array[ExtResource("8_j34jw")]([])
+
+[sub_resource type="Resource" id="Resource_4pj5t"]
+resource_name = "pistol ammo"
+script = ExtResource("5_wp0ex")
+ability_data = ExtResource("4_ntbdm")
+consumable = false
+cost_resource = true
+resource_name = "pistol ammo"
+cost_amount = 1
+name = "pistol"
+description = ""
+asset_path = null
+stack_limit = 1
+amount = 1
+
+[sub_resource type="Resource" id="Resource_mfibn"]
+script = ExtResource("6_0nyc1")
+name = "pistol ammo"
+description = ""
+asset_path = null
+stack_limit = 24
+amount = 10
+
+[sub_resource type="Resource" id="Resource_15dha"]
+script = ExtResource("7_fiugb")
+allow_deactivation = false
+requires_resource = ""
+requires_resource_amount = 0
+give_inventory = Array[ExtResource("3_svev2")]([SubResource("Resource_4pj5t"), SubResource("Resource_mfibn")])
+triggers = Array[ExtResource("8_j34jw")]([])
+
+[sub_resource type="Resource" id="Resource_jnqf7"]
+script = ExtResource("3_q0mxc")
+path = "res://Levels/Maps/room_6.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce4id"]
+size = Vector2(328, 88.75)
+
+[sub_resource type="Resource" id="Resource_ou7ip"]
+script = ExtResource("3_q0mxc")
+path = "res://Levels/Maps/room4.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3o17"]
+size = Vector2(76.25, 357)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9//r/AAAAAAAAAAD9//v/AAAAAAEAAAD9/wQAAAAAAAAAAAD9/wUAAAAAAAEAAAD+//r/AAABAAAAAAD+//v/AAABAAEAAAD+/wQAAAABAAAAAAD+/wUAAAABAAEAAAD///r/AAAAAAAAAAD///v/AAAAAAEAAAD//wQAAAAAAAAAAAD//wUAAAAAAAEAAAAAAPr/AAABAAAAAAAAAPv/AAABAAEAAAAAAAQAAAABAAAAAAAAAAUAAAABAAEAAAABAPr/AAAAAAAAAAABAPv/AAAAAAEAAAABAAQAAAAAAAAAAAABAAUAAAAAAAEAAAACAPr/AAABAAAAAAACAPv/AAABAAEAAAACAAQAAAABAAAAAAACAAUAAAABAAEAAADv//r/AAAAAAAAAADv//v/AAAAAAEAAADv//z/AAAAAAEAAADv//3/AAAAAAAAAADv//7/AAAAAAEAAADv/wEAAAAAAAAAAADv/wIAAAAAAAEAAADv/wMAAAAAAAAAAADv/wQAAAAAAAAAAADv/wUAAAAAAAEAAADw//r/AAABAAAAAADw//v/AAABAAEAAADw//z/AAABAAEAAADw//3/AAABAAAAAADw//7/AAABAAEAAADw/wEAAAABAAAAAADw/wIAAAABAAEAAADw/wMAAAABAAAAAADw/wQAAAABAAAAAADw/wUAAAABAAEAAADx//r/AAAAAAAAAADx//v/AAAAAAEAAADx/wQAAAAAAAAAAADx/wUAAAAAAAEAAADy//r/AAABAAAAAADy//v/AAABAAEAAADy/wQAAAABAAAAAADy/wUAAAABAAEAAADz//r/AAAAAAAAAADz//v/AAAAAAEAAADz/wQAAAAAAAAAAADz/wUAAAAAAAEAAAD0//r/AAABAAAAAAD0//v/AAABAAEAAAD0/wQAAAABAAAAAAD0/wUAAAABAAEAAAD1//r/AAAAAAAAAAD1//v/AAAAAAEAAAD1/wQAAAAAAAAAAAD1/wUAAAAAAAEAAAD2//r/AAABAAAAAAD2//v/AAABAAEAAAD2/wQAAAABAAAAAAD2/wUAAAABAAEAAAD3//r/AAAAAAAAAAD3//v/AAAAAAEAAAD3/wQAAAAAAAAAAAD3/wUAAAAAAAEAAAD4//r/AAABAAAAAAD4//v/AAABAAEAAAD4/wQAAAABAAAAAAD4/wUAAAABAAEAAAD5//r/AAAAAAAAAAD5//v/AAAAAAEAAAD5/wQAAAAAAAAAAAD5/wUAAAAAAAEAAAD6//r/AAABAAAAAAD6//v/AAABAAEAAAD6/wQAAAABAAAAAAD6/wUAAAABAAEAAAD7//r/AAAAAAAAAAD7//v/AAAAAAEAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAEAAAD8//r/AAABAAAAAAD8//v/AAABAAEAAAD8/wQAAAABAAAAAAD8/wUAAAABAAEAAAABAPz/AAAAAAEAAAABAP3/AAAAAAAAAAABAP7/AAAAAAEAAAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAABAAMAAAAAAAAAAAACAPz/AAABAAEAAAACAP3/AAABAAAAAAACAP7/AAABAAEAAAACAAEAAAABAAAAAAACAAIAAAABAAEAAAACAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_3q1ai")
+
+[node name="BandageCrateDestructable" parent="." instance=ExtResource("2_2e1bq")]
+position = Vector2(-449, 206)
+start_status = true
+data = SubResource("Resource_jwb1d")
+
+[node name="PistolContainer" parent="." instance=ExtResource("2_rsrax")]
+position = Vector2(-441, -199)
+data = SubResource("Resource_15dha")
+
+[node name="MapTransitionZoneToStartMap" parent="." instance=ExtResource("2_xurda")]
+position = Vector2(-827, -761)
+path = SubResource("Resource_jnqf7")
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToStartMap/Area2D" index="0"]
+position = Vector2(-196, 748)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ce4id")
+
+[node name="MapTransitionZoneToTest2" parent="." instance=ExtResource("2_xurda")]
+position = Vector2(-1130, -552)
+path = SubResource("Resource_ou7ip")
+pos = Vector2(-556, -630)
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToTest2/Area2D" index="0"]
+position = Vector2(1264, 530)
+shape = SubResource("RectangleShape2D_o3o17")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-132, 7)
+rotation = 1.5708
+stream = ExtResource("14_2w6x4")
+autoplay = true
+
+[editable path="MapTransitionZoneToStartMap"]
+[editable path="MapTransitionZoneToTest2"]

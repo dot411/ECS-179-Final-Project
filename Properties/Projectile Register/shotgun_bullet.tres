@@ -39,4 +39,4 @@ finite_duration = false
 script = ExtResource("1_tvrfo")
 asset_path = null
 effect_region_data = SubResource("Resource_hv4q0")
-speed = 6.0
+speed = 8.0

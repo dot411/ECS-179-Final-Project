@@ -14,6 +14,7 @@ var wander_noise = FastNoiseLite.new()
 var wander_noise_offset = Vector2(randf_range(0, 10000), randf_range(0, 10000))
 var ability_controller:AbilityController
 var data:UnitAIData
+var zombie_music:AudioStreamPlayer2D
 
 func _ready() -> void:
 	body.get_node("Dir").visible = true
@@ -44,6 +45,13 @@ func _ready() -> void:
 		PathfindingRaycast.add_child(raycast)
 		pathfinding_rays.append(raycast)
 	init_debug_mode()
+	#AUDIO
+	var zombie_music = AudioStreamPlayer2D.new()
+	zombie_music.stream = load("res://Audio/zombiemusic.wav")
+	zombie_music.autoplay = false
+	zombie_music.volume_db = 14
+	zombie_music.name = "ZombieMusic"
+	add_child(zombie_music)
 
 func init_debug_mode():
 	if Utility.get_debug_setting("game_AI/show_raycast"): body.get_node("PathfindingRaycast").modulate.a = 1
@@ -70,7 +78,12 @@ func _physics_process(delta: float) -> void:
 				targets_metadata.append([enemy.get_pos(), false])
 	if targets.size() == 0:
 		wander(delta)
+		#AUDIO
+		if $ZombieMusic.is_playing():
+			$ZombieMusic.stop()
 	else:
+		if not $ZombieMusic.is_playing():
+			$ZombieMusic.play()
 		pathfinding_main()
 		ability_casting_main()
 

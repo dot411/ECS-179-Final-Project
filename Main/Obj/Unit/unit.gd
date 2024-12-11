@@ -131,7 +131,7 @@ func gain_item(_item_data):
 	var item_data = _item_data.duplicate(true)
 	var inventory = data.inventory
 	var amount = item_data.amount
-	for item in inventory:
+	for item in inventory: 
 		if item_data.name == item.name and item.amount < item.stack_limit:
 			if item.amount + amount > item.stack_limit:
 				amount = clampi(item.amount + amount - item.stack_limit, 0, amount)
