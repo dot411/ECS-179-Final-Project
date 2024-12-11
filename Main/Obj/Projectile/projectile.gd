@@ -7,6 +7,8 @@ var data:ProjectileData
 func _ready() -> void:
 	effect_region.collision_mask = 0b11
 	effect_region.monitorable = true
+	if data.asset_path != null:
+		get_node("EffectRegion/Sprite").texture = load(data.asset_path)
 
 func _physics_process(delta: float) -> void:
 	var _velocity = Utility.to_world_space(data.speed)

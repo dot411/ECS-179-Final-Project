@@ -7,8 +7,8 @@ func init():
 
 func HP_changed():
 	var proportion = float(data.HP) / float(data.max_HP)
-	if get_body().has_node("Sprite"):
-		get_body().get_node("Sprite").scale = Vector2(proportion, proportion)
+	#if get_body().has_node("Sprite"):
+		#get_body().get_node("Sprite").scale = Vector2(proportion, proportion)
 
 func heal(value:FloatPoint):
 	if data.HP >= data.max_HP: return false

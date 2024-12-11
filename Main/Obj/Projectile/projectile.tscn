@@ -8,7 +8,12 @@ script = ExtResource("1_wiqmd")
 
 [node name="EffectRegion" parent="." instance=ExtResource("2_hmyub")]
 
+[node name="Sprite" type="Sprite2D" parent="EffectRegion"]
+scale = Vector2(2, 2)
+hframes = 4
+
 [node name="ColorRect" type="ColorRect" parent="EffectRegion"]
+visible = false
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0

@@ -1,6 +1,16 @@
 class_name Unit
 extends HP_Obj
 
+const aligned_facing_arr4 = [
+	["Right", -PI/4 - 0.01, PI/4 + 0.01],
+	["Down", PI/4, PI*3/4],
+	["Left", PI*3/4 + 0.01, -PI*3/4 - 0.01],
+	["Up", -PI*3/4, -PI/4]
+]
+const aligned_facing_arr2 = [
+	["Right", -PI/2, PI/2],
+	["Left", PI/2, -PI/2]
+]
 var speed_multiplier:float = 1.0
 var fatigued:bool = false
 var is_casting = false
@@ -33,6 +43,67 @@ func init_ability_controller():
 	ability_controller.caster = self
 	add_child(ability_controller)
 
+func init_sprite():
+	var sprite_node = get_node("Body/Sprite")
+	var sprite_frames = SpriteFrames.new()
+	sprite_node.sprite_frames = sprite_frames
+	add_animation(sprite_frames, "Idle", 4, 2, true)
+	add_animation(sprite_frames, "Walk", 4, 4, true)
+	add_animation(sprite_frames, "Death", 4, 4, false)
+	if controller is Player:
+		add_animation(sprite_frames, "Stab", 4, 4, false)
+		add_animation(sprite_frames, "Shoot", 4, 4, false)
+	elif controller is UnitAI:
+		add_animation(sprite_frames, "Attack", 4, 4, false)
+	play_sprite_animation("Idle")
+
+func add_animation(sprite_frames, anim, rows, columns, loop):
+	if data.asset_path == null: return
+	var sprite_sheet_path = str(data.asset_path, "/", data.asset_path.get_file(), anim, ".png")
+	if controller is Player: sprite_sheet_path = str(data.asset_path, "/", anim, ".png")
+	var sprite_sheet = load(sprite_sheet_path)
+	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Down", 0)
+	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Up", 1)
+	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Right", 2)
+	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Left", 3)
+
+func add_subanimation(sprite_frames, _anim, sprite_sheet, rows, columns, loop, sub_anim, row):
+	var sprite_node = get_node("Body/Sprite")
+	var anim = str(_anim, sub_anim)
+	sprite_frames.add_animation(anim)
+	sprite_frames.set_animation_loop(anim, loop)
+	for column in range(columns):
+		var frame_texture = AtlasTexture.new()
+		frame_texture.atlas = sprite_sheet
+		frame_texture.region = Rect2(column * 32, row * 32, 32, 32)
+		sprite_frames.add_frame(anim, frame_texture)
+
+func get_aligned_facing(directions):
+	var alignment_arr
+	if directions == 4: alignment_arr = aligned_facing_arr4
+	elif directions == 2: alignment_arr = aligned_facing_arr2
+	var angle = get_facing_angle()
+	for aligned_facing in alignment_arr:
+		var start_angle = aligned_facing[1]
+		var end_angle = aligned_facing[2]
+		if angle >= start_angle and angle <= end_angle: return aligned_facing[0]
+		if end_angle < start_angle and (angle >= start_angle or angle <= end_angle): return aligned_facing[0]
+	return ""
+
+func is_animation_movement(anim):
+	if anim.contains("Idle") or anim.contains("Walk"): return true
+	return false
+
+func play_sprite_animation(anim):
+	if get_sprite_animation() == anim: return
+	var aligned_facing
+	if anim == "Attack": aligned_facing = get_aligned_facing(2)
+	else: aligned_facing = get_aligned_facing(4)
+	get_node("Body/Sprite").play(str(anim, aligned_facing))
+
+func get_sprite_animation():
+	return get_node("Body/Sprite").animation
+
 func get_vision_radius():
 	return Utility.to_world_space(data.vision)
 
@@ -54,6 +125,7 @@ func set_controller(_controller):
 	controller.unit = self
 	controller.body = body
 	add_child(controller)
+	init_sprite()
 	if _controller is Player:
 		_controller.init_camera()
 	render_update()
@@ -81,6 +153,9 @@ func move(dir):
 		body.velocity = (charge_to_pos - charge_from_pos) / duration
 	else:
 		body.velocity = Utility.to_world_space(dir * data.speed * speed_multiplier)
+	if is_animation_movement(get_sprite_animation()):
+		if body.velocity == Vector2(0, 0): play_sprite_animation("Idle")
+		else: play_sprite_animation("Walk")
 	var collision_occured = body.move_and_slide()
 	if collision_occured:
 		var body_collider = body.get_slide_collision(0).get_collider()
@@ -104,6 +179,8 @@ func use_ability(aim_pos):
 		elif selected_item._get("cost_resource"):
 			if !spend_item_based_on_name(selected_item._get("resource_name"), selected_item._get("cost_amount")):
 				return
+	if ability_controller.data.cast_animation != "":
+		play_sprite_animation(ability_controller.data.cast_animation)
 	speed_multiplier = 1.0
 	ability_controller.track_caster_aim(aim_pos)
 	ability_controller.use()
@@ -149,14 +226,15 @@ func gain_item(_item_data):
 func add_item_to_inventory(item):
 	data.inventory.append(item)
 	if controller is Player:
-		Utility.get_UI_Scene().player_gains_new_item(data.inventory, item)
+		#Utility.get_UI_Scene().player_gains_new_item(data.inventory, item)
 		if item is AbilityItem:
 			select_item(item)
 
 func item_amount_changed(item, to_amount):
 	item.amount = to_amount
 	if controller is Player:
-		Utility.get_UI_Scene().player_item_amount_changed(data.inventory, item, to_amount)
+		pass
+		#Utility.get_UI_Scene().player_item_amount_changed(data.inventory, item, to_amount)
 
 func get_body():
 	return body
@@ -166,6 +244,9 @@ func get_pos():
 
 func get_collision_radius():
 	return body.get_node("CollisionShape2D").shape.radius
+
+func death():
+	play_sprite_animation("Death")
 
 func HP_changed():
 	super()
@@ -265,3 +346,11 @@ func _on_proximity_area_body_exited(new_target_body: Node2D) -> void:
 	if new_target_body is not CharacterBody2D: return
 	if target.data.team != data.team: nearby_enemies.erase(target)
 	elif new_target_body != body: nearby_allies.erase(target)
+
+func _on_sprite_animation_finished() -> void:
+	if get_sprite_animation().contains("Death"):
+		queue_free()
+		return
+	if !is_animation_movement(get_sprite_animation()):
+		if body.velocity == Vector2(0, 0): play_sprite_animation("Idle")
+		else: play_sprite_animation("Walk")

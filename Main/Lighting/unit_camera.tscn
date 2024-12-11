@@ -9,6 +9,7 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
 [node name="Light" type="PointLight2D" parent="."]
+z_index = -1
 energy = 2.0
 shadow_enabled = true
 texture = ExtResource("1_n8scy")
