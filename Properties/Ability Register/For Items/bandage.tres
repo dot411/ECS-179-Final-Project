@@ -24,6 +24,7 @@ position_effects = Array[ExtResource("2_nq76w")]([])
 
 [resource]
 script = ExtResource("2_jttj7")
+cast_animation = ""
 stationary = true
 AI_cast_range = 10.0
 cooldown = 5.0

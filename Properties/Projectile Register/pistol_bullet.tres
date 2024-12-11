@@ -37,6 +37,6 @@ finite_duration = false
 
 [resource]
 script = ExtResource("5_mqhyb")
-asset_path = null
+asset_path = "res://Properties/Projectile Register/Bullet.png"
 effect_region_data = SubResource("Resource_0m0eu")
 speed = 8.0

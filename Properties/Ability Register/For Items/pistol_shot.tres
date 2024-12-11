@@ -21,7 +21,8 @@ position_effects = Array[ExtResource("2_qi2lj")]([SubResource("Resource_7kfeq")]
 
 [resource]
 script = ExtResource("2_uxfwe")
+cast_animation = "Shoot"
 stationary = false
 AI_cast_range = 5.0
-cooldown = 2.0
+cooldown = 1.0
 channeling_track = Array[ExtResource("1_lnuv1")]([SubResource("Resource_koiqv")])

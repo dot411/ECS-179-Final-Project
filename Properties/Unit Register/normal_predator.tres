@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_ksros")
-asset_path = null
+asset_path = "res://Main/Obj/Unit/EnemySprites/Nurse"
 speed = 2.0
 max_fatigue = 100.0
 attack = 15
