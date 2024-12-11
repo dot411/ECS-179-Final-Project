@@ -1,0 +1,112 @@
+[gd_scene load_steps=22 format=4 uid="uid://c7tshdtsjuxl4"]
+
+[ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_7f7ll"]
+[ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_1kbjv"]
+[ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_fak7o"]
+[ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="4_q1tso"]
+[ext_resource type="Script" path="res://Main/Item/item_data.gd" id="5_kruyt"]
+[ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="6_piuwv"]
+[ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="7_b820q"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="8_hwaml"]
+[ext_resource type="PackedScene" uid="uid://d0o3yq8o6yb63" path="res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn" id="9_evh80"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="10_40qv1"]
+[ext_resource type="Resource" uid="uid://b6x28pdlgk6t2" path="res://Properties/Unit Register/normal_predator.tres" id="11_mclxy"]
+[ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="12_h54jv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrafa"]
+texture = ExtResource("1_7f7ll")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_wmi6q"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hrafa")
+
+[sub_resource type="Resource" id="Resource_1p761"]
+script = ExtResource("3_fak7o")
+path = "res://Levels/Maps/room_10.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eai0"]
+size = Vector2(48.5, 357)
+
+[sub_resource type="Resource" id="Resource_ie5l2"]
+script = ExtResource("7_b820q")
+drop_items = Array[ExtResource("5_kruyt")]([ExtResource("6_piuwv")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 10
+triggers = Array[ExtResource("8_hwaml")]([])
+
+[sub_resource type="Resource" id="Resource_wjufb"]
+script = ExtResource("10_40qv1")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_unit"
+data = ExtResource("11_mclxy")
+
+[sub_resource type="Resource" id="Resource_mc3rm"]
+script = ExtResource("12_h54jv")
+disable_when_player_is_nearby = true
+start_delay = 0.0
+cooldown = 10.0
+max_aim_distance = 5.0
+max_aim_angle = 360.0
+unit_spawn_limit = 2
+position_effects = Array[ExtResource("10_40qv1")]([SubResource("Resource_wjufb")])
+triggers = Array[ExtResource("8_hwaml")]([])
+
+[sub_resource type="Resource" id="Resource_igjaj"]
+script = ExtResource("3_fak7o")
+path = "res://Levels/Maps/room_8.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uelyn"]
+size = Vector2(190, 35)
+
+[node name="room_9" type="Node2D"]
+position = Vector2(0, -744)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(512, 0)
+tile_map_data = PackedByteArray("AAD3//H/AAAAAAAAAAD3//L/AAAAAAEAAAD3/w0AAAAAAAAAAAD3/w4AAAAAAAEAAAD4//H/AAABAAAAAAD4//L/AAABAAEAAAD4/w0AAAABAAAAAAD4/w4AAAABAAEAAAD5//H/AAAAAAAAAAD5//L/AAAAAAEAAAD5/w0AAAAAAAAAAAD5/w4AAAAAAAEAAAD6//H/AAABAAAAAAD6//L/AAABAAEAAAD6/w0AAAABAAAAAAD6/w4AAAABAAEAAAD7//H/AAAAAAAAAAD7//L/AAAAAAEAAAD7/w0AAAAAAAAAAAD7/w4AAAAAAAEAAAD8//H/AAABAAAAAAD8//L/AAABAAEAAAD8/w0AAAABAAAAAAD8/w4AAAABAAEAAAD9//H/AAAAAAAAAAD9//L/AAAAAAEAAAD9/w0AAAAAAAAAAAD9/w4AAAAAAAEAAAD+//H/AAABAAAAAAD+//L/AAABAAEAAAD+/w0AAAABAAAAAAD+/w4AAAABAAEAAAD///H/AAAAAAAAAAD///L/AAAAAAEAAAD//w0AAAAAAAAAAAD//w4AAAAAAAEAAAAAAPH/AAABAAAAAAAAAPL/AAABAAEAAAAAAA0AAAABAAAAAAAAAA4AAAABAAEAAAABAPH/AAAAAAAAAAABAPL/AAAAAAEAAAABAA0AAAAAAAAAAAABAA4AAAAAAAEAAAACAPH/AAABAAAAAAACAPL/AAABAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAEAAAADAPH/AAAAAAAAAAADAPL/AAAAAAEAAAADAA0AAAAAAAAAAAADAA4AAAAAAAEAAAAEAPH/AAABAAAAAAAEAPL/AAABAAEAAAAEAA0AAAABAAAAAAAEAA4AAAABAAEAAADr//H/AAAAAAAAAADr//L/AAAAAAEAAADr//P/AAAAAAAAAADr//T/AAAAAAEAAADr//X/AAAAAAAAAADr//b/AAAAAAEAAADr//f/AAAAAAAAAADr//j/AAAAAAEAAADr//n/AAAAAAAAAADr//r/AAAAAAEAAADr//v/AAAAAAAAAADr//z/AAAAAAEAAADr//3/AAAAAAAAAADr//7/AAAAAAEAAADr////AAAAAAAAAADr/wAAAAAAAAEAAADr/wEAAAAAAAAAAADr/wIAAAAAAAEAAADr/wMAAAAAAAAAAADr/wQAAAAAAAEAAADr/wUAAAAAAAAAAADr/wYAAAAAAAEAAADr/wcAAAAAAAAAAADr/wgAAAAAAAEAAADr/wkAAAAAAAAAAADr/woAAAAAAAEAAADr/wsAAAAAAAAAAADr/wwAAAAAAAEAAADr/w0AAAAAAAAAAADr/w4AAAAAAAEAAADs//H/AAABAAAAAADs//L/AAABAAEAAADs//P/AAABAAAAAADs//T/AAABAAEAAADs//X/AAABAAAAAADs//b/AAABAAEAAADs//f/AAABAAAAAADs//j/AAABAAEAAADs//n/AAABAAAAAADs//r/AAABAAEAAADs//v/AAABAAAAAADs//z/AAABAAEAAADs//3/AAABAAAAAADs//7/AAABAAEAAADs////AAABAAAAAADs/wAAAAABAAEAAADs/wEAAAABAAAAAADs/wIAAAABAAEAAADs/wMAAAABAAAAAADs/wQAAAABAAEAAADs/wUAAAABAAAAAADs/wYAAAABAAEAAADs/wcAAAABAAAAAADs/wgAAAABAAEAAADs/wkAAAABAAAAAADs/woAAAABAAEAAADs/wsAAAABAAAAAADs/wwAAAABAAEAAADs/w0AAAABAAAAAADs/w4AAAABAAEAAADt//H/AAAAAAAAAADt//L/AAAAAAEAAADt/w0AAAAAAAAAAADt/w4AAAAAAAEAAADu//H/AAABAAAAAADu//L/AAABAAEAAADu/w0AAAABAAAAAADu/w4AAAABAAEAAADv//H/AAAAAAAAAADv//L/AAAAAAEAAADv/w0AAAAAAAAAAADv/w4AAAAAAAEAAADw//H/AAABAAAAAADw//L/AAABAAEAAADw/w0AAAABAAAAAADw/w4AAAABAAEAAADx//H/AAAAAAAAAADx//L/AAAAAAEAAADx/w0AAAAAAAAAAADx/w4AAAAAAAEAAADy//H/AAABAAAAAADy//L/AAABAAEAAADy/w0AAAABAAAAAADy/w4AAAABAAEAAADz//H/AAAAAAAAAADz//L/AAAAAAEAAADz/w0AAAAAAAAAAADz/w4AAAAAAAEAAAD0//H/AAABAAAAAAD0//L/AAABAAEAAAD0/w0AAAABAAAAAAD0/w4AAAABAAEAAAD1//H/AAAAAAAAAAD1//L/AAAAAAEAAAD1/w0AAAAAAAAAAAD1/w4AAAAAAAEAAAD2//H/AAABAAAAAAD2//L/AAABAAEAAAD2/w0AAAABAAAAAAD2/w4AAAABAAEAAAADAPP/AAAAAAAAAAADAPT/AAAAAAEAAAADAPX/AAAAAAAAAAADAPb/AAAAAAEAAAADAPf/AAAAAAAAAAADAPj/AAAAAAEAAAADAPn/AAAAAAAAAAADAPr/AAAAAAEAAAADAPv/AAAAAAAAAAADAPz/AAAAAAEAAAADAP3/AAAAAAAAAAADAP7/AAAAAAEAAAADAP//AAAAAAAAAAADAAAAAAAAAAEAAAADAAEAAAAAAAAAAAADAAIAAAAAAAEAAAADAAMAAAAAAAAAAAADAAQAAAAAAAEAAAADAAUAAAAAAAAAAAADAAYAAAAAAAEAAAADAAcAAAAAAAAAAAADAAgAAAAAAAEAAAADAAkAAAAAAAAAAAADAAoAAAAAAAEAAAADAAsAAAAAAAAAAAADAAwAAAAAAAEAAAAEAPP/AAABAAAAAAAEAPT/AAABAAEAAAAEAPX/AAABAAAAAAAEAPb/AAABAAEAAAAEAPf/AAABAAAAAAAEAPj/AAABAAEAAAAEAPn/AAABAAAAAAAEAPr/AAABAAEAAAAEAPv/AAABAAAAAAAEAPz/AAABAAEAAAAEAP3/AAABAAAAAAAEAP7/AAABAAEAAAAEAP//AAABAAAAAAAEAAAAAAABAAEAAAAEAAEAAAABAAAAAAAEAAIAAAABAAEAAAAEAAMAAAABAAAAAAAEAAQAAAABAAEAAAAEAAUAAAABAAAAAAAEAAYAAAABAAEAAAAEAAcAAAABAAAAAAAEAAgAAAABAAEAAAAEAAkAAAABAAAAAAAEAAoAAAABAAEAAAAEAAsAAAABAAAAAAAEAAwAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_wmi6q")
+
+[node name="MapTransitionZoneToRoom10" parent="." instance=ExtResource("2_1kbjv")]
+position = Vector2(672, -576)
+path = SubResource("Resource_1p761")
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToRoom10/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_5eai0")
+
+[node name="BandageCrateDestructable" parent="." instance=ExtResource("4_q1tso")]
+position = Vector2(-648, 776)
+start_status = true
+data = SubResource("Resource_ie5l2")
+
+[node name="PredatorSpawner" parent="." instance=ExtResource("9_evh80")]
+start_status = true
+data = SubResource("Resource_mc3rm")
+
+[node name="MapTransitionZoneToRoom8" parent="." instance=ExtResource("2_1kbjv")]
+position = Vector2(0, 808)
+rotation = 3.14159
+path = SubResource("Resource_igjaj")
+pos = Vector2(0, -1450)
+
+[node name="Area2D" parent="MapTransitionZoneToRoom8" index="0"]
+position = Vector2(2.22545e-07, -9.53674e-07)
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToRoom8/Area2D" index="0"]
+position = Vector2(-3.8147e-05, 0)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_uelyn")
+
+[editable path="MapTransitionZoneToRoom10"]
+[editable path="MapTransitionZoneToRoom8"]
