@@ -13,6 +13,6 @@ resource_name = "pistol ammo"
 cost_amount = 1
 name = "pistol"
 description = ""
-asset_path = null
+asset_path = "res://UI/Inventory Interface/InventorySprites/Gun.png"
 stack_limit = 1
 amount = 1

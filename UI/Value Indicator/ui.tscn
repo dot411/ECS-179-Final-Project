@@ -17,8 +17,6 @@ var selected_slot = -1
 
 func _ready():
 	# Load the InventoryInterface node from the scene tree
-	
-	
 	var inventory_interface = get_node_or_null(\"InventoryInterface\")  
 	if inventory_interface:
 		inventory_interface.connect(\"inventory_updated\", Callable(self,\"updated_inventory_visuals\"))

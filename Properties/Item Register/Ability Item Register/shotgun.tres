@@ -13,6 +13,6 @@ resource_name = "shotgun ammo"
 cost_amount = 5
 name = "shotgun"
 description = ""
-asset_path = null
+asset_path = "<null>"
 stack_limit = 1
 amount = 1

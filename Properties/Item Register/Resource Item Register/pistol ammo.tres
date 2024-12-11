@@ -6,6 +6,6 @@
 script = ExtResource("1_gh8a7")
 name = "pistol ammo"
 description = ""
-asset_path = null
+asset_path = "res://UI/Inventory Interface/InventorySprites"
 stack_limit = 24
 amount = 1

@@ -9,6 +9,6 @@ ability_data = ExtResource("1_ai0sg")
 consumable = true
 name = "bandage"
 description = ""
-asset_path = null
+asset_path = "res://UI/Inventory Interface/InventorySprites"
 stack_limit = 5
 amount = 2

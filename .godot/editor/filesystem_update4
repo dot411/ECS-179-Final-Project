@@ -21,4 +21,13 @@ res://UI/Inventory Interface/inventory.tscn
 res://UI/Inventory Interface/slot.tscn
 res://Main/Lighting/unit_camera.tscn
 res://UI/Game Message Manager/game_message.tscn
-res://UI/Game Message Manager/game_message_manager.gd
+res://UI/Main Menu/main_menu.tscn
+res://Main/Ability/ability_data.gd
+res://Properties/Item Register/Ability Item Register/bandage.tres
+res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres
+res://Main/Item/item_data.gd
+res://Properties/Item Register/Ability Item Register/shotgun.tres
+res://Properties/Item Register/Ability Item Register/pistol.tres
+res://Properties/Item Register/Resource Item Register/pistol ammo.tres
+res://Main/Obj/Interactable Object/interactable_object.gd
+res://Levels/Placeable Entities/Base Entities/interactable_object.tscn
