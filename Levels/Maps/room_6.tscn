@@ -1,0 +1,160 @@
+[gd_scene load_steps=33 format=4 uid="uid://bh8n0tyninbyn"]
+
+[ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_ocsjf"]
+[ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_68hd8"]
+[ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_1h62p"]
+[ext_resource type="PackedScene" uid="uid://dgbg1uhecu4ml" path="res://Levels/Placeable Entities/Base Entities/interactable_object.tscn" id="4_f221o"]
+[ext_resource type="Script" path="res://Main/Item/item_data.gd" id="5_rxex1"]
+[ext_resource type="Resource" uid="uid://co7er44eby16y" path="res://Properties/Ability Register/For Items/pistol_shot.tres" id="6_vbqcl"]
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="7_rxwk7"]
+[ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="8_brrtt"]
+[ext_resource type="Script" path="res://Main/Obj/Interactable Object/interactable_object_data.gd" id="9_dm4uv"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="10_trdvc"]
+[ext_resource type="Resource" uid="uid://b7tqo64ouhnvo" path="res://Properties/Item Register/Ability Item Register/shotgun.tres" id="11_qd5dh"]
+[ext_resource type="Resource" uid="uid://b6hhycrlt0oaw" path="res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres" id="12_lgfdx"]
+[ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="13_luyx4"]
+[ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="14_fug8n"]
+[ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="15_t7wbp"]
+[ext_resource type="PackedScene" uid="uid://d0o3yq8o6yb63" path="res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn" id="16_drq6a"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="17_xxcbt"]
+[ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="18_rokoi"]
+[ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="19_al3o8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxvej"]
+texture = ExtResource("1_ocsjf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_nun0s"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gxvej")
+
+[sub_resource type="Resource" id="Resource_ewhu3"]
+script = ExtResource("3_1h62p")
+path = "res://Levels/Maps/room_7.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvje4"]
+size = Vector2(440, 35)
+
+[sub_resource type="Resource" id="Resource_5twj1"]
+script = ExtResource("3_1h62p")
+path = "res://Levels/Maps/start_level.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w35m"]
+size = Vector2(48.5, 357)
+
+[sub_resource type="Resource" id="Resource_4pj5t"]
+resource_name = "pistol ammo"
+script = ExtResource("7_rxwk7")
+ability_data = ExtResource("6_vbqcl")
+consumable = false
+cost_resource = true
+resource_name = "pistol ammo"
+cost_amount = 1
+name = "pistol"
+description = ""
+asset_path = null
+stack_limit = 1
+amount = 1
+
+[sub_resource type="Resource" id="Resource_mfibn"]
+script = ExtResource("8_brrtt")
+name = "pistol ammo"
+description = ""
+asset_path = null
+stack_limit = 24
+amount = 10
+
+[sub_resource type="Resource" id="Resource_5g31x"]
+script = ExtResource("9_dm4uv")
+allow_deactivation = false
+requires_resource = ""
+requires_resource_amount = 0
+give_inventory = Array[ExtResource("5_rxex1")]([SubResource("Resource_4pj5t"), SubResource("Resource_mfibn")])
+triggers = Array[ExtResource("10_trdvc")]([])
+
+[sub_resource type="Resource" id="Resource_v66gq"]
+script = ExtResource("9_dm4uv")
+allow_deactivation = false
+requires_resource = "pistol ammo"
+requires_resource_amount = 1
+give_inventory = Array[ExtResource("5_rxex1")]([ExtResource("11_qd5dh"), ExtResource("12_lgfdx")])
+triggers = Array[ExtResource("10_trdvc")]([])
+
+[sub_resource type="Resource" id="Resource_p6ewg"]
+script = ExtResource("15_t7wbp")
+drop_items = Array[ExtResource("5_rxex1")]([ExtResource("14_fug8n")])
+vulnerable_to_damage = Array[int]([0])
+resistance_to_damage = Array[float]([])
+max_HP = 10
+triggers = Array[ExtResource("10_trdvc")]([])
+
+[sub_resource type="Resource" id="Resource_pwkvo"]
+script = ExtResource("17_xxcbt")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_unit"
+data = ExtResource("18_rokoi")
+
+[sub_resource type="Resource" id="Resource_aj5et"]
+script = ExtResource("19_al3o8")
+disable_when_player_is_nearby = true
+start_delay = 0.0
+cooldown = 10.0
+max_aim_distance = 3.0
+max_aim_angle = 360.0
+unit_spawn_limit = 3
+position_effects = Array[ExtResource("17_xxcbt")]([SubResource("Resource_pwkvo")])
+triggers = Array[ExtResource("10_trdvc")]([])
+
+[node name="room_6" type="Node2D"]
+position = Vector2(-55, 0)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADr//P/AAAAAAAAAADr//T/AAAAAAEAAADs//P/AAABAAAAAADs//T/AAABAAEAAADr//X/AAAAAAAAAADr//b/AAAAAAEAAADs//X/AAABAAAAAADs//b/AAABAAEAAADr//f/AAAAAAAAAADr//j/AAAAAAEAAADs//f/AAABAAAAAADs//j/AAABAAEAAADr//n/AAAAAAAAAADr//r/AAAAAAEAAADs//n/AAABAAAAAADs//r/AAABAAEAAADr//v/AAAAAAAAAADr//z/AAAAAAEAAADs//v/AAABAAAAAADs//z/AAABAAEAAADr//3/AAAAAAAAAADr//7/AAAAAAEAAADs//3/AAABAAAAAADs//7/AAABAAEAAADr////AAAAAAAAAADr/wAAAAAAAAEAAADs////AAABAAAAAADs/wAAAAABAAEAAADr/wEAAAAAAAAAAADr/wIAAAAAAAEAAADs/wEAAAABAAAAAADs/wIAAAABAAEAAADr/wMAAAAAAAAAAADr/wQAAAAAAAEAAADs/wMAAAABAAAAAADs/wQAAAABAAEAAADr/wYAAAAAAAEAAADs/wYAAAABAAEAAADr/wcAAAAAAAAAAADr/wgAAAAAAAEAAADs/wcAAAABAAAAAADs/wgAAAABAAEAAADr/wkAAAAAAAAAAADr/woAAAAAAAEAAADs/wkAAAABAAAAAADs/woAAAABAAEAAADr/wsAAAAAAAAAAADr/wwAAAAAAAEAAADs/wsAAAABAAAAAADs/wwAAAABAAEAAADr/w0AAAAAAAAAAADr/w4AAAAAAAEAAADs/w0AAAABAAAAAADs/w4AAAABAAEAAADt/w0AAAAAAAAAAADt/w4AAAAAAAEAAADu/w0AAAABAAAAAADu/w4AAAABAAEAAADv/w0AAAAAAAAAAADv/w4AAAAAAAEAAADw/w0AAAABAAAAAADw/w4AAAABAAEAAADx/w0AAAAAAAAAAADx/w4AAAAAAAEAAADy/w0AAAABAAAAAADy/w4AAAABAAEAAADz/w0AAAAAAAAAAADz/w4AAAAAAAEAAAD0/w0AAAABAAAAAAD0/w4AAAABAAEAAAD1/w0AAAAAAAAAAAD1/w4AAAAAAAEAAAD2/w0AAAABAAAAAAD2/w4AAAABAAEAAAD3/w0AAAAAAAAAAAD3/w4AAAAAAAEAAAD4/w0AAAABAAAAAAD4/w4AAAABAAEAAAD5/w0AAAAAAAAAAAD5/w4AAAAAAAEAAAD6/w0AAAABAAAAAAD6/w4AAAABAAEAAAD7/w0AAAAAAAAAAAD7/w4AAAAAAAEAAAD8/w0AAAABAAAAAAD8/w4AAAABAAEAAADr//H/AAAAAAAAAADr//L/AAAAAAEAAADs//H/AAABAAAAAADs//L/AAABAAEAAADt//H/AAAAAAAAAADt//L/AAAAAAEAAADu//H/AAABAAAAAADu//L/AAABAAEAAADv//H/AAAAAAAAAADv//L/AAAAAAEAAADw//H/AAABAAAAAADw//L/AAABAAEAAADx//H/AAAAAAAAAADx//L/AAAAAAEAAADy//H/AAABAAAAAADy//L/AAABAAEAAADz//H/AAAAAAAAAADz//L/AAAAAAEAAAD0//H/AAABAAAAAAD0//L/AAABAAEAAAD1//H/AAAAAAAAAAD1//L/AAAAAAEAAAD2//H/AAABAAAAAAD2//L/AAABAAEAAAD3//H/AAAAAAAAAAD3//L/AAAAAAEAAAD4//H/AAABAAAAAAD4//L/AAABAAEAAAD5//H/AAAAAAAAAAD5//L/AAAAAAEAAAD6//H/AAABAAAAAAD6//L/AAABAAEAAAD7//H/AAAAAAAAAAD7//L/AAAAAAEAAAD8//H/AAABAAAAAAD8//L/AAABAAEAAADr/wUAAAAAAAAAAADs/wUAAAABAAAAAAD9//H/AAAAAAAAAAD9//L/AAAAAAEAAAD9/w0AAAAAAAAAAAD9/w4AAAAAAAEAAAD+//H/AAABAAAAAAD+//L/AAABAAEAAAD+/w0AAAABAAAAAAD+/w4AAAABAAEAAAD///H/AAAAAAAAAAD///L/AAAAAAEAAAD//w0AAAAAAAAAAAD//w4AAAAAAAEAAAAAAPH/AAABAAAAAAAAAPL/AAABAAEAAAAAAA0AAAABAAAAAAAAAA4AAAABAAEAAAABAPH/AAAAAAAAAAABAPL/AAAAAAEAAAABAA0AAAAAAAAAAAABAA4AAAAAAAEAAAACAPH/AAABAAAAAAACAPL/AAABAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAEAAAADAPH/AAAAAAAAAAADAPL/AAAAAAEAAAADAPP/AAAAAAAAAAADAPT/AAAAAAEAAAADAPX/AAAAAAAAAAADAPb/AAAAAAEAAAADAPf/AAAAAAAAAAADAPj/AAAAAAEAAAADAPn/AAAAAAAAAAADAPr/AAAAAAEAAAADAPv/AAAAAAAAAAADAPz/AAAAAAEAAAADAP3/AAAAAAAAAAADAP7/AAAAAAEAAAADAP//AAAAAAAAAAADAAAAAAAAAAEAAAADAAEAAAAAAAAAAAADAAIAAAAAAAEAAAADAAMAAAAAAAAAAAADAAQAAAAAAAEAAAADAAUAAAAAAAAAAAADAAYAAAAAAAEAAAADAAcAAAAAAAAAAAADAAgAAAAAAAEAAAADAAkAAAAAAAAAAAADAAoAAAAAAAEAAAADAAsAAAAAAAAAAAADAAwAAAAAAAEAAAADAA0AAAAAAAAAAAADAA4AAAAAAAEAAAAEAPH/AAABAAAAAAAEAPL/AAABAAEAAAAEAPP/AAABAAAAAAAEAPT/AAABAAEAAAAEAPX/AAABAAAAAAAEAPb/AAABAAEAAAAEAPf/AAABAAAAAAAEAPj/AAABAAEAAAAEAPn/AAABAAAAAAAEAPr/AAABAAEAAAAEAPv/AAABAAAAAAAEAPz/AAABAAEAAAAEAP3/AAABAAAAAAAEAP7/AAABAAEAAAAEAP//AAABAAAAAAAEAAAAAAABAAEAAAAEAAEAAAABAAAAAAAEAAIAAAABAAEAAAAEAAMAAAABAAAAAAAEAAQAAAABAAEAAAAEAAUAAAABAAAAAAAEAAYAAAABAAEAAAAEAAcAAAABAAAAAAAEAAgAAAABAAEAAAAEAAkAAAABAAAAAAAEAAoAAAABAAEAAAAEAAsAAAABAAAAAAAEAAwAAAABAAEAAAAEAA0AAAABAAAAAAAEAA4AAAABAAEAAAD1//n/AAAAAAAAAAD1/wUAAAAAAAAAAAD2//n/AAABAAAAAAD2/wUAAAABAAAAAAD3//n/AAAAAAAAAAD3/wUAAAAAAAAAAAD4//n/AAABAAAAAAD4/wUAAAABAAAAAAD6//z/AAAAAAAAAAD6//3/AAAAAAEAAAD6//7/AAAAAAAAAAD6////AAAAAAEAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAAAAAD7//z/AAABAAAAAAD7//3/AAABAAEAAAD7//7/AAABAAAAAAD7////AAABAAEAAAD7/wAAAAABAAAAAAD7/wEAAAABAAEAAAD7/wIAAAABAAAAAAD1//r/AAAAAAEAAAD1/wYAAAAAAAEAAAD2//r/AAABAAEAAAD2/wYAAAABAAEAAAD3//r/AAAAAAEAAAD3/wYAAAAAAAEAAAD4//r/AAABAAEAAAD4/wYAAAABAAEAAAD6/wMAAAAAAAEAAAD7/wMAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_nun0s")
+
+[node name="MapTransitionZoneToRoom7" parent="." instance=ExtResource("2_68hd8")]
+position = Vector2(-1192.01, 1)
+rotation = 1.5708
+path = SubResource("Resource_ewhu3")
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToRoom7/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_fvje4")
+
+[node name="MapTransitionZoneToRoom5" parent="." instance=ExtResource("2_68hd8")]
+position = Vector2(160, 0)
+path = SubResource("Resource_5twj1")
+pos = Vector2(-800, -600)
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToRoom5/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_4w35m")
+
+[node name="PistolContainer" parent="." instance=ExtResource("4_f221o")]
+position = Vector2(-927, -488)
+data = SubResource("Resource_5g31x")
+
+[node name="ShotgunContainer" parent="." instance=ExtResource("4_f221o")]
+position = Vector2(-844, -403)
+data = SubResource("Resource_v66gq")
+
+[node name="BandageCrateDestructable" parent="." instance=ExtResource("13_luyx4")]
+position = Vector2(-1064, -304)
+start_status = true
+data = SubResource("Resource_p6ewg")
+
+[node name="NormalZombieSpawner" parent="." instance=ExtResource("16_drq6a")]
+position = Vector2(-834, -5)
+start_status = true
+data = SubResource("Resource_aj5et")
+
+[editable path="MapTransitionZoneToRoom7"]
+[editable path="MapTransitionZoneToRoom5"]
