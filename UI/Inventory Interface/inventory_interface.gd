@@ -1,100 +1,80 @@
 class_name InventoryInterface
 extends Control
 
-# Signal to notify the UI about inventory updates
 signal inventory_updated
 
-# Inventory item slots using an Array
 @export var inventory: Array[ItemData] = []
+@export var rows: int = 3
+@export var columns: int = 3
 
-# Rows and columns for the grid layout
-@export var rows: int = 2
-@export var columns: int = 5
+@onready var ui_node = get_parent()
+@onready var grid = $NinePatchRect/GridContainer 
+@onready var slots = []  #for buttons
+@onready var inv_backround =  $NinePatchRect
+var def_slot_icon = preload("res://UI/temp_png/inventory-slot.png")
 
-#  or referencing the grid 
-@onready var grid = $GridContainer
-
-#start with a specified amount of slots
 func _ready():
-	inventory.resize(rows * columns)  # Match inventory size to grid
-	create_inventory_grid()
+	print('UI Node:',ui_node)
+	# fill slots with buttons
+	for child in grid.get_children():
+		if child is Button:
+			child.custom_minimum_size = Vector2(25,25)
+	for i in range(grid.get_child_count()):
+		slots.append(grid.get_child(i))
 
-# Add an item to the inventory
+	# Initialize inventory size
+	inventory.resize(rows * columns)
+	update_inventory_visuals()
+
+	# Connect button signals
+	for i in range(slots.size()):
+		slots[i].connect("pressed", Callable(self, "_on_slot_pressed").bind(i))
+
 func add_item(item: ItemData) -> bool:
-	# Check for the first empty slot
 	for i in range(inventory.size()):
 		if inventory[i] == null:
 			inventory[i] = item
-			inventory_updated.emit()  # Notify the UI
-			update_slot_visual(i)  # Update the slot's visual
+			inventory_updated.emit()
+			update_slot_visual(i)
 			return true
-	# If no empty slot is found
 	print("Inventory is full!")
 	return false
 
-# Remove an item from the inventory by slot index
 func remove_item(slot_index: int):
 	if is_valid_slot(slot_index):
 		inventory[slot_index] = null
-		inventory_updated.emit()  # Notify the UI
-		update_slot_visual(slot_index)  # Update the slot's visual
+		inventory_updated.emit()
+		update_slot_visual(slot_index)
 	else:
 		print("Invalid slot index: %d" % slot_index)
 
-# Update the quantity of an existing item
-func update_item_quantity(item: ItemData, new_quantity: int):
+func update_inventory_visuals():
 	for i in range(inventory.size()):
-		if inventory[i] == item:
-			if new_quantity <= 0:
-				remove_item(i)  # Remove the item if the quantity is zero or less
-			else:
-				item.quantity = new_quantity
-				inventory_updated.emit()  # Notify the UI
-				update_slot_visual(i)  # Update the slot's visual
-			return
-	print("Item not found in inventory.")
+		update_slot_visual(i)
 
-# Create buttons dynamically for the inventory grid
-func create_inventory_grid():
-	#grid.clear_children()  # Remove old buttons
-	for i in range(inventory.size()):
-		var button = Button.new()
-		button.text = "Slot %d" % i  # Default text for the button
-		button.connect("pressed", Callable(self, "_on_slot_pressed").bind(i))  # Connect button press
-		grid.add_child(button)
-
-
-# Update a specific slot's visual representation
 func update_slot_visual(slot_index: int):
-	if slot_index >= grid.get_child_count():
-		return  # Out of bounds, ignore
-	var button = grid.get_child(slot_index) as Button
+	if slot_index >= slots.size():
+		return
+	var button = slots[slot_index]
 	if inventory[slot_index] != null:
-		button.text = inventory[slot_index].name  # Set item name
+		var item = inventory[slot_index]
+		button.icon = preload("res://icon.svg")
 	else:
-		button.text = "Empty"  # Set empty text for unused slots
+		button.icon = preload("res://UI/temp_png/UniqueBorderV11.png") #def_slot_icon
 
-# Handle slot selection
 func _on_slot_pressed(slot_index: int):
 	if is_valid_slot(slot_index):
+		if ui_node:
+			ui_node.item_selected_from_action_bar(inventory[slot_index])
+		else:
+			print("null")
 		print("Selected item: %s" % inventory[slot_index].name)
 	else:
 		print("Empty slot.")
 		
-
-# Get the current state of the inventory
-func get_inventory() -> Array:
-	return inventory
-
-# Check if a slot index is valid
+func set_focus_on_slot(slot_index:int):
+	if slot_index >= 0 and slot_index < slots.size():
+		var button = slots[slot_index]
+		button.grab_focus()
 func is_valid_slot(slot_index: int) -> bool:
 	return slot_index >= 0 and slot_index < inventory.size() and inventory[slot_index] != null
-	
-func highlight_slot(slot_index: int):
-	for i in range(grid.get_child_count()):
-		var button = grid.get_child(i) as Button
-		button.modulate = Color(1,1,1,1)
-	
-	if slot_index >= 0 and slot_index < grid.get_child_count():
-		var selected_button = grid.get_child(slot_index) as Button
-		selected_button.modulate = Color(1,0,0,1)

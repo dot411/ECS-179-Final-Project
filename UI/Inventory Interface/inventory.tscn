@@ -1,26 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://q6cwrhtyh68v"]
+[gd_scene load_steps=3 format=3 uid="uid://q6cwrhtyh68v"]
 
 [ext_resource type="Script" path="res://UI/Inventory Interface/inventory_interface.gd" id="1_rdjq3"]
+[ext_resource type="Texture2D" uid="uid://vdac66syin7" path="res://UI/temp_png/RareBorderV11.png" id="2_5mu5i"]
 
 [node name="Invetory_tscn" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -522.0
+offset_bottom = -364.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_rdjq3")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.427337, 0.494857, 0.611272, 1)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = 22.0
+offset_right = -21.0
 grow_horizontal = 2
-grow_vertical = 0
-columns = 5
+grow_vertical = 2
+region_rect = Rect2(-0.56554, -0.919009, 17.3027, 17.3395)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.081
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.545
+offset_top = -5.116
+offset_right = -77.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Button" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("2_5mu5i")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button3" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button4" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button5" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button6" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button7" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button8" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true
+
+[node name="Button9" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_icon = true

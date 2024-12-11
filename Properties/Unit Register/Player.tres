@@ -14,7 +14,7 @@ fatigue_recovery_per_second = 15.0
 
 [resource]
 script = ExtResource("3_duopv")
-asset_path = null
+asset_path = "<null>"
 speed = 1.0
 max_fatigue = 100.0
 attack = 10

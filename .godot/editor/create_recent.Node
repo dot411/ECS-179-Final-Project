@@ -1,4 +1,14 @@
+Control
+Label
+HBoxContainer
+Panel
+MarginContainer
+AnimationPlayer
+Sprite2D
+TextureProgressBar
+ProgressBar
 Button
+NinePatchRect
+TextureRect
 GridContainer
 VSeparator
-HSeparator

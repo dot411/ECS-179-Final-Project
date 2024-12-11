@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx2655inol7k4"]
+
+[ext_resource type="Script" path="res://UI/Game Message Manager/game_message_manager.gd" id="1_ctn1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjfo4"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_5qufk"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_kuhuo"]
+resource_name = "fade_in"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_d3mli"]
+resource_name = "fade_out"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvdfb"]
+_data = {
+"RESET": SubResource("Animation_5qufk"),
+"fade_in": SubResource("Animation_kuhuo"),
+"fade_out": SubResource("Animation_d3mli")
+}
+
+[node name="GameMessage" type="Panel"]
+anchors_preset = -1
+anchor_right = 0.418
+anchor_bottom = 0.115
+offset_right = -334.4
+offset_bottom = -69.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ctn1u")
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 668.0
+offset_bottom = 136.0
+theme_override_constants/margin_left = 16
+
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pjfo4")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer/Panel"]
+layout_mode = 0
+offset_right = 644.0
+offset_bottom = 132.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/Panel/MarginContainer/Panel"]
+layout_mode = 0
+offset_right = 634.0
+offset_bottom = 119.0
+
+[node name="StartSymbol" type="Label" parent="TextBoxContainer/Panel/MarginContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "*"
+
+[node name="Label2" type="Label" parent="TextBoxContainer/Panel/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "this is a test for this box and here is what will happen wwhen"
+autowrap_mode = 2
+clip_text = true
+
+[node name="EndSymbol" type="Label" parent="TextBoxContainer/Panel/MarginContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "*"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gvdfb")
+}

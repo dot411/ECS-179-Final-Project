@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfevm8rov8jnj"]
+
+[ext_resource type="Texture2D" uid="uid://c6akt6kjxyob1" path="res://UI/temp_png/UniqueBorderV11.png" id="1_st5bm"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_st5bm")
+centered = false
