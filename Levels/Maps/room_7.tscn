@@ -758,13 +758,14 @@ position = Vector2(-2, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_k374y")
 
-[node name="Fireplace" type="Node2D" parent="." node_paths=PackedStringArray("firewood", "burn_animation")]
+[node name="Fireplace" type="Node2D" parent="." node_paths=PackedStringArray("firewood", "burn_animation", "matches")]
 position = Vector2(-325, -468)
 script = ExtResource("19_j1a5f")
 firewood = NodePath("Firewood")
 required_resource = "matches"
 burned_texture = ExtResource("22_jfudd")
 burn_animation = NodePath("SpriteSheet/AnimationPlayer")
+matches = NodePath(".")
 
 [node name="SpriteSheet" type="Sprite2D" parent="Fireplace"]
 position = Vector2(-3, -28)
@@ -820,8 +821,9 @@ texture = ExtResource("4_a4thv")
 region_enabled = true
 region_rect = Rect2(192, 24, 120, 168)
 
-[node name="MatchesContainer" parent="." instance=ExtResource("4_0iyj7")]
+[node name="MatchesContainer" parent="." node_paths=PackedStringArray("matches") instance=ExtResource("4_0iyj7")]
 position = Vector2(-566, -401)
+matches = NodePath("../Fireplace")
 data = SubResource("Resource_ixvu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="MatchesContainer"]

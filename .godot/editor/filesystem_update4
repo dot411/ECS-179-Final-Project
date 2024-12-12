@@ -6,8 +6,12 @@ res://Levels/Placeable Entities/starting_player.gd
 res://Properties/Unit Register/Player.tres
 res://Properties/Projectile Register/pistol_bullet.tres
 res://Properties/Ability Register/For Items/pistol_shot.tres
+res://Properties/Ability Register/For Items/knife_attack.tres
 res://Properties/Ability Register/For Units/normal_melee_attack.tres
 res://Properties/Unit Register/normal_zombie.tres
+res://Properties/Projectile Register/eyeball.tres
+res://Properties/Ability Register/For Units/normal_ranged_attack.tres
+res://Properties/Unit Register/normal_spitter.tres
 res://Properties/Ability Register/For Items/bandage.tres
 res://Properties/Item Register/Ability Item Register/bandage.tres
 res://Properties/Ability Register/For Units/short_range_charge.tres
@@ -18,7 +22,6 @@ res://UI/Game Message Manager/game_message.tscn
 res://Levels/Maps/room5.tscn
 res://Levels/Maps/room_6.tscn
 res://Levels/Maps/room4.tscn
-res://Levels/Maps/room3.tscn
 res://Levels/Maps/room_8.tscn
 res://Levels/Maps/room_7.tscn
 res://Levels/Maps/room_9.tscn
@@ -28,3 +31,4 @@ res://UI/Main Menu/main_menu.tscn
 res://UI/Inventory Interface/inventory.tscn
 res://Main/Game Scene/game_scene.tscn
 res://UI/Main Menu/pause_menu.tscn
+res://Levels/Maps/room3.tscn

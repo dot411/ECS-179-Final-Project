@@ -13,6 +13,8 @@ const aligned_facing_arr2 = [
 ]
 var speed_multiplier:float = 1.0
 var fatigued:bool = false
+var key1_picked_up:bool = false
+var unlocked:bool = false
 var is_casting = false
 var is_dead = false
 var charge_from_pos:Vector2
@@ -176,6 +178,14 @@ func interact():
 			if target.name == "MatchesContainer":
 				target.interact(self)
 				target.matches.interact(self) # Fireplace 
+			#elif unlocked:
+				#target.door.door_interact(self)
+			elif target.name == "key2" and key1_picked_up:
+				target.interact(self)
+				target.door.door_interact(self)
+				unlocked = true
+			elif target.name == "key1":
+				key1_picked_up = true
 			else:
 				target.interact(self)
 
