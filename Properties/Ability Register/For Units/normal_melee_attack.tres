@@ -37,6 +37,7 @@ damage_type = 0
 
 [sub_resource type="Resource" id="Resource_gxfbh"]
 script = ExtResource("7_8jlp8")
+asset_file_path = "res://Main/Obj/Unit/EffectSprites/Swing.png"
 area_shape = SubResource("Resource_d2aw8")
 effect = SubResource("Resource_pdahw")
 follow_parent = true

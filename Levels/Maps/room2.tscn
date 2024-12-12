@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://btyuumcalms23"]
+[gd_scene load_steps=31 format=4 uid="uid://btyuumcalms23"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_erhki"]
 [ext_resource type="Texture2D" uid="uid://mcdhh0uekpu0" path="res://Main/Obj/Unit/CharacterSprites/Walk.png" id="2_go60d"]
@@ -9,6 +9,12 @@
 [ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="4_tq7w8"]
 [ext_resource type="Texture2D" uid="uid://2qev6wkqu5mv" path="res://Main/Game Scene/BackgroundSprites/OCDoor.png" id="5_ra27a"]
 [ext_resource type="Texture2D" uid="uid://fiv1e6uyrpq3" path="res://Main/Game Scene/BackgroundSprites/OCDrawers.png" id="6_mmyxs"]
+[ext_resource type="PackedScene" uid="uid://d0o3yq8o6yb63" path="res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn" id="10_cc1ru"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="11_gmsyd"]
+[ext_resource type="Resource" uid="uid://h78s4g1iavx4" path="res://Properties/Unit Register/normal_spitter.tres" id="12_bar3n"]
+[ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="12_qgrqk"]
+[ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="13_8hrm2"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="14_5q8y3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip7lc"]
 texture = ExtResource("1_erhki")
@@ -511,6 +517,42 @@ path = "res://Levels/Maps/room3.tscn"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrjqh"]
 size = Vector2(72.25, 294.5)
 
+[sub_resource type="Resource" id="Resource_ymend"]
+script = ExtResource("11_gmsyd")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_unit"
+data = ExtResource("12_bar3n")
+
+[sub_resource type="Resource" id="Resource_t1l0g"]
+script = ExtResource("13_8hrm2")
+disable_when_player_is_nearby = false
+start_delay = 0.0
+cooldown = 10.0
+max_aim_distance = 0.0
+max_aim_angle = 0.0
+unit_spawn_limit = 1
+position_effects = Array[ExtResource("11_gmsyd")]([SubResource("Resource_ymend")])
+triggers = Array[ExtResource("14_5q8y3")]([])
+
+[sub_resource type="Resource" id="Resource_tbwig"]
+script = ExtResource("11_gmsyd")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_unit"
+data = ExtResource("12_qgrqk")
+
+[sub_resource type="Resource" id="Resource_c1pgb"]
+script = ExtResource("13_8hrm2")
+disable_when_player_is_nearby = false
+start_delay = 0.0
+cooldown = 10.0
+max_aim_distance = 0.0
+max_aim_angle = 0.0
+unit_spawn_limit = 1
+position_effects = Array[ExtResource("11_gmsyd")]([SubResource("Resource_tbwig")])
+triggers = Array[ExtResource("14_5q8y3")]([])
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -547,6 +589,16 @@ position = Vector2(12, 6)
 [node name="CollisionShape2D" parent="MapTransitionZoneToTest2/Area2D" index="0"]
 position = Vector2(3284, 550)
 shape = SubResource("RectangleShape2D_jrjqh")
+
+[node name="Spawner" parent="." instance=ExtResource("10_cc1ru")]
+position = Vector2(1100, 0)
+start_status = true
+data = SubResource("Resource_t1l0g")
+
+[node name="Spawner2" parent="." instance=ExtResource("10_cc1ru")]
+position = Vector2(660, -100)
+start_status = true
+data = SubResource("Resource_c1pgb")
 
 [editable path="MapTransitionZoneToStartMap"]
 [editable path="MapTransitionZoneToTest2"]

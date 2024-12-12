@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://cdhhrpxjr28fe"]
+[gd_scene load_steps=38 format=4 uid="uid://cdhhrpxjr28fe"]
 
 [ext_resource type="PackedScene" uid="uid://ceutv8wcd58qj" path="res://Levels/Placeable Entities/Starting Player.tscn" id="1_5x5yi"]
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_a8adi"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="8_nxxc7"]
 [ext_resource type="Script" path="res://Main/Obj/Interactable Object/interactable_object_data.gd" id="9_dsi0d"]
 [ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="10_ut6f3"]
+[ext_resource type="Resource" uid="uid://dklv6q6acsr2r" path="res://Properties/Item Register/Ability Item Register/knife.tres" id="13_38278"]
 [ext_resource type="PackedScene" uid="uid://d0o3yq8o6yb63" path="res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn" id="18_1heuk"]
 [ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="19_byylq"]
 [ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="20_fhqjt"]
@@ -833,7 +834,7 @@ script = ExtResource("9_dsi0d")
 allow_deactivation = false
 requires_resource = ""
 requires_resource_amount = 0
-give_inventory = Array[ExtResource("5_n4wke")]([SubResource("Resource_4pj5t"), SubResource("Resource_mfibn")])
+give_inventory = Array[ExtResource("5_n4wke")]([SubResource("Resource_4pj5t"), SubResource("Resource_mfibn"), ExtResource("13_38278")])
 triggers = Array[ExtResource("10_ut6f3")]([])
 
 [sub_resource type="Resource" id="Resource_md2ec"]
@@ -855,9 +856,9 @@ script = ExtResource("21_hurm2")
 disable_when_player_is_nearby = true
 start_delay = 0.0
 cooldown = 10.0
-max_aim_distance = 3.0
-max_aim_angle = 360.0
-unit_spawn_limit = 3
+max_aim_distance = 0.0
+max_aim_angle = 0.0
+unit_spawn_limit = 1
 position_effects = Array[ExtResource("19_byylq")]([SubResource("Resource_pwkvo")])
 triggers = Array[ExtResource("10_ut6f3")]([])
 
@@ -894,7 +895,7 @@ position = Vector2(711, -191)
 shape = SubResource("RectangleShape2D_a40tl")
 
 [node name="NormalZombieSpawner" parent="." instance=ExtResource("18_1heuk")]
-position = Vector2(128, -203)
+position = Vector2(276, -217)
 start_status = true
 data = SubResource("Resource_p7ag0")
 

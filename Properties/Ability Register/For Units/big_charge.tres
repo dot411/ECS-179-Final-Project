@@ -37,6 +37,7 @@ damage_type = 0
 
 [sub_resource type="Resource" id="Resource_tatx0"]
 script = ExtResource("7_eio73")
+asset_file_path = null
 area_shape = SubResource("Resource_a6y76")
 effect = SubResource("Resource_v0qo4")
 follow_parent = true

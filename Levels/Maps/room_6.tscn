@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bh8n0tyninbyn"]
+[gd_scene load_steps=39 format=4 uid="uid://bh8n0tyninbyn"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_ocsjf"]
 [ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_68hd8"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="17_xxcbt"]
 [ext_resource type="Texture2D" uid="uid://bxbo26e2yjl8g" path="res://UI/Inventory Interface/InventorySprites/Bandage.png" id="18_4rgxd"]
 [ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="18_rokoi"]
+[ext_resource type="Resource" uid="uid://b6x28pdlgk6t2" path="res://Properties/Unit Register/normal_predator.tres" id="19_6qryf"]
 [ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="19_al3o8"]
 [ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="20_67a2v"]
 
@@ -431,6 +432,24 @@ size = Vector2(59, 121)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pbt"]
 size = Vector2(72, 79)
 
+[sub_resource type="Resource" id="Resource_u5sqv"]
+script = ExtResource("17_xxcbt")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_unit"
+data = ExtResource("19_6qryf")
+
+[sub_resource type="Resource" id="Resource_j0j0y"]
+script = ExtResource("19_al3o8")
+disable_when_player_is_nearby = false
+start_delay = 0.0
+cooldown = 10.0
+max_aim_distance = 2.0
+max_aim_angle = 360.0
+unit_spawn_limit = 1
+position_effects = Array[ExtResource("17_xxcbt")]([SubResource("Resource_u5sqv")])
+triggers = Array[ExtResource("10_trdvc")]([])
+
 [node name="room_6" type="Node2D"]
 position = Vector2(-55, 0)
 
@@ -558,6 +577,16 @@ region_rect = Rect2(464, 0, 96, 208)
 visible = false
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_f3pbt")
+
+[node name="Spawner" parent="." instance=ExtResource("16_drq6a")]
+position = Vector2(-200, 200)
+start_status = true
+data = SubResource("Resource_j0j0y")
+
+[node name="Spawner2" parent="." instance=ExtResource("16_drq6a")]
+position = Vector2(-200, -200)
+start_status = true
+data = SubResource("Resource_j0j0y")
 
 [editable path="MapTransitionZoneToRoom7"]
 [editable path="MapTransitionZoneToRoom4"]
