@@ -8,20 +8,20 @@
 
 [sub_resource type="Resource" id="Resource_7kfeq"]
 script = ExtResource("2_qi2lj")
-distance_modifier = 0.0
+distance_modifier = 0.3
 angle_modifier = 0.0
 function = "spawn_projectile"
 data = ExtResource("3_jy8si")
 
 [sub_resource type="Resource" id="Resource_koiqv"]
 script = ExtResource("1_lnuv1")
-channeling_time = 0.5
+channeling_time = 0.4
 self_effects = Array[ExtResource("8_ulydc")]([])
 position_effects = Array[ExtResource("2_qi2lj")]([SubResource("Resource_7kfeq")])
 
 [resource]
 script = ExtResource("2_uxfwe")
-cast_animation = ""
+cast_animation = "Shoot"
 stationary = false
 AI_cast_range = 5.0
 cooldown = 1.0

@@ -14,7 +14,7 @@
 script = ExtResource("3_guaft")
 outer_radius = 1.0
 inner_radius = 0.0
-angle = 360.0
+angle = 90.0
 
 [sub_resource type="Resource" id="Resource_bwg75"]
 script = ExtResource("6_nlxlu")
@@ -37,10 +37,12 @@ damage_type = 0
 
 [sub_resource type="Resource" id="Resource_gxfbh"]
 script = ExtResource("7_8jlp8")
+asset_file_path = "res://Main/Obj/Unit/EffectSprites/Swing.png"
 area_shape = SubResource("Resource_d2aw8")
 effect = SubResource("Resource_pdahw")
 follow_parent = true
-targets_limit = false
+targets_limit = true
+max_affected = 1
 wait_for_collision_to_trigger = false
 periodic = false
 
@@ -53,13 +55,13 @@ data = SubResource("Resource_gxfbh")
 
 [sub_resource type="Resource" id="Resource_30qpt"]
 script = ExtResource("1_edo6y")
-channeling_time = 0.5
+channeling_time = 0.3
 self_effects = Array[ExtResource("8_h8q34")]([])
 position_effects = Array[ExtResource("2_7xqo5")]([SubResource("Resource_dyd8f")])
 
 [resource]
 script = ExtResource("9_1ege7")
-cast_animation = ""
+cast_animation = "Attack"
 stationary = true
 AI_cast_range = 1.0
 cooldown = 1.5

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityItem" load_steps=3 format=3 uid="uid://dklv6q6acsr2r"]
+
+[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="1_hv0co"]
+[ext_resource type="Resource" uid="uid://c5q8pxx1slsho" path="res://Properties/Ability Register/For Items/knife_attack.tres" id="1_y0lp8"]
+
+[resource]
+script = ExtResource("1_hv0co")
+ability_data = ExtResource("1_y0lp8")
+consumable = false
+cost_resource = false
+name = "Knife"
+description = ""
+asset_path = "res://UI/Inventory Interface/InventorySprites"
+stack_limit = 1
+amount = 1

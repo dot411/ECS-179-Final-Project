@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=17 format=3 uid="uid://c5q8pxx1slsho"]
+
+[ext_resource type="Script" path="res://Main/Ability/channeling_interval.gd" id="1_m2xtc"]
+[ext_resource type="Script" path="res://Main/Ability/ability_data.gd" id="2_0bn0i"]
+[ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="2_i3vqg"]
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="3_mc6qc"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="4_yh3ia"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="5_u2gwm"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="6_o322g"]
+[ext_resource type="Script" path="res://Main/Effect/self_effect.gd" id="7_reyxm"]
+
+[sub_resource type="Resource" id="Resource_ddq54"]
+script = ExtResource("3_mc6qc")
+outer_radius = 1.0
+inner_radius = 0.0
+angle = 90.0
+
+[sub_resource type="Resource" id="Resource_1nivl"]
+script = ExtResource("5_u2gwm")
+function = "raw_value"
+value = 10.0
+
+[sub_resource type="Resource" id="Resource_pf1eo"]
+script = ExtResource("4_yh3ia")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_1nivl")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_rnuda"]
+script = ExtResource("6_o322g")
+asset_file_path = "res://Main/Obj/Unit/EffectSprites/Swing.png"
+area_shape = SubResource("Resource_ddq54")
+effect = SubResource("Resource_pf1eo")
+follow_parent = true
+targets_limit = true
+max_affected = 1
+wait_for_collision_to_trigger = false
+periodic = false
+
+[sub_resource type="Resource" id="Resource_u2pwb"]
+script = ExtResource("2_i3vqg")
+distance_modifier = 0.0
+angle_modifier = 0.0
+function = "spawn_effect_region"
+data = SubResource("Resource_rnuda")
+
+[sub_resource type="Resource" id="Resource_2lj5r"]
+script = ExtResource("5_u2gwm")
+function = "raw_value"
+value = 15.0
+
+[sub_resource type="Resource" id="Resource_g1vi3"]
+script = ExtResource("7_reyxm")
+function = "accumulate_fatigue"
+value = SubResource("Resource_2lj5r")
+
+[sub_resource type="Resource" id="Resource_7ni6j"]
+script = ExtResource("1_m2xtc")
+channeling_time = 0.3
+self_effects = Array[ExtResource("7_reyxm")]([SubResource("Resource_g1vi3")])
+position_effects = Array[ExtResource("2_i3vqg")]([SubResource("Resource_u2pwb")])
+
+[resource]
+script = ExtResource("2_0bn0i")
+cast_animation = "Stab"
+stationary = true
+AI_cast_range = 1.0
+cooldown = 1.0
+channeling_track = Array[ExtResource("1_m2xtc")]([SubResource("Resource_7ni6j")])
