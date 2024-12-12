@@ -42,8 +42,8 @@ func cast():
 	for i in range(100):
 		pos = new_pos()
 		if vision_intersect_ray(space_state, position, pos).size() == 0:
+			position = pos
 			break
-	if pos != null: position = pos
 	update_facing_angle(randf_range(0.0, deg_to_rad(data.max_aim_angle)))
 	ability_controller.track_caster_aim(position)
 	ability_controller.use()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwot6c0qjwvx"
-path="res://.godot/imported/NurseCorpse.png-26faca3737c9f630df40291cb12ac490.ctex"
+uid="uid://dir3g0nas5xhe"
+path="res://.godot/imported/PatientGreenAttack.png-79c5a494bd78d0b4275c380128320259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main/Obj/Unit/EnemySprites/Nurse/NurseCorpse.png"
-dest_files=["res://.godot/imported/NurseCorpse.png-26faca3737c9f630df40291cb12ac490.ctex"]
+source_file="res://Main/Obj/Unit/EnemySprites/Patient/GreenPatient/PatientGreenAttack.png"
+dest_files=["res://.godot/imported/PatientGreenAttack.png-79c5a494bd78d0b4275c380128320259.ctex"]
 
 [params]
 

@@ -14,6 +14,7 @@ const aligned_facing_arr2 = [
 var speed_multiplier:float = 1.0
 var fatigued:bool = false
 var is_casting = false
+var is_dead = false
 var charge_from_pos:Vector2
 var charge_to_pos:Vector2
 var steer_state:int = randi_range(0, 1) * 2 - 1
@@ -55,6 +56,7 @@ func init_sprite():
 		add_animation(sprite_frames, "Shoot", 4, 4, false)
 	elif controller is UnitAI:
 		add_animation(sprite_frames, "Attack", 4, 4, false)
+		add_animation(sprite_frames, "LongAttack", 8, 4, false)
 	play_sprite_animation("Idle")
 
 func add_animation(sprite_frames, anim, rows, columns, loop):
@@ -62,6 +64,7 @@ func add_animation(sprite_frames, anim, rows, columns, loop):
 	var sprite_sheet_path = str(data.asset_path, "/", data.asset_path.get_file(), anim, ".png")
 	if controller is Player: sprite_sheet_path = str(data.asset_path, "/", anim, ".png")
 	var sprite_sheet = load(sprite_sheet_path)
+	if sprite_sheet == null: return
 	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Down", 0)
 	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Up", 1)
 	add_subanimation(sprite_frames, anim, sprite_sheet, rows, columns, loop, "Right", 2)
@@ -97,8 +100,7 @@ func is_animation_movement(anim):
 func play_sprite_animation(anim):
 	if get_sprite_animation() == anim: return
 	var aligned_facing
-	if anim == "Attack": aligned_facing = get_aligned_facing(2)
-	else: aligned_facing = get_aligned_facing(4)
+	aligned_facing = get_aligned_facing(4)
 	get_node("Body/Sprite").play(str(anim, aligned_facing))
 
 func get_sprite_animation():
@@ -117,6 +119,7 @@ func set_controller(_controller):
 		if !Utility.get_debug_setting("player/show_interact_range"): body.get_node("InteractZone/CollisionShape2D").modulate.a = 0
 	elif _controller is UnitAI:
 		_controller.data = data.AI_data
+		if _controller.data.chase_coefficient < 0: steer_state_cooldown = 2.0
 		_controller.ability_controller = ability_controller
 		body.get_node("InteractZone/CollisionShape2D").modulate.a = 0
 	get_node("Body/ProximityArea/CollisionShape2D").shape.radius = get_vision_radius()
@@ -147,6 +150,9 @@ func finish_casting():
 		charge_to_pos = Vector2(0, 0)
 
 func move(dir):
+	if is_dead:
+		if !get_node("Body/Sprite").is_playing(): play_sprite_animation("Death")
+		return
 	if is_casting and ability_controller.data.stationary: return
 	if charge_to_pos != Vector2(0, 0):
 		var duration = ability_controller.data.channeling_track[ability_controller.current_tick].channeling_time
@@ -170,6 +176,7 @@ func interact():
 			target.interact(self)
 
 func use_ability(aim_pos):
+	if is_dead: return
 	if ability_controller == null or is_casting: return
 	update_facing_angle((aim_pos - get_pos()).angle())
 	if !ability_controller.can_use(): return
@@ -246,21 +253,9 @@ func get_collision_radius():
 	return body.get_node("CollisionShape2D").shape.radius
 
 func death():
+	is_dead = true
+	body.get_node("CollisionShape2D").set_deferred("disabled", true)
 	play_sprite_animation("Death")
-	var my_timer = Timer.new()
-	my_timer.wait_time = 3.0
-	await my_timer.timeout
-	data = ObjData.new()
-	data.triggers.append(TriggerEditable.new())
-	var _trigger = data.triggers[0]
-	_trigger.one_shot = false
-	_trigger.event = Event.new()
-	_trigger.event._set("function", "object_activated")
-	var action = Action.new()
-	action._set("function", "go_to_map")
-	action._set("path", "res://Levels/Maps/start_level.tscn")
-	action._set("pos", Vector2(0,0))
-	_trigger.actions.append(action)
 
 func HP_changed():
 	super()
