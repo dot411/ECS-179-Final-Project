@@ -87,6 +87,7 @@ text = "Start
 "
 
 [node name="Load" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)

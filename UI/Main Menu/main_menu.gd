@@ -20,10 +20,9 @@ func _on_start_pressed() -> void:
 		#$".".visible = true
 		$"..".start_game_ui()
 
-
-	
-	
-	
+func _on_save_and_exit_pressed():
+	Utility.get_GameScene().load_game()
+	$"..".start_game_ui()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

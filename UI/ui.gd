@@ -7,12 +7,16 @@ extends Control
 @onready var pause_screen = $PauseScreen
 var is_inventory_visible:bool = false
 var selected_slot = -1
-func _ready():
+
+func hide_ingame_control():
 	$InventoryInterface.visible = false
 	$ValueIndicator.visible = false
 	$GameMessage.visible = false
 	$PauseMenu.visible = false
 	$MainMenu.visible = true
+
+func _ready():
+	hide_ingame_control()
 	var inventory_interface = get_node_or_null("InventoryInterface")  
 	if inventory_interface:
 		inventory_interface.connect("inventory_updated", Callable(self,"updated_inventory_visuals"))
