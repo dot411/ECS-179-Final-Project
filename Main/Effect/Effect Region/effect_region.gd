@@ -1,6 +1,7 @@
 class_name EffectRegion
 extends Area2D
 
+signal removed
 var trigger_buffer:TriggerBuffer = TriggerBuffer.new()
 var debug_on = false
 var affected = []
@@ -30,6 +31,8 @@ func _ready() -> void:
 		return
 	await get_tree().physics_frame
 	await get_tree().physics_frame
+	if data.asset_file_path != null:
+		get_node("Sprite").texture = load(data.asset_file_path)
 	trigger()
 	if !data._get("periodic") or (data._get("finite_duration") and data._get("lifetime") == 0):
 		remove()
@@ -115,6 +118,7 @@ func apply_effect(target):
 
 func remove():
 	active = false
+	emit_signal("removed")
 	var animation_player = get_node("AnimationPlayer")
 	animation_player.play("fade")
 	await animation_player.animation_finished

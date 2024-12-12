@@ -2,6 +2,7 @@
 class_name EffectRegionData
 extends BaseData
 
+@export_file var asset_file_path
 @export var area_shape:AreaShape
 @export var effect:AreaEffect
 @export var follow_parent = true

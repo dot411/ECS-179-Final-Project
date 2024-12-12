@@ -1,6 +1,6 @@
 class_name SaveGameData
 extends Resource
 
-var current_map_path:EditorPaths
-var player
-var save_dictionary = {}
+@export var current_map_path:String
+@export var player = {}
+@export var save_dictionary = {}
