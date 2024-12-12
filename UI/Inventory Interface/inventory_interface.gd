@@ -60,7 +60,7 @@ func preload_item_icons():
 				## All added
 				#return true
 	## If there's still some left, add as a new entry if possible
-	## In a dynamic inventory, we just append:
+
 	#inventory.append(item.duplicate(true))
 	#update_inventory_visuals()
 	#inventory_updated.emit()
@@ -102,8 +102,7 @@ func update_item_quantity(item: ItemData, to_amount: int):
 	print("Item not found in inventory: %s" % item.name)
 
 func update_inventory_visuals():
-	# We have 'rows * columns' slots, but inventory might have fewer or more items.
-	# If fewer items than slots, remaining slots appear empty.
+	
 	print("update_inventory_visuals called. Inventory size:", inventory.size())
 	for i in range(rows * columns):
 		update_slot_visual(i)

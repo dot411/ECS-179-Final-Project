@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpululjkubu7"]
+[gd_scene load_steps=10 format=3 uid="uid://dpululjkubu7"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_aed6e"]
 [ext_resource type="PackedScene" uid="uid://cv0h77i3d58qm" path="res://UI/Debug Setting/debug_setting.tscn" id="1_h68dx"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cx2655inol7k4" path="res://UI/Game Message Manager/game_message.tscn" id="6_ko5h2"]
 [ext_resource type="PackedScene" uid="uid://dcdanbyx5hp3g" path="res://UI/Main Menu/main_menu.tscn" id="8_e2nb5"]
 [ext_resource type="PackedScene" uid="uid://b8dki06oh1ewq" path="res://UI/Main Menu/pause_menu.tscn" id="9_3ocsm"]
-[ext_resource type="Script" path="res://UI/Main Menu/pause_menu.gd" id="10_61dds"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -80,4 +79,3 @@ offset_bottom = 660.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_3ocsm")]
 layout_mode = 1
-script = ExtResource("10_61dds")

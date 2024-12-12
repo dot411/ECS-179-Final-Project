@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://2qev6wkqu5mv" path="res://Main/Game Scene/BackgroundSprites/OCDoor.png" id="4_x5akj"]
 [ext_resource type="Texture2D" uid="uid://fiv1e6uyrpq3" path="res://Main/Game Scene/BackgroundSprites/OCDrawers.png" id="5_cil8s"]
 [ext_resource type="Script" path="res://Main/Item/item_data.gd" id="5_n4wke"]
-[ext_resource type="Texture2D" uid="uid://bqfkwwq7ywdsh" path="res://Main/Obj/Unit/EnemySprites/Nurse/NurseCorpse.png" id="6_oh2c6"]
+[ext_resource type="Texture2D" uid="uid://dwwot6c0qjwvx" path="res://Main/Obj/Unit/EnemySprites/Nurse/NurseCorpse.png" id="6_oh2c6"]
 [ext_resource type="Resource" uid="uid://co7er44eby16y" path="res://Properties/Ability Register/For Items/pistol_shot.tres" id="6_rcstk"]
 [ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="7_kwrpw"]
 [ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="8_hdjt1"]

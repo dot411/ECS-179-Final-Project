@@ -50,7 +50,7 @@ func load_map(path):
 	else:
 		save_data.save_dictionary[path] = {}
 		store_map_data(map, path)
-	save_data.current_map_path = path
+	#save_data.current_map_path = path
 	var map_data = save_data.save_dictionary[path]
 	await get_tree().create_timer(0.01).timeout
 	for child_path in map_data.keys():
