@@ -10,9 +10,6 @@ res://Properties/Ability Register/For Units/normal_melee_attack.tres
 res://Properties/Unit Register/normal_zombie.tres
 res://Properties/Ability Register/For Items/bandage.tres
 res://Properties/Item Register/Ability Item Register/bandage.tres
-res://Properties/Projectile Register/shotgun_bullet.tres
-res://Properties/Ability Register/For Items/shotgun_shot.tres
-res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres
 res://Properties/Ability Register/For Units/short_range_charge.tres
 res://Main/Obj/PickableItem/pickable_item.gd
 res://Levels/Maps/start_level.tscn
