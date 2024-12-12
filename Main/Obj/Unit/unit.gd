@@ -226,7 +226,7 @@ func gain_item(_item_data):
 func add_item_to_inventory(item):
 	data.inventory.append(item)
 	if controller is Player:
-		#Utility.get_UI_Scene().player_gains_new_item(data.inventory, item)
+		Utility.get_UI_Scene().player_gains_new_item(data.inventory, item)
 		if item is AbilityItem:
 			select_item(item)
 
@@ -234,7 +234,7 @@ func item_amount_changed(item, to_amount):
 	item.amount = to_amount
 	if controller is Player:
 		pass
-		#Utility.get_UI_Scene().player_item_amount_changed(data.inventory, item, to_amount)
+		Utility.get_UI_Scene().player_item_amount_changed(data.inventory, item, to_amount)
 
 func get_body():
 	return body

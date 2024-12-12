@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx2655inol7k4"]
+[gd_scene load_steps=8 format=3 uid="uid://cx2655inol7k4"]
 
 [ext_resource type="Script" path="res://UI/Game Message Manager/game_message_manager.gd" id="1_ctn1u"]
+[ext_resource type="FontFile" uid="uid://bx2sqyaybi6wl" path="res://UI/Game Message Manager/CanvasBags-ZrqB.ttf" id="2_2h0tg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjfo4"]
 bg_color = Color(0, 0, 0, 1)
@@ -74,8 +75,9 @@ text = "*"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 24
-text = "this is a test for this box and here is what will happen wwhen"
+theme_override_fonts/font = ExtResource("2_2h0tg")
+theme_override_font_sizes/font_size = 35
+text = "this is a test for this box and here is what will happen wwhen, test test test adsad here."
 autowrap_mode = 2
 clip_text = true
 

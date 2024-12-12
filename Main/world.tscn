@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dylow4q0hhe1f"]
 
 [ext_resource type="PackedScene" uid="uid://dtm38asas4na1" path="res://Main/Game Scene/game_scene.tscn" id="1_eknvq"]
-[ext_resource type="PackedScene" uid="uid://dpululjkubu7" path="res://UI/Value Indicator/ui.tscn" id="2_4khsj"]
+[ext_resource type="PackedScene" uid="uid://dpululjkubu7" path="res://UI/ui.tscn" id="2_4khsj"]
 [ext_resource type="PackedScene" uid="uid://bgakx5ov5kts5" path="res://Main/Lighting/lighting.tscn" id="2_ybk7p"]
 [ext_resource type="AudioStream" uid="uid://x1vay7ytcy6h" path="res://Audio/764373__klankbeeld__horror-nightmare.wav" id="3_fdhlg"]
 

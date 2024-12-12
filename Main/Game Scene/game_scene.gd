@@ -5,8 +5,8 @@ var save_data:SaveGameData = SaveGameData.new()
 var current_map_node:Node2D
 var player_node:Unit
 
-func _ready() -> void:
-	new_game("res://Levels/Maps/start_level.tscn")
+#func _ready() -> void:
+	#new_game("res://Levels/Maps/start_level.tscn")
 
 func go_to_map(path_resource, pos):
 	var path = path_resource.path

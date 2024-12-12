@@ -1,14 +1,16 @@
+# InventoryInterface.gd
 class_name InventoryInterface
 extends Control
 
 signal inventory_updated
 
-@export var inventory: Array[ItemData] = []  # Holds references to ItemData resources
 @export var rows: int = 3
 @export var columns: int = 3
+var inventory: Array[ItemData] = []  # Start with an empty array
 
-@onready var grid = $NinePatchRect/GridContainer  # Reference to GridContainer
-@onready var slots = []  # For buttons
+@onready var ui_node = get_parent()
+@onready var grid = $NinePatchRect/GridContainer
+@onready var slots = []
 @onready var inv_background = $NinePatchRect
 
 var def_slot_icon = preload("res://UI/temp_png/inventory-slot.png")
@@ -17,20 +19,17 @@ var item_icons: Dictionary = {}
 func _ready():
 	preload_item_icons()
 	print("Initializing InventoryInterface...")
-	# Fill slots with buttons
 	for child in grid.get_children():
 		if child is Button:
 			child.custom_minimum_size = Vector2(25, 25)
+
 	for i in range(grid.get_child_count()):
 		slots.append(grid.get_child(i))
+		slots[i].connect("pressed", Callable(self, "_on_slot_pressed").bind(i))
 
-	# Initialize inventory size and visuals
-	inventory.resize(rows * columns)
+	# Just update visuals with empty inventory initially.
 	update_inventory_visuals()
 
-	# Connect button signals
-	for i in range(slots.size()):
-		slots[i].connect("pressed", Callable(self, "_on_slot_pressed").bind(i))
 func preload_item_icons():
 	var sprite_folder = "res://UI/Inventory Interface/InventorySprites/"
 	var dir = DirAccess.open(sprite_folder)
@@ -38,76 +37,105 @@ func preload_item_icons():
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if file_name.find(".png"):
+			if file_name.ends_with(".png"):
 				var icon_name = file_name.get_basename()
 				item_icons[icon_name] = load(sprite_folder + file_name)
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	else:
-		print("cannot open")
-			
+		print("cannot open sprite folder:", sprite_folder)
+
+#func add_item(item: ItemData) -> bool:
+	## First try to stack with an identical existing item if stackable
+	#for i in range(inventory.size()):
+		#var existing_item = inventory[i]
+		#if existing_item.name == item.name and existing_item.amount < existing_item.stack_limit:
+			#var remaining_space = existing_item.stack_limit - existing_item.amount
+			#var to_add = min(item.amount, remaining_space)
+			#existing_item.amount += to_add
+			#item.amount -= to_add
+			#update_slot_visual(i)
+			#inventory_updated.emit()
+			#if item.amount <= 0:
+				## All added
+				#return true
+	## If there's still some left, add as a new entry if possible
+	## In a dynamic inventory, we just append:
+	#inventory.append(item.duplicate(true))
+	#update_inventory_visuals()
+	#inventory_updated.emit()
+	#return true
 func add_item(item: ItemData) -> bool:
-	# Look for an existing stackable slot
-	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i].name == item.name:
-			if inventory[i].amount < inventory[i].stack_limit:
-				var remaining_space = inventory[i].stack_limit - inventory[i].amount
-				var add_amount = min(item.amount, remaining_space)
-				inventory[i].amount += add_amount
-				item.amount -= add_amount
-				if item.amount == 0:
-					break  # All items added, no need to continue
-				update_slot_visual(i)
-			inventory_updated.emit()
-			return true
+	print("add_item called with:", item.name, "Amount:", item.amount)
+	inventory.append(item.duplicate(true))
+	print("Inventory size after adding:", inventory.size())
+	update_inventory_visuals()
+	inventory_updated.emit()
+	return true
 
-	# Look for the first empty slot
-	for i in range(inventory.size()):
-		if inventory[i] == null:
-			inventory[i] = item.duplicate()  # Duplicate to prevent modifying original `.tres`
-			inventory[i].amount = min(item.amount, item.stack_limit)
-			item.amount -= inventory[i].amount
-			update_slot_visual(i)
-			inventory_updated.emit()
-			if item.amount == 0:
-				return true  # All items added
-	print("Inventory is full!")
-	return false
 
-func remove_item(slot_index: int):
-	if is_valid_slot(slot_index):
-		inventory[slot_index] = null
+func remove_item(item: ItemData):
+	var slot_index = find_item_index_by_name(item.name)
+	if slot_index != -1:
+		inventory.remove_at(slot_index)
+		update_inventory_visuals()
 		inventory_updated.emit()
-		update_slot_visual(slot_index)
-	else:
-		print("Invalid slot index: %d" % slot_index)
+		print("Removed item: %s from Slot ID: %d" % [item.name, slot_index])
+		return
+	print("Item not found in inventory: %s" % item.name)
+
+func update_item_quantity(item: ItemData, to_amount: int):
+	var slot_index = find_item_index_by_name(item.name)
+	if slot_index != -1:
+		if to_amount <= 0:
+			# Removing the item entirely
+			inventory.remove_at(slot_index)
+			update_inventory_visuals()
+			inventory_updated.emit()
+			print("Removed item: %s" % item.name)
+		else:
+			inventory[slot_index].amount = min(to_amount, item.stack_limit)
+			update_slot_visual(slot_index)
+			inventory_updated.emit()
+			print("Updated item: %s to amount: %d" % [item.name, inventory[slot_index].amount])
+		return
+	print("Item not found in inventory: %s" % item.name)
 
 func update_inventory_visuals():
-	for i in range(inventory.size()):
+	# We have 'rows * columns' slots, but inventory might have fewer or more items.
+	# If fewer items than slots, remaining slots appear empty.
+	print("update_inventory_visuals called. Inventory size:", inventory.size())
+	for i in range(rows * columns):
 		update_slot_visual(i)
 
 func update_slot_visual(slot_index: int):
 	if slot_index >= slots.size():
 		return
 	var button = slots[slot_index]
-	if inventory[slot_index] != null:
-		var item = inventory[slot_index]
-		print("Proces:%s   (Path:%s)" % [item.name, item.asset_path])
-		if item.name in item_icons:
-			#var icon = load("res://UI/Inventory Interface/InventorySprites/pistol ammo.png")# Dynamically load the item icon
-			# Set button icon and text
-			button.icon = item_icons[item.name]
-			
+	var label:Label = null
+	for child in button.get_children():
+		if child is Label:
+			label = child
+			break
+
+	if slot_index < inventory.size():
+		var slot_item = inventory[slot_index]
+		if slot_item.name in item_icons:
+			button.icon = item_icons[slot_item.name]
 		else:
 			button.icon = def_slot_icon
-		#button.text = str(item.amount)  # Display the current quantity
+		label.text = str(slot_item.amount)
+		label.visible = true
 	else:
+		# This slot is empty
 		button.icon = def_slot_icon
-		button.text = ""
+		label.text = ""
+		label.visible = true
 
 func _on_slot_pressed(slot_index: int):
-	if is_valid_slot(slot_index):
+	if slot_index < inventory.size():
 		var item = inventory[slot_index]
+		ui_node.item_selected_from_action_bar(item)
 		print("Selected item: %s (Amount: %d)" % [item.name, item.amount])
 	else:
 		print("Empty slot.")
@@ -117,5 +145,16 @@ func set_focus_on_slot(slot_index: int):
 		var button = slots[slot_index]
 		button.grab_focus()
 
-func is_valid_slot(slot_index: int) -> bool:
-	return slot_index >= 0 and slot_index < inventory.size() and inventory[slot_index] != null
+func find_item_index_by_name(item_name: String) -> int:
+	for i in range(inventory.size()):
+		var existing_item = inventory[i]
+		if existing_item.name == item_name:
+			return i
+	return -1
+
+func debug_inventory_slots():
+	print("=== Debugging Inventory Slots ===")
+	for i in range(inventory.size()):
+		var slot_item = inventory[i]
+		print("Slot Index: %d | Item: %s | Amount: %d" % [i, slot_item.name, slot_item.amount])
+	print("=== End of Inventory Debug ===")

@@ -1,45 +1,38 @@
-res://Main/world.tscn
+res://UI/ui.tscn
 res://UI/Inventory Interface/inventory_interface.gd
-res://Properties/Projectile Register/pistol_bullet.tres
-res://Properties/Ability Register/For Items/pistol_shot.tres
-res://Properties/Projectile Register/shotgun_bullet.tres
-res://Properties/Ability Register/For Items/shotgun_shot.tres
-res://Properties/Ability Register/For Items/bandage.tres
-res://Properties/Item Register/Ability Item Register/bandage.tres
-res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres
-res://Properties/Unit Register/normal_zombie.tres
-res://Properties/Ability Register/For Units/short_range_charge.tres
 res://Levels/Placeable Entities/starting_player.gd
 res://Properties/Unit Register/Player.tres
-res://Main/Lighting/camera_light_mask.tres
+res://Properties/Projectile Register/pistol_bullet.tres
+res://Properties/Ability Register/For Items/pistol_shot.tres
+res://Properties/Ability Register/For Units/normal_melee_attack.tres
+res://Properties/Unit Register/normal_zombie.tres
+res://Properties/Ability Register/For Items/bandage.tres
+res://Properties/Item Register/Ability Item Register/bandage.tres
+res://Properties/Projectile Register/shotgun_bullet.tres
+res://Properties/Ability Register/For Items/shotgun_shot.tres
+res://Properties/Item Register/Resource Item Register/shotgun_ammo.tres
+res://Properties/Ability Register/For Units/short_range_charge.tres
+res://Main/world.tscn
 res://Levels/Maps/start_level.tscn
-res://UI/Debug Setting/debug_setting.tscn
-res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn
-res://Levels/Maps/Test Maps/test_map_1.tscn
-res://Levels/Maps/Test Maps/test_map_2.tscn
-res://UI/Value Indicator/ui.tscn
-res://Main/Game Scene/game_scene.tscn
-res://UI/Inventory Interface/inventory.tscn
-res://UI/Inventory Interface/slot.tscn
-res://Main/Lighting/unit_camera.tscn
-res://UI/Game Message Manager/game_message.tscn
-res://UI/Main Menu/main_menu.tscn
-res://Levels/Placeable Entities/Base Entities/interactable_object.tscn
-res://Properties/Item Register/Resource Item Register/pistol ammo.tres
-res://Properties/Item Register/Ability Item Register/pistol.tres
 res://Levels/Maps/room2.tscn
+res://UI/Game Message Manager/game_message.tscn
 res://Levels/Maps/room5.tscn
 res://Levels/Maps/room_6.tscn
 res://Levels/Maps/room4.tscn
 res://Levels/Maps/room3.tscn
 res://Levels/Maps/room_8.tscn
-res://Main/Obj/Unit/Controller/unit_AI.gd
-res://Main/Ability/ability_controller.gd
-res://Main/Obj/Unit/Controller/player.gd
-res://Main/Obj/Unit/unit.gd
-res://Main/Ability/ability_data.gd
-res://Properties/Ability Register/For Units/normal_melee_attack.tres
-res://Levels/Maps/room_10.tscn
 res://Levels/Maps/room_7.tscn
 res://Levels/Maps/room_9.tscn
-res://Properties/Unit Register/normal_predator.tres
+res://Levels/Maps/room_10.tscn
+res://UI/Main Menu/main_menu.tscn
+res://UI/Inventory Interface/inventory.tscn
+res://Main/Game Scene/game_scene.gd
+res://Main/Obj/Unit/unit.gd
+res://Main/Game Scene/game_scene.tscn
+res://UI/Game Message Manager/game_message_manager.gd
+res://UI/ui.gd
+res://UI/Main Menu/main_menu.gd
+res://UI/Main Menu/pause_menu.gd
+res://UI/Main Menu/pause_menu.tscn
+res://Properties/Item Register/Ability Item Register/pistol.tres
+res://Properties/Item Register/Resource Item Register/pistol ammo.tres
