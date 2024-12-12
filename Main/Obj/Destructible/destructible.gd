@@ -17,7 +17,7 @@ func activate():
 	super()
 
 func deactivate():
-	get_node("Body/CollisionShape2D").set_deferred("disabled", true)
+	get_node("StaticBody2D/CollisionShape2D").set_deferred("disabled", true)
 	super()
 
 func death():

@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://epjylitauyjv"]
+[gd_scene load_steps=19 format=4 uid="uid://epjylitauyjv"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_jvvuo"]
+[ext_resource type="Texture2D" uid="uid://sl3yj1wf43e6" path="res://Main/Game Scene/BackgroundSprites/16x16-ALL_ASSETS-demo.png" id="2_7c1h8"]
 [ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_faoym"]
 [ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_gxb7q"]
+[ext_resource type="Texture2D" uid="uid://cwlfo0nyuw34y" path="res://Main/Game Scene/BackgroundSprites/BackgroundTileSet.png" id="3_mgol6"]
 [ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="4_4dwqw"]
+[ext_resource type="Texture2D" uid="uid://fiv1e6uyrpq3" path="res://Main/Game Scene/BackgroundSprites/OCDrawers.png" id="4_74rag"]
+[ext_resource type="Texture2D" uid="uid://2qev6wkqu5mv" path="res://Main/Game Scene/BackgroundSprites/OCDoor.png" id="5_tl8wx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8sf6"]
 texture = ExtResource("1_jvvuo")
@@ -17,10 +21,261 @@ texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gb48x"]
+texture = ExtResource("2_7c1h8")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+0:25/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+9:25/0 = 0
+0:26/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+4:26/0 = 0
+5:26/0 = 0
+6:26/0 = 0
+7:26/0 = 0
+8:26/0 = 0
+9:26/0 = 0
+0:27/0 = 0
+1:27/0 = 0
+2:27/0 = 0
+3:27/0 = 0
+4:27/0 = 0
+5:27/0 = 0
+6:27/0 = 0
+7:27/0 = 0
+8:27/0 = 0
+9:27/0 = 0
+0:28/0 = 0
+1:28/0 = 0
+0:29/0 = 0
+1:29/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28v5b"]
+texture = ExtResource("3_mgol6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f270h"]
+texture = ExtResource("4_74rag")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2riri"]
+texture = ExtResource("5_tl8wx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_8oval"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n8sf6")
+sources/1 = SubResource("TileSetAtlasSource_gb48x")
+sources/2 = SubResource("TileSetAtlasSource_28v5b")
+sources/4 = SubResource("TileSetAtlasSource_f270h")
+sources/6 = SubResource("TileSetAtlasSource_2riri")
 
 [sub_resource type="Resource" id="Resource_ttyru"]
 script = ExtResource("3_gxb7q")
@@ -41,10 +296,11 @@ position = Vector2(-4, -736)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(321, 0)
-tile_map_data = PackedByteArray("AAD8//L/AAAAAAEAAAD8/w0AAAAAAAAAAAD8/w4AAAAAAAEAAAD5//H/AAABAAAAAAD5//L/AAABAAEAAAD5/w0AAAABAAAAAAD5/w4AAAABAAEAAAD6//H/AAABAAAAAAD6//L/AAABAAEAAAD6/w0AAAABAAAAAAD6/w4AAAABAAEAAAD7//H/AAAAAAAAAAD7//L/AAAAAAEAAAD7/w0AAAAAAAAAAAD7/w4AAAAAAAEAAAD8//H/AAAAAAAAAAD4//H/AAAAAAAAAAD4//L/AAAAAAEAAAD4//P/AAAAAAAAAAD4//T/AAAAAAEAAAD4//X/AAAAAAAAAAD4//b/AAAAAAEAAAD4//f/AAAAAAAAAAD4//j/AAAAAAEAAAD4//n/AAAAAAAAAAD4//r/AAAAAAEAAAD4//v/AAAAAAAAAAD4//z/AAAAAAEAAAD4//3/AAAAAAAAAAD4//7/AAAAAAEAAAD4////AAAAAAAAAAD4/wAAAAAAAAEAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAEAAAD4/wMAAAAAAAAAAAD4/wQAAAAAAAEAAAD4/wUAAAAAAAAAAAD4/wYAAAAAAAEAAAD4/wcAAAAAAAAAAAD4/wgAAAAAAAEAAAD4/wkAAAAAAAAAAAD4/woAAAAAAAEAAAD4/wsAAAAAAAAAAAD4/wwAAAAAAAEAAAD4/w0AAAAAAAAAAAD4/w4AAAAAAAEAAAD5//P/AAABAAAAAAD5//T/AAABAAEAAAD5//X/AAABAAAAAAD5//b/AAABAAEAAAD5//f/AAABAAAAAAD5//j/AAABAAEAAAD5//n/AAABAAAAAAD5//r/AAABAAEAAAD5//v/AAABAAAAAAD5//z/AAABAAEAAAD5//3/AAABAAAAAAD5//7/AAABAAEAAAD5////AAABAAAAAAD5/wAAAAABAAEAAAD5/wEAAAABAAAAAAD5/wIAAAABAAEAAAD5/wMAAAABAAAAAAD5/wQAAAABAAEAAAD5/wUAAAABAAAAAAD5/wYAAAABAAEAAAD5/wcAAAABAAAAAAD5/wgAAAABAAEAAAD5/wkAAAABAAAAAAD5/woAAAABAAEAAAD5/wsAAAABAAAAAAD5/wwAAAABAAEAAAD9//H/AAABAAAAAAD9//L/AAABAAEAAAD9//P/AAABAAAAAAD9//T/AAABAAEAAAD9//X/AAABAAAAAAD9//b/AAABAAEAAAD9//f/AAABAAAAAAD9//j/AAABAAEAAAD9//n/AAABAAAAAAD9//r/AAABAAEAAAD9//v/AAABAAAAAAD9//z/AAABAAEAAAD9//3/AAABAAAAAAD9//7/AAABAAEAAAD9////AAABAAAAAAD9/wAAAAABAAEAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAAAAAD9/wQAAAABAAEAAAD9/wUAAAABAAAAAAD9/wYAAAABAAEAAAD9/wcAAAABAAAAAAD9/wgAAAABAAEAAAD9/wkAAAABAAAAAAD9/woAAAABAAEAAAD9/wsAAAABAAAAAAD9/wwAAAABAAEAAAD9/w0AAAABAAAAAAD9/w4AAAABAAEAAAD8//P/AAAAAAAAAAD8//T/AAAAAAEAAAD8//X/AAAAAAAAAAD8//b/AAAAAAEAAAD8//f/AAAAAAAAAAD8//j/AAAAAAEAAAD8//n/AAAAAAAAAAD8//r/AAAAAAEAAAD8//v/AAAAAAAAAAD8//z/AAAAAAEAAAD8//3/AAAAAAAAAAD8//7/AAAAAAEAAAD8////AAAAAAAAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAEAAAD8/wUAAAAAAAAAAAD8/wYAAAAAAAEAAAD8/wcAAAAAAAAAAAD8/wgAAAAAAAEAAAD8/wkAAAAAAAAAAAD8/woAAAAAAAEAAAD8/wsAAAAAAAAAAAD8/wwAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD6//H/BgAAAAAAAAD6//L/BgAAAAEAAAD6/w0AAgAGAAAAAFD7//H/BgABAAAAAAD7//L/BgABAAEAAAD7/w0AAgAGAAAAAFD5//T/AgAFAAAAAAD5//X/AgAFAAAAAAD5//b/AgAFAAAAAAD5//f/AgAFAAAAAAD5//j/AgAFAAAAAAD5//n/AgAFAAAAAAD5//r/AgAFAAAAAAD5//v/AgAFAAAAAAD5//z/AgAFAAAAAAD5//3/AgAFAAAAAAD5//7/AgAFAAAAAAD5////AgAFAAAAAAD5/wAAAgAFAAAAAAD5/wEAAgAFAAAAAAD5/wIAAgAFAAAAAAD5/wMAAgAFAAAAAAD5/wQAAgAFAAAAAAD5/wUAAgAFAAAAAAD5/wYAAgAFAAAAAAD5/wcAAgAFAAAAAAD5/wgAAgAFAAAAAAD5/wkAAgAFAAAAAAD5/woAAgAFAAAAAAD5/wsAAgAFAAAAAAD5/wwAAgAFAAAAAAD8//T/AgAGAAAAAAD8//X/AgAGAAAAAAD8//b/AgAGAAAAAAD8//f/AgAGAAAAAAD8//j/AgAGAAAAAAD8//n/AgAGAAAAAAD8//r/AgAGAAAAAAD8//v/AgAGAAAAAAD8//z/AgAGAAAAAAD8//3/AgAGAAAAAAD8//7/AgAGAAAAAAD8////AgAGAAAAAAD8/wAAAgAGAAAAAAD8/wEAAgAGAAAAAAD8/wIAAgAGAAAAAAD8/wMAAgAGAAAAAAD8/wQAAgAGAAAAAAD8/wUAAgAGAAAAAAD8/wYAAgAGAAAAAAD8/wcAAgAGAAAAAAD8/wgAAgAGAAAAAAD8/wkAAgAGAAAAAAD8/woAAgAGAAAAAAD8/wsAAgAGAAAAAAD8/wwAAgAGAAAAAAD6//T/AQAJABkAAAD6//X/AQAJABkAAAD6//b/AQAJABkAAAD6//f/AQAJABkAAAD6//j/AQAJABkAAAD6//n/AQAJABkAAAD6//r/AQAJABkAAAD6//v/AQAJABkAAAD6/wQAAQAJABkAAAD6/wMAAQAJABkAAAD6/wIAAQAJABkAAAD6/wEAAQAJABkAAAD6/wAAAQAJABkAAAD6////AQAJABkAAAD6//7/AQAJABkAAAD6//3/AQAJABkAAAD6//z/AQAJABkAAAD6/wUAAQAJABkAAAD6/wYAAQAJABkAAAD6/wcAAQAJABkAAAD6/wgAAQAJABkAAAD6/wkAAQAJABkAAAD6/woAAQAJABkAAAD6/wsAAQAJABkAAAD6/wwAAQAJABkAAAD7/wwAAQAJABkAAAD7/wsAAQAJABkAAAD7/woAAQAJABkAAAD7/wkAAQAJABkAAAD7/wgAAQAJABkAAAD7/wcAAQAJABkAAAD7/wYAAQAJABkAAAD7/wUAAQAJABkAAAD7/wQAAQAJABkAAAD7/wMAAQAJABkAAAD7/wIAAQAJABkAAAD7/wEAAQAJABkAAAD7/wAAAQAJABkAAAD7////AQAJABkAAAD7//7/AQAJABkAAAD7//3/AQAJABkAAAD7//z/AQAJABkAAAD7//v/AQAJABkAAAD7//r/AQAJABkAAAD7//n/AQAJABkAAAD7//j/AQAJABkAAAD7//f/AQAJABkAAAD7//T/AQAJABkAAAD7//X/AQAJABkAAAD7//b/AQAJABkAAAD6//P/BgAAAAIAAAD7//P/BgABAAIAAAD5//P/AgAFAAAAAAD8//P/AgAGAAAAAAA=")
 tile_set = SubResource("TileSet_8oval")
 
 [node name="MapTransitionZoneToRoom9" parent="." instance=ExtResource("2_faoym")]
+visible = false
 position = Vector2(1, -800)
 rotation = 1.5708
 path = SubResource("Resource_ttyru")
@@ -57,7 +313,7 @@ shape = SubResource("RectangleShape2D_mr8ja")
 position = Vector2(1, 808)
 rotation = 3.14159
 path = SubResource("Resource_tg3ar")
-pos = Vector2(-450, -700)
+pos = Vector2(-375, -350)
 
 [node name="Area2D" parent="MapTransitionZoneToRoom7" index="0"]
 position = Vector2(2.22545e-07, -9.53674e-07)

@@ -1,6 +1,7 @@
 class_name InteractableObject
 extends Obj
 ##switch active status when interacted
+@export var matches:Fireplace
 
 func interact(unit):
 	if data.active:
