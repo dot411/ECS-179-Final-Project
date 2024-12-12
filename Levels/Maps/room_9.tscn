@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://b6x28pdlgk6t2" path="res://Properties/Unit Register/normal_predator.tres" id="11_mclxy"]
 [ext_resource type="Script" path="res://Main/Obj/Ability Object/ability_object_data.gd" id="12_h54jv"]
 [ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="13_5kms5"]
-[ext_resource type="Texture2D" uid="uid://bxbo26e2yjl8g" path="res://UI/Inventory Interface/InventorySprites/bandage.png" id="13_bmlvv"]
+[ext_resource type="Texture2D" uid="uid://bxbo26e2yjl8g" path="res://UI/Inventory Interface/InventorySprites/Bandage.png" id="13_bmlvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrafa"]
 texture = ExtResource("1_7f7ll")
