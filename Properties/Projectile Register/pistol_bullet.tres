@@ -26,6 +26,7 @@ damage_type = 0
 
 [sub_resource type="Resource" id="Resource_0m0eu"]
 script = ExtResource("4_oxb7c")
+asset_file_path = null
 area_shape = SubResource("Resource_hwpwd")
 effect = SubResource("Resource_vlasu")
 follow_parent = true
@@ -37,6 +38,6 @@ finite_duration = false
 
 [resource]
 script = ExtResource("5_mqhyb")
-asset_path = "res://Properties/Projectile Register/Bullet.png"
+asset_file_path = "res://Main/Obj/Unit/EffectSprites/Bullet.png"
 effect_region_data = SubResource("Resource_0m0eu")
 speed = 8.0

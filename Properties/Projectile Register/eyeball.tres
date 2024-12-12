@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=12 format=3 uid="uid://c41kvt5rse7o3"]
+
+[ext_resource type="Script" path="res://Main/Effect/Area Shape/circle_shape.gd" id="1_plq57"]
+[ext_resource type="Script" path="res://Main/Effect/area_effect.gd" id="2_f7ayx"]
+[ext_resource type="Script" path="res://Main/Trigger/float_point.gd" id="3_s0d74"]
+[ext_resource type="Script" path="res://Main/Trigger/trigger_unit.gd" id="4_38pb8"]
+[ext_resource type="Script" path="res://Main/Effect/Effect Region/effect_region_data.gd" id="5_uk2ia"]
+[ext_resource type="Script" path="res://Main/Obj/Projectile/projectile_data.gd" id="6_h577y"]
+
+[sub_resource type="Resource" id="Resource_r5sj7"]
+script = ExtResource("1_plq57")
+outer_radius = 0.3
+inner_radius = 0.0
+angle = 360.0
+
+[sub_resource type="Resource" id="Resource_r8gjh"]
+script = ExtResource("4_38pb8")
+function = "triggering_caster"
+
+[sub_resource type="Resource" id="Resource_nk1in"]
+script = ExtResource("3_s0d74")
+function = "unit_attribute"
+unit = SubResource("Resource_r8gjh")
+attribute = 0
+modifier = 0.0
+multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_2ttvx"]
+script = ExtResource("2_f7ayx")
+target_mode = 0
+function = "take_damage"
+value = SubResource("Resource_nk1in")
+damage_type = 0
+
+[sub_resource type="Resource" id="Resource_xpm5d"]
+script = ExtResource("5_uk2ia")
+asset_file_path = null
+area_shape = SubResource("Resource_r5sj7")
+effect = SubResource("Resource_2ttvx")
+follow_parent = true
+targets_limit = true
+max_affected = 1
+wait_for_collision_to_trigger = true
+one_shot = true
+finite_duration = false
+
+[resource]
+script = ExtResource("6_h577y")
+asset_file_path = "res://Main/Obj/Unit/EnemySprites/Spitter/EyeballSprite.png"
+effect_region_data = SubResource("Resource_xpm5d")
+speed = 4.0

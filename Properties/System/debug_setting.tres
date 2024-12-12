@@ -6,8 +6,8 @@
 script = ExtResource("1_r54jo")
 reset = false
 debug_mode_on = true
-general/status = true
-general/show_effect_region = true
+general/status = false
+general/show_effect_region = false
 unit/status = false
 unit/show_collision = false
 player/status = false

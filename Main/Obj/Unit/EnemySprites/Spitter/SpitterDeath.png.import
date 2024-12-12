@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwot6c0qjwvx"
-path="res://.godot/imported/NurseCorpse.png-26faca3737c9f630df40291cb12ac490.ctex"
+uid="uid://cvcrk7owmkt5h"
+path="res://.godot/imported/SpitterDeath.png-928b1d052db0ff6d4ef4fa41f8ba2317.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main/Obj/Unit/EnemySprites/Nurse/NurseCorpse.png"
-dest_files=["res://.godot/imported/NurseCorpse.png-26faca3737c9f630df40291cb12ac490.ctex"]
+source_file="res://Main/Obj/Unit/EnemySprites/Spitter/SpitterDeath.png"
+dest_files=["res://.godot/imported/SpitterDeath.png-928b1d052db0ff6d4ef4fa41f8ba2317.ctex"]
 
 [params]
 

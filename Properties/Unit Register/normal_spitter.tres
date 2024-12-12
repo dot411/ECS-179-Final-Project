@@ -14,7 +14,7 @@ surround_coefficient = 1.0
 
 [resource]
 script = ExtResource("2_o1xbq")
-asset_path = null
+asset_path = "res://Main/Obj/Unit/EnemySprites/Spitter"
 speed = 1.0
 max_fatigue = 100.0
 attack = 10

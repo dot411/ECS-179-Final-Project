@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d1n188a6bnla2" path="res://Main/Effect/Effect Region/effect_region.tscn" id="2_hmyub"]
 
 [node name="Projectile" type="Node2D"]
+z_index = 1
 script = ExtResource("1_wiqmd")
 
-[node name="EffectRegion" parent="." instance=ExtResource("2_hmyub")]
-
-[node name="Sprite" type="Sprite2D" parent="EffectRegion"]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-hframes = 4
+
+[node name="EffectRegion" parent="." instance=ExtResource("2_hmyub")]
 
 [node name="ColorRect" type="ColorRect" parent="EffectRegion"]
 visible = false
@@ -21,4 +21,5 @@ offset_bottom = 4.0
 color = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="EffectRegion" to="." method="_on_effect_region_body_entered"]
+[connection signal="removed" from="EffectRegion" to="." method="_on_effect_region_removed"]
 [connection signal="tree_exited" from="EffectRegion" to="." method="_on_effect_region_tree_exited"]
