@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cqyfmy5jv21fd"]
+[gd_scene load_steps=40 format=4 uid="uid://cqyfmy5jv21fd"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_o2epm"]
 [ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="2_2e1bq"]
@@ -10,10 +10,8 @@
 [ext_resource type="Script" path="res://Main/Item/item_data.gd" id="3_svev2"]
 [ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="4_7kyxn"]
 [ext_resource type="Texture2D" uid="uid://cwlfo0nyuw34y" path="res://Main/Game Scene/BackgroundSprites/BackgroundTileSet.png" id="4_fsa0s"]
-[ext_resource type="Resource" uid="uid://co7er44eby16y" path="res://Properties/Ability Register/For Items/pistol_shot.tres" id="4_ntbdm"]
 [ext_resource type="Texture2D" uid="uid://dmwa8c71uwcmb" path="res://Main/Game Scene/BackgroundSprites/burned_texture.png" id="5_cywd2"]
 [ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="5_rbf4x"]
-[ext_resource type="Script" path="res://Main/Item/ability_item.gd" id="5_wp0ex"]
 [ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="6_0nyc1"]
 [ext_resource type="Texture2D" uid="uid://cixo73qnpputy" path="res://Main/Game Scene/BackgroundSprites/Fireplace.png" id="6_3mseb"]
 [ext_resource type="Texture2D" uid="uid://dyxgrgq6tyfi5" path="res://Main/Game Scene/BackgroundSprites/FireplaceWithWood.png" id="7_ehjai"]
@@ -641,20 +639,6 @@ resistance_to_damage = Array[float]([])
 max_HP = 10
 triggers = Array[ExtResource("8_j34jw")]([])
 
-[sub_resource type="Resource" id="Resource_4pj5t"]
-resource_name = "pistol ammo"
-script = ExtResource("5_wp0ex")
-ability_data = ExtResource("4_ntbdm")
-consumable = false
-cost_resource = true
-resource_name = "pistol ammo"
-cost_amount = 1
-name = "pistol"
-description = ""
-asset_path = null
-stack_limit = 1
-amount = 1
-
 [sub_resource type="Resource" id="Resource_mfibn"]
 script = ExtResource("6_0nyc1")
 name = "pistol ammo"
@@ -668,7 +652,7 @@ script = ExtResource("7_fiugb")
 allow_deactivation = false
 requires_resource = ""
 requires_resource_amount = 0
-give_inventory = Array[ExtResource("3_svev2")]([SubResource("Resource_4pj5t"), SubResource("Resource_mfibn")])
+give_inventory = Array[ExtResource("3_svev2")]([SubResource("Resource_mfibn")])
 triggers = Array[ExtResource("8_j34jw")]([])
 
 [sub_resource type="Resource" id="Resource_jnqf7"]

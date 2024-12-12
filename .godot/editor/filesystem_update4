@@ -32,3 +32,6 @@ res://UI/Inventory Interface/inventory.tscn
 res://Main/Game Scene/game_scene.tscn
 res://UI/Main Menu/pause_menu.tscn
 res://Levels/Maps/room3.tscn
+res://UI/ui.gd
+res://Main/Effect/Effect Region/effect_region.gd
+res://Main/Obj/Unit/unit.gd

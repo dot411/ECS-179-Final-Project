@@ -557,26 +557,27 @@ texture = ExtResource("13_pwn0p")
 region_enabled = true
 region_rect = Rect2(196, 24, 116, 164)
 
-[node name="DeskTableSprite" type="Sprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-1171, -404)
 scale = Vector2(0.673333, 0.673333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_f3pbt")
+
+[node name="DeskTableSprite" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(1, 1)
 texture = ExtResource("13_pwn0p")
 region_enabled = true
 region_rect = Rect2(248, 256, 136, 136)
 
-[node name="LampSprite" type="Sprite2D" parent="DeskTableSprite"]
+[node name="LampSprite" type="Sprite2D" parent="StaticBody2D/DeskTableSprite"]
 position = Vector2(-26.7327, -92.0792)
 scale = Vector2(0.551671, 0.551671)
 texture = ExtResource("13_pwn0p")
 region_enabled = true
 region_rect = Rect2(464, 0, 96, 208)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="DeskTableSprite"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskTableSprite/StaticBody2D"]
-visible = false
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_f3pbt")
 
 [node name="Spawner" parent="." instance=ExtResource("16_drq6a")]
 position = Vector2(-200, 200)

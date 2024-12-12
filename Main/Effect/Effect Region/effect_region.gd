@@ -94,7 +94,7 @@ func trigger():
 		var distance = (body.position - global_position).length()
 		var angle = angle_difference((body.position - global_position).angle(), rotation)
 		var target = body.get_parent()
-		if body is TileMapLayer: continue
+		if body is TileMapLayer or body is StaticBody2D: continue
 		if !is_target_team_valid(team, target.data.team): continue
 		var target_collision_radius = target.get_collision_radius()
 		if area_shape is CircleShape and area_shape.is_in_self(distance - target_collision_radius, angle):
@@ -131,7 +131,7 @@ func _on_cooldown_timer_timeout():
 	trigger()
 
 func _on_effect_region_body_entered(new_target_body: Node2D) -> void:
-	if new_target_body is not TileMapLayer:
+	if new_target_body is not TileMapLayer and new_target_body is not StaticBody2D:
 		var team = trigger_buffer.triggering_caster.team
 		var target = new_target_body.get_parent()
 		if !is_target_team_valid(team, target.data.team): return
