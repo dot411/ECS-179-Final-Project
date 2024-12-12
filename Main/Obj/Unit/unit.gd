@@ -173,7 +173,11 @@ func interact():
 	for target_body in bodies:
 		var target = target_body.get_parent()
 		if target is InteractableObject:
-			target.interact(self)
+			if target.name == "MatchesContainer":
+				target.interact(self)
+				target.matches.interact(self) # Fireplace 
+			else:
+				target.interact(self)
 
 func use_ability(aim_pos):
 	if is_dead: return
