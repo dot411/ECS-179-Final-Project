@@ -336,6 +336,7 @@ tile_map_data = PackedByteArray("AAD3//H/AQAAAAAAAAD3//L/AQAEAAAAAAD4//H/AQAAAAA
 tile_set = SubResource("TileSet_wmi6q")
 
 [node name="MapTransitionZoneToRoom10" parent="." instance=ExtResource("2_1kbjv")]
+visible = false
 position = Vector2(766, -576)
 path = SubResource("Resource_1p761")
 
@@ -360,10 +361,12 @@ rotation = 0.785397
 texture = ExtResource("13_bmlvv")
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("9_evh80")]
+position = Vector2(0, -349)
 start_status = true
 data = SubResource("Resource_mc3rm")
 
 [node name="MapTransitionZoneToRoom8" parent="." instance=ExtResource("2_1kbjv")]
+visible = false
 position = Vector2(0, 894)
 rotation = 3.14159
 path = SubResource("Resource_igjaj")

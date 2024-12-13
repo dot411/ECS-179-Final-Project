@@ -1,7 +1,7 @@
-res://Levels/Maps
-res://UI/fonts,maine_menu
 res://Main/Game Scene/BackgroundSprites
+res://Levels/Maps
+res://UI/Inventory Interface/InventorySprites
+res://UI/fonts,maine_menu
 res://Audio
 res://Main/Obj/Unit/EnemySprites/Nurse
 res://UI/Inventory Interface
-res://UI/Inventory Interface/InventorySprites

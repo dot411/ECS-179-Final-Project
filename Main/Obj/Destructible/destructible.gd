@@ -17,7 +17,7 @@ func activate():
 	super()
 
 func deactivate():
-	if(self.name == "DestructableDoor"):
+	if self.name == "DestructableDoor" and self != null:
 		self.queue_free();
 	else:
 		get_node("StaticBody2D/CollisionShape2D").set_deferred("disabled", true)

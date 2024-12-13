@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg5l8uhxywn0i"]
+
+[ext_resource type="Texture2D" uid="uid://dbokumt3b3s2y" path="res://Main/Game Scene/BackgroundSprites/end.png" id="1_rerhj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(416, 297)
+scale = Vector2(0.594792, 0.6)
+texture = ExtResource("1_rerhj")
+
+[node name="Ending" type="Node2D" parent="."]

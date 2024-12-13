@@ -297,27 +297,49 @@ texture_region_size = Vector2i(64, 64)
 5:30/0 = 0
 6:30/0 = 0
 0:32/0 = 0
+0:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:32/0 = 0
+1:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:32/0 = 0
+2:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:32/0 = 0
+4:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:32/0 = 0
+5:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:32/0 = 0
+6:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 9:32/0 = 0
+9:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:33/0 = 0
+0:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:33/0 = 0
+2:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:33/0 = 0
+4:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:33/0 = 0
+6:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 8:33/0 = 0
+8:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 10:33/0 = 0
+10:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 12:33/0 = 0
+12:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:34/0 = 0
+0:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:34/0 = 0
+1:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:34/0 = 0
+2:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:34/0 = 0
+4:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:34/0 = 0
+5:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:34/0 = 0
+6:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 9:34/0 = 0
+9:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 12:34/0 = 0
+12:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:35/0 = 0
 1:35/0 = 0
 2:35/0 = 0
@@ -387,13 +409,6 @@ path = "res://Levels/Maps/room_7.tscn"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvje4"]
 size = Vector2(369, 81.49)
 
-[sub_resource type="Resource" id="Resource_s8ndh"]
-script = ExtResource("3_1h62p")
-path = "res://Levels/Maps/room5.tscn"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpua2"]
-size = Vector2(76.25, 357)
-
 [sub_resource type="Resource" id="Resource_p6ewg"]
 script = ExtResource("15_t7wbp")
 drop_items = Array[ExtResource("5_rxex1")]([ExtResource("14_fug8n")])
@@ -450,6 +465,13 @@ unit_spawn_limit = 1
 position_effects = Array[ExtResource("17_xxcbt")]([SubResource("Resource_u5sqv")])
 triggers = Array[ExtResource("10_trdvc")]([])
 
+[sub_resource type="Resource" id="Resource_6bsmw"]
+script = ExtResource("3_1h62p")
+path = "res://Levels/Maps/room5.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w7n2"]
+size = Vector2(48.5, 357)
+
 [node name="room_6" type="Node2D"]
 position = Vector2(-55, 0)
 
@@ -458,24 +480,14 @@ tile_map_data = PackedByteArray("AADs//X/BQAGACEAAADs//b/BQAGACEAAADs//f/BQAGACE
 tile_set = SubResource("TileSet_nun0s")
 
 [node name="MapTransitionZoneToRoom7" parent="." instance=ExtResource("2_68hd8")]
-position = Vector2(-1250, 1)
+visible = false
+position = Vector2(-1271, 1)
 rotation = 1.5708
 path = SubResource("Resource_ewhu3")
 
 [node name="CollisionShape2D" parent="MapTransitionZoneToRoom7/Area2D" index="0"]
-visible = false
 position = Vector2(-1.49992, 23.245)
 shape = SubResource("RectangleShape2D_fvje4")
-
-[node name="MapTransitionZoneToRoom4" parent="." instance=ExtResource("2_68hd8")]
-position = Vector2(259, 1)
-path = SubResource("Resource_s8ndh")
-pos = Vector2(-950, 0)
-
-[node name="CollisionShape2D" parent="MapTransitionZoneToRoom4/Area2D" index="0"]
-visible = false
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_jpua2")
 
 [node name="BandageCrateDestructable" parent="." instance=ExtResource("13_luyx4")]
 position = Vector2(-338, -237)
@@ -567,7 +579,6 @@ position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_f3pbt")
 
 [node name="DeskTableSprite" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(1, 1)
 texture = ExtResource("13_pwn0p")
 region_enabled = true
 region_rect = Rect2(248, 256, 136, 136)
@@ -589,5 +600,14 @@ position = Vector2(-200, -200)
 start_status = true
 data = SubResource("Resource_j0j0y")
 
+[node name="MapTransitionZoneToRoom5" parent="." instance=ExtResource("2_68hd8")]
+visible = false
+position = Vector2(296, -6)
+path = SubResource("Resource_6bsmw")
+pos = Vector2(-950, 0)
+
+[node name="CollisionShape2D" parent="MapTransitionZoneToRoom5/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_7w7n2")
+
 [editable path="MapTransitionZoneToRoom7"]
-[editable path="MapTransitionZoneToRoom4"]
+[editable path="MapTransitionZoneToRoom5"]

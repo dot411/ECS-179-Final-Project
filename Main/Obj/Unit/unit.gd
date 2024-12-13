@@ -178,9 +178,9 @@ func interact():
 			if target.name == "MatchesContainer":
 				target.interact(self)
 				target.matches.interact(self) # Fireplace 
-			#elif unlocked:
-				#target.door.door_interact(self)
-			elif target.name == "key2" and key1_picked_up:
+			elif unlocked and target.name == "key2" and target.door != null:
+				pass
+			elif target.name == "key2" and key1_picked_up and not unlocked:
 				target.interact(self)
 				target.door.door_interact(self)
 				unlocked = true

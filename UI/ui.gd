@@ -160,12 +160,11 @@ func  start_game_ui():
 	main_menu.visible = false
 	$ValueIndicator.visible = true
 	$GameMessage.visible = true
-	game_message_manager.add_message("Welcome To Resident Medieval",5.0)
-	game_message_manager.add_message("Here is how to play", 3.0)
-	game_message_manager.add_message("Use 'WASD' to move , 'i' for inventory, 'inventory Keybinds are #'s 1-9", 8.0)
-	game_message_manager.add_message("Select the weapon/item using the #1-9", 8.0)
-	game_message_manager.add_message("Press 'e' to interact and left mouse click to fire", 8.0)
-	await get_tree().create_timer(40).timeout
+	#game_message_manager.add_message("Welcome To Resident Medieval",5.0)
+	#game_message_manager.add_message("Here is how to play", 3.0)
+	game_message_manager.add_message("'WASD' to move , 'i' for inventory, 'E' to interact, Left-click to use weapon.", 6.0)
+	game_message_manager.add_message("Select weapon in inventory using the #1-9 keys.", 5.0)
+	await get_tree().create_timer(11).timeout
 	game_message_manager.clear_messages()
 	print("switched")
 func resume_game():

@@ -1,17 +1,14 @@
-[gd_scene load_steps=40 format=4 uid="uid://cqyfmy5jv21fd"]
+[gd_scene load_steps=37 format=4 uid="uid://cqyfmy5jv21fd"]
 
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_o2epm"]
-[ext_resource type="PackedScene" uid="uid://ukc1pysdk0eg" path="res://Levels/Placeable Entities/Base Entities/destructible_entity.tscn" id="2_2e1bq"]
 [ext_resource type="PackedScene" uid="uid://dgbg1uhecu4ml" path="res://Levels/Placeable Entities/Base Entities/interactable_object.tscn" id="2_rsrax"]
 [ext_resource type="Texture2D" uid="uid://sl3yj1wf43e6" path="res://Main/Game Scene/BackgroundSprites/16x16-ALL_ASSETS-demo.png" id="2_vospt"]
 [ext_resource type="PackedScene" uid="uid://btd6fkuos8ws2" path="res://Levels/Placeable Entities/Base Entities/Extended Entities/Map Transition Zone/map_transition_zone.tscn" id="2_xurda"]
 [ext_resource type="Script" path="res://Main/Utility/scene_file_path.gd" id="3_q0mxc"]
 [ext_resource type="Texture2D" uid="uid://cw5vt48ojlp3d" path="res://Main/Game Scene/BackgroundSprites/64x64 backgroundSprites.png" id="3_q6wua"]
 [ext_resource type="Script" path="res://Main/Item/item_data.gd" id="3_svev2"]
-[ext_resource type="Resource" uid="uid://bi33ejnsyausq" path="res://Properties/Item Register/Ability Item Register/bandage.tres" id="4_7kyxn"]
 [ext_resource type="Texture2D" uid="uid://cwlfo0nyuw34y" path="res://Main/Game Scene/BackgroundSprites/BackgroundTileSet.png" id="4_fsa0s"]
 [ext_resource type="Texture2D" uid="uid://dmwa8c71uwcmb" path="res://Main/Game Scene/BackgroundSprites/burned_texture.png" id="5_cywd2"]
-[ext_resource type="Script" path="res://Main/Obj/Destructible/destructible_data.gd" id="5_rbf4x"]
 [ext_resource type="Script" path="res://Main/Item/resource_item.gd" id="6_0nyc1"]
 [ext_resource type="Texture2D" uid="uid://cixo73qnpputy" path="res://Main/Game Scene/BackgroundSprites/Fireplace.png" id="6_3mseb"]
 [ext_resource type="Texture2D" uid="uid://dyxgrgq6tyfi5" path="res://Main/Game Scene/BackgroundSprites/FireplaceWithWood.png" id="7_ehjai"]
@@ -21,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://2qev6wkqu5mv" path="res://Main/Game Scene/BackgroundSprites/OCDoor.png" id="9_rfgl7"]
 [ext_resource type="Texture2D" uid="uid://fiv1e6uyrpq3" path="res://Main/Game Scene/BackgroundSprites/OCDrawers.png" id="10_jajf0"]
 [ext_resource type="AudioStream" uid="uid://bpe8nqm1k5ydg" path="res://Audio/door.mp3" id="14_2w6x4"]
+[ext_resource type="Texture2D" uid="uid://b8qgew5ato1f0" path="res://Main/Game Scene/BackgroundSprites/drawersprite.png" id="16_mvnup"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dkvw"]
 texture = ExtResource("1_o2epm")
@@ -631,21 +629,13 @@ sources/7 = SubResource("TileSetAtlasSource_yw80d")
 sources/8 = SubResource("TileSetAtlasSource_a2wes")
 sources/9 = SubResource("TileSetAtlasSource_qh0um")
 
-[sub_resource type="Resource" id="Resource_jwb1d"]
-script = ExtResource("5_rbf4x")
-drop_items = Array[ExtResource("3_svev2")]([ExtResource("4_7kyxn")])
-vulnerable_to_damage = Array[int]([0])
-resistance_to_damage = Array[float]([])
-max_HP = 10
-triggers = Array[ExtResource("8_j34jw")]([])
-
 [sub_resource type="Resource" id="Resource_mfibn"]
 script = ExtResource("6_0nyc1")
 name = "pistol ammo"
 description = ""
 asset_path = null
 stack_limit = 24
-amount = 10
+amount = 15
 
 [sub_resource type="Resource" id="Resource_4xktp"]
 script = ExtResource("7_fiugb")
@@ -675,16 +665,23 @@ size = Vector2(76.25, 357)
 tile_map_data = PackedByteArray("AAD9//r/AwACAAAAAAD9//v/AwABAAAAAAD9/wQAAwAEAAAAAAD+//r/AwACAAAAAAD+//v/AwABAAAAAAD+/wQAAwAEAAAAAAD///r/AwACAAAAAAD///v/AwABAAAAAAD//wQAAwAEAAAAAAAAAPr/AwACAAAAAAAAAPv/AwABAAAAAAAAAAQAAwAEAAAAAAABAPr/AwAGAAAAAAABAPv/AwAGAAAAAAABAAQAAwAGAAAAAADw//r/AwAFAAAAAADw//v/AwAFAAAAAADw//z/AwAFAAAAAADw//3/AwAFAAAAAADw//7/AwAFAAAAAADw/wEAAwAFAAAAAADw/wIAAwAFAAAAAADw/wMAAwAFAAAAAADw/wQAAwAFAAAAAADx//r/AwACAAAAAADx//v/AwABAAAAAADx/wQAAwAEAAAAAADy//r/AwACAAAAAADy//v/AwABAAAAAADy/wQAAwAEAAAAAADz//r/AwACAAAAAADz//v/AwABAAAAAADz/wQAAwAEAAAAAAD0//r/AwACAAAAAAD0//v/AwABAAAAAAD0/wQAAwAEAAAAAAD1//r/AwACAAAAAAD1//v/AwABAAAAAAD1/wQAAwAEAAAAAAD2//r/AwACAAAAAAD2//v/AwABAAAAAAD2/wQAAwAEAAAAAAD3//r/AwACAAAAAAD3//v/AwABAAAAAAD3/wQAAwAEAAAAAAD4//r/AwACAAAAAAD4//v/AwABAAAAAAD4/wQAAwAEAAAAAAD5//r/AwACAAAAAAD5//v/AwABAAAAAAD5/wQAAwAEAAAAAAD6//r/AwACAAAAAAD6//v/AwABAAAAAAD6/wQAAwAEAAAAAAD7//r/AwACAAAAAAD7//v/AwABAAAAAAD7/wQAAwAEAAAAAAD8//r/AwACAAAAAAD8//v/AwABAAAAAAD8/wQAAwAEAAAAAAABAPz/AwAGAAAAAAABAP3/AwAGAAAAAAABAP7/AwAGAAAAAAABAAEAAwAGAAAAAAABAAIAAwAGAAAAAAABAAMAAwAGAAAAAADx/wMAAwADAAAAAADy/wMAAwADAAAAAADz/wMAAwADAAAAAAD0/wMAAwADAAAAAAD1/wMAAwADAAAAAAD2/wMAAwADAAAAAAD3/wMAAwADAAAAAAD4/wMAAwADAAAAAAD5/wMAAwADAAAAAAD6/wMAAwADAAAAAAD7/wMAAwADAAAAAAD8/wMAAwADAAAAAAD9/wMAAwADAAAAAAD+/wMAAwADAAAAAAD//wMAAwADAAAAAAAAAAMAAwADAAAAAAAAAAIAAwADAAAAAAD//wIAAwADAAAAAAD+/wIAAwADAAAAAAD9/wIAAwADAAAAAAD8/wIAAwADAAAAAAD7/wIAAwADAAAAAAD6/wIAAwADAAAAAAD5/wIAAwADAAAAAAD4/wIAAwADAAAAAAD3/wIAAwADAAAAAAD2/wIAAwADAAAAAAD1/wIAAwADAAAAAAD0/wIAAwADAAAAAADz/wIAAwADAAAAAADy/wIAAwADAAAAAADx/wIAAwADAAAAAADx/wEAAwADAAAAAADy/wEAAwADAAAAAADz/wEAAwADAAAAAAD0/wEAAwADAAAAAAD1/wEAAwADAAAAAAD2/wEAAwADAAAAAAD3/wEAAwADAAAAAAD4/wEAAwADAAAAAAD5/wEAAwADAAAAAAD6/wEAAwADAAAAAAD7/wEAAwADAAAAAAD8/wEAAwADAAAAAAD9/wEAAwADAAAAAAD+/wEAAwADAAAAAAD//wEAAwADAAAAAAAAAAEAAwADAAAAAAAAAAAAAwADAAAAAAABAAAAAwADAAAAAAABAP//AwADAAAAAAAAAP//AwADAAAAAAAAAP7/AwADAAAAAAAAAP3/AwADAAAAAAAAAPz/AwADAAAAAAD///3/AwADAAAAAAD///7/AwADAAAAAAD/////AwADAAAAAAD//wAAAwADAAAAAAD+/wAAAwADAAAAAAD+////AwADAAAAAAD9////AwADAAAAAAD8////AwADAAAAAAD7////AwADAAAAAAD7/wAAAwADAAAAAAD6/wAAAwADAAAAAAD5/wAAAwADAAAAAAD4/wAAAwADAAAAAAD3/wAAAwADAAAAAAD2/wAAAwADAAAAAADx/wAAAwADAAAAAADw/wAAAwADAAAAAADw////AwADAAAAAADx////AwADAAAAAADy////AwADAAAAAADy/wAAAwADAAAAAADz/wAAAwADAAAAAAD0/wAAAwADAAAAAAD1/wAAAwADAAAAAAD1////AwADAAAAAAD0////AwADAAAAAADz////AwADAAAAAADz//7/AwADAAAAAADy//7/AwADAAAAAAD0//7/AwADAAAAAAD1//7/AwADAAAAAAD2//7/AwADAAAAAAD3//7/AwADAAAAAAD4//7/AwADAAAAAAD5////AwADAAAAAAD6////AwADAAAAAAD4////AwADAAAAAAD3////AwADAAAAAAD2////AwADAAAAAAD5//7/AwADAAAAAAD6//7/AwADAAAAAAD7//7/AwADAAAAAAD8//7/AwADAAAAAAD9//7/AwADAAAAAAD+//7/AwADAAAAAAD8/wAAAwADAAAAAAD9/wAAAwADAAAAAAD9//3/AwADAAAAAAD+//3/AwADAAAAAAD+//z/AwADAAAAAAD///z/AwADAAAAAAD9//z/AwADAAAAAAD8//z/AwADAAAAAAD7//z/AwADAAAAAAD6//z/AwADAAAAAAD5//z/AwADAAAAAAD4//z/AwADAAAAAAD4//3/AwADAAAAAAD3//3/AwADAAAAAAD2//3/AwADAAAAAAD1//3/AwADAAAAAAD0//3/AwADAAAAAADz//3/AwADAAAAAADy//3/AwADAAAAAADx//3/AwADAAAAAADx//7/AwADAAAAAADx//z/AwADAAAAAADy//z/AwADAAAAAADz//z/AwADAAAAAAD0//z/AwADAAAAAAD1//z/AwADAAAAAAD2//z/AwADAAAAAAD3//z/AwADAAAAAAD5//3/AwADAAAAAAD6//3/AwADAAAAAAD7//3/AwADAAAAAAD8//3/AwADAAAAAAA=")
 tile_set = SubResource("TileSet_3q1ai")
 
-[node name="BandageCrateDestructable" parent="." instance=ExtResource("2_2e1bq")]
-position = Vector2(-449, 206)
-start_status = true
-data = SubResource("Resource_jwb1d")
+[node name="DrawerSprite8" type="Sprite2D" parent="."]
+position = Vector2(-461, 214)
+texture = ExtResource("16_mvnup")
 
-[node name="PistolContainer" parent="." instance=ExtResource("2_rsrax")]
-position = Vector2(-449, -220)
+[node name="DrawerSprite9" type="Sprite2D" parent="."]
+position = Vector2(-449, -222)
+scale = Vector2(0.945946, 0.981013)
+texture = ExtResource("16_mvnup")
+
+[node name="PistolContainer" parent="DrawerSprite9" instance=ExtResource("2_rsrax")]
+visible = false
+position = Vector2(0, 2.03871)
+scale = Vector2(1.05714, 1.01935)
 data = SubResource("Resource_4xktp")
 
 [node name="MapTransitionZoneToStartMap" parent="." instance=ExtResource("2_xurda")]
+visible = false
 position = Vector2(-827, -761)
 path = SubResource("Resource_jnqf7")
 
@@ -694,6 +691,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_ce4id")
 
 [node name="MapTransitionZoneToTest2" parent="." instance=ExtResource("2_xurda")]
+visible = false
 position = Vector2(-1130, -552)
 path = SubResource("Resource_ou7ip")
 pos = Vector2(-556, -630)

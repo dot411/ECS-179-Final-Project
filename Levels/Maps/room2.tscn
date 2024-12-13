@@ -570,6 +570,7 @@ stream = ExtResource("3_13m1l")
 autoplay = true
 
 [node name="MapTransitionZoneToStartMap" parent="." instance=ExtResource("3_wut1e")]
+visible = false
 position = Vector2(-827, -761)
 path = SubResource("Resource_kjqlk")
 pos = Vector2(460, -199)
@@ -580,6 +581,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_r3622")
 
 [node name="MapTransitionZoneToTest2" parent="." instance=ExtResource("3_wut1e")]
+visible = false
 position = Vector2(-1130, -552)
 path = SubResource("Resource_x0r1u")
 

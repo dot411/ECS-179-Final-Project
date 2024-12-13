@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cdhhrpxjr28fe"]
+[gd_scene load_steps=39 format=4 uid="uid://cdhhrpxjr28fe"]
 
 [ext_resource type="PackedScene" uid="uid://ceutv8wcd58qj" path="res://Levels/Placeable Entities/Starting Player.tscn" id="1_5x5yi"]
 [ext_resource type="Texture2D" uid="uid://vpuuhnsp7m3p" path="res://icon.svg" id="1_a8adi"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Main/Obj/Interactable Object/interactable_object_data.gd" id="9_dsi0d"]
 [ext_resource type="Script" path="res://Main/Trigger/trigger_editable.gd" id="10_ut6f3"]
 [ext_resource type="Resource" uid="uid://dklv6q6acsr2r" path="res://Properties/Item Register/Ability Item Register/knife.tres" id="13_38278"]
+[ext_resource type="Texture2D" uid="uid://b8qgew5ato1f0" path="res://Main/Game Scene/BackgroundSprites/drawersprite.png" id="16_hpqx0"]
 [ext_resource type="PackedScene" uid="uid://d0o3yq8o6yb63" path="res://Levels/Placeable Entities/Base Entities/ability_object_entity.tscn" id="18_1heuk"]
 [ext_resource type="Script" path="res://Main/Effect/position_effect.gd" id="19_byylq"]
 [ext_resource type="Resource" uid="uid://bat4lhigy1b11" path="res://Properties/Unit Register/normal_zombie.tres" id="20_fhqjt"]
@@ -877,8 +878,15 @@ position = Vector2(176, -331)
 scale = Vector2(2.35366, 3.05469)
 texture = ExtResource("6_oh2c6")
 
-[node name="PistolContainer" parent="." instance=ExtResource("4_477ao")]
-position = Vector2(110, -26)
+[node name="DrawerSprite8" type="Sprite2D" parent="."]
+position = Vector2(111, -26)
+scale = Vector2(0.905405, 0.968354)
+texture = ExtResource("16_hpqx0")
+
+[node name="PistolContainer" parent="DrawerSprite8" instance=ExtResource("4_477ao")]
+visible = false
+position = Vector2(-1.10452, 0)
+scale = Vector2(1.10448, 1.03268)
 data = SubResource("Resource_jof1f")
 
 [node name="StartingPlayer" parent="." instance=ExtResource("1_5x5yi")]
@@ -887,6 +895,7 @@ scale = Vector2(1.5, 1.5)
 unit_data = ExtResource("2_r3wof")
 
 [node name="MapTransitionZoneToTest1" parent="." instance=ExtResource("4_vu0f1")]
+visible = false
 position = Vector2(-142, 0)
 path = SubResource("Resource_md2ec")
 
