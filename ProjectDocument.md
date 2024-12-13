@@ -1,24 +1,28 @@
 # Resident Medieval #
+IMPORTANT: Converting our Godot project to HTML caused the web version of the game to break. Please play the game by downloading the zip file called ResidentMedieval.zip and launching Godot using this link: https://drive.google.com/file/d/1tfXmzc50zvNG8Jq4TXfSyPP31eo42mPe/view?usp=sharing. The game works with no issues this way.
 
 ## Summary ##
+An action horror game set in a dark and eerie Victorian-era Gothic mansion, where your primary goal is to escape the nightmarish environment. As the game begins, you wake up alone in a dimly lit room, disoriented and with no recollection of how you arrived. The unsettling silence is broken only by distant, chilling noises, setting the tone for the terrifying journey ahead. Driven by a mix of fear and curiosity, you start to explore the shadowy corridors and decrepit streets, only to discover that the place is teeming with hostile, "infected" individuals who are out for blood. To survive, you must navigate a labyrinth of interconnected rooms, passageways, and outdoor areas, all while solving puzzles, using weapons, and piecing together the mansion’s dark secrets. The infected are relentless, and your limited supply of resources forces you to make tough decisions: do you risk engaging them head-on, or attempt to sneak past unnoticed?
 
 **A paragraph-length pitch for your game.**
 
-## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
+## Project Resources
+IMPORTANT: Converting our Godot project to HTML caused the web version of the game to break. Please play the game by downloading the zip file called ResidentMedieval.zip and launching Godot using this link: https://drive.google.com/file/d/1tfXmzc50zvNG8Jq4TXfSyPP31eo42mPe/view?usp=sharing. The game works with no issues this way.
+
+[Web-playable version of your game.](https://noahmchang.itch.io/resident-medieval) Password: 11037 (SEE NOTE ABOVE)
 [Trailor](https://youtube.com)  
 [Press Kit](https://dopresskit.com/)  
 [Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1M7M3UT2rDdXSgoVlukvLziJDm2PqogjL-ExfxdbDmNA/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
 
-Controls are WASD to move, E to interact, left click to use weapon, I for inventory, #1-9 to select inventory slot.
+Controls are WASD to move, shift to run, E to interact, left click to use weapon, I for inventory, #1-9 to select inventory slot. Interact with cabinets to obtain items. In some rooms, enemies will be constantly spawned from spawners, so running from them is a valid way to play the game. In terms of weaponry, there is a knife which is unlimited and a pistol which takes ammo. There are three times of enemies, normal melee zombies, ranged zombies, and slasher zombies which are slightly stronger. Enemy AI gets alerted by player and follows player through ray casting. The first puzzle is a room where you have to interact with the cabinets in a certain order to unlock the door. There will be a hint based on the text (2:00 then 5:00) and the clock pattern on the carpet. When at the second puzzle, the player notices that there is no door for the next room. The player must interact with the matches on a cabinet to burn away the firewood in the fireplace to unlock a passage.
 
 NOTE: You aim by your mouse position (even your knife).
 
 **In this section, explain how the game should be played. Treat this as a manual within a game. Explaining the button mappings and the most optimal gameplay strategy is encouraged.**
-
+Optimal strategy would be a mix of fighting and running when you get overwhelmed by enemies. As mentioned, the you can select items in your inventory by using the the 1-9 keys. Save your pistol for tough enemies since you will only receive a small amount of ammo. Switch to your knife on weaker enemies since the knife can be used without any cost. Finally, run by holding the shift key in short bursts to make sure you do not get fatigued. The health and fatigue bar can be viewed at the top-left of the screen.
 
 **Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
 
@@ -62,13 +66,13 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Game Logic
+## Game Logic - Noah Chang
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
 
 # Sub-Roles
 
-## Audio
+## Audio - Noah Chang
 
 **List your assets, including their sources and licenses.**
 
