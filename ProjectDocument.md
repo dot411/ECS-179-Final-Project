@@ -8,15 +8,16 @@ An action horror game set in a dark and eerie Victorian-era Gothic mansion, wher
 
 **A paragraph-length pitch for your game.**
 
-Resident Medieval is a pulse-pounding action-horror game where you must navigate a sinister mansion teeming with infected enemies, solve cryptic puzzles, and make life-or-death decisions to survive the night. Action-horror games often focus on combat or stealth, but Resident Medieval blends both with a resource-constrained survival element and intricate environmental puzzles. There is always constant tension between engaging enemies and sneaking past them adds a unique, strategic layer to the gameplay. Jump into the action and give it a try!
+Resident Medieval is a pulse-pounding action-horror game where you must navigate a sinister mansion teeming with infected enemies, solve cryptic puzzles, and make life-or-death decisions to survive the night. Fight or flee as you uncover the mansion’s dark secrets, all while conserving your limited resources to make it out alive. Action-horror games often focus on combat or stealth, but Resident Medieval blends both with a resource-constrained survival element and intricate environmental puzzles. There is always constant tension between engaging enemies and sneaking past them adds a unique, strategic layer to the gameplay. Jump into the action and give it a try!
 
 ## Project Resources
 IMPORTANT: Converting our Godot project to HTML caused the web version of the game to break. Please play the game by downloading the zip file called ResidentMedieval.zip and launching Godot using this link: https://drive.google.com/file/d/1tfXmzc50zvNG8Jq4TXfSyPP31eo42mPe/view?usp=sharing. The game works with no issues this way.
 
 [Web-playable version of your game.](https://noahmchang.itch.io/resident-medieval) Password: 11037 (SEE NOTE ABOVE)
+
 [Trailor](https://youtube.com)  
 [Press Kit](https://dopresskit.com/)  
-[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1M7M3UT2rDdXSgoVlukvLziJDm2PqogjL-ExfxdbDmNA/edit?usp=sharing)  
+[Proposal](https://docs.google.com/document/d/1M7M3UT2rDdXSgoVlukvLziJDm2PqogjL-ExfxdbDmNA/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
 
@@ -35,6 +36,8 @@ Optimal strategy would be a mix of fighting and running when you get overwhelmed
 If your project contains code that: 1) your team did not write, and 2) does not fit cleanly into a role, please document it in this section. Please include the author of the code, where to find the code, and note which scripts, folders, or other files that comprise the external contribution. Additionally, include the license for the external code that permits you to use it. You do not need to include the license for code provided by the instruction team.
 
 If you used tutorials or other intellectual guidance to create aspects of your project, include reference to that information as well.
+
+Our group did not use code from any external source. However, we referenced the Godot Docs to understand how to implement certain features: https://docs.godotengine.org/en/stable/index.html
 
 # Main Roles #
 
