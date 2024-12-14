@@ -168,7 +168,7 @@ The base Obj class has a state control(data.active/inactive). Trigger editables 
 
 Lastly, we only have basic items, abilities, interactions in the actual game because we didn’t have enough time to coordinate the levels and datas.
 
-## Animation and Visuals
+## Animation and Visuals - Jose Romero
 
 **List your assets, including their sources and licenses.**
 
@@ -234,7 +234,8 @@ it was given.
 
 
 All characters also had 4 way animations/movement, as well as specific animations for each direction. This took a bit of time since I had to make sure that the attacks were clear and that the player could easily see that they're about to get hit.
-One thing I do regret is not making an animation for when you get hit since the only indicator is the health bar going down.
+One thing I do regret is not making an animation for when you get hit since the only indicator is the health bar going down. Another thing is that the artstyle doesn't always match since different people all worked on these sprites, including me, so it might look off in occasions. If I were to do it over
+I would try and stick to one artstyle, or at least edit things more to better match each other. 
 
 
 
@@ -277,11 +278,35 @@ https://github.com/dot411/ECS-179-Final-Project/blob/main/Levels/Maps/room5.tscn
 
 # Sub-Roles
 
-## Audio
+## Audio - Jose
 
 **List your assets, including their sources and licenses.**
 
 **Describe the implementation of your audio system.**
+
+Assets used
+
+https://freesound.org/people/malisz99/sounds/628232/
+
+Made by https://freesound.org/people/malisz99/
+
+Creative Commons License
+
+https://freesound.org/people/klankbeeld/sounds/757334/
+
+Made by https://freesound.org/people/klankbeeld/
+
+Attribution 4.0 License
+
+https://freesound.org/people/PNMCarrieRailfan/sounds/681485/
+
+Made by https://freesound.org/people/PNMCarrieRailfan/
+
+Attribution NonCommercial 4.0 License
+
+(Missing gun sound. Need to find link)
+
+I honestly didn't put as much time into this compared to the animations and art I did. All I really ended up doing was finding free use sounds online and then handing them over to Noah so he could script them in. I wish I found more sounds to use, such as footsetps and sounds for attacks and when interacting with things. We wanted there it to be creepy so we found the ambience that plays when you aren't being chased by anything to make it creepy. Then when an enemy sports you the rave music starts to play, which should make the player be more aware that something has seen them and that the chase is on. Overall it's nothing very complicated.
 
 **Document the sound style.** 
 
