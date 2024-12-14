@@ -230,7 +230,7 @@ Since all of the enemies were initialized as a unit and the animations were bein
 amount for each enemy. This ended up being around 4 frames for all enemies, except for our eyeball enemy, which has an attack animation of 8 frames. I also added a swing animation to all attacks to make it better match the hitbox
 it was given.
 
-| <img src="ProjectImages/ProjectImagesForAnimation/ZombieAnim.gif" width="100%"> | <img src="ProjectImages/ProjectImagesForAnimation/SpitterAnim.gif" width="100%"> |
+| <img src="ProjectImages/ProjectImagesForAnimation/ZombieAnim.gif" width="50%"> | <img src="ProjectImages/ProjectImagesForAnimation/SpitterAnim.gif" width="50%"> |<img src="ProjectImages/ProjectImagesForAnimation/SideAnim.gif" width="50%"> |<img src="ProjectImages/ProjectImagesForAnimation/NurseAttackAndDeath.gif" width="50%">
 
 
 All characters also had 4 way animations/movement, as well as specific animations for each direction. This took a bit of time since I had to make sure that the attacks were clear and that the player could easily see that they're about to get hit.
@@ -240,7 +240,15 @@ One thing I do regret is not making an animation for when you get hit since the 
 
 I also ended up making a lot of sprites that didn't make it into the final build. These are just some of them. This was due to time constraints and trying to get a working build with as little bugs as possible for "release".
 
+![pic](ProjectImages/ProjectImagesForAnimation/Sprite1.PNG)
 
+![pic](ProjectImages/ProjectImagesForAnimation/Sprite2.PNG)
+
+![pic](ProjectImages/ProjectImagesForAnimation/Sprite3.PNG)
+
+![pic](ProjectImages/ProjectImagesForAnimation/Sprite5.PNG)
+
+![pic](ProjectImages/ProjectImagesForAnimation/Sprite6.PNG)
 
 
 
