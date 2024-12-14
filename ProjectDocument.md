@@ -15,8 +15,8 @@ IMPORTANT: Converting our Godot project to HTML caused the web version of the ga
 
 [Web-playable version of your game.](https://noahmchang.itch.io/resident-medieval) Password: 11037 (SEE NOTE ABOVE)
 
-[Trailor](https://youtube.com)  
-[Press Kit](https://dopresskit.com/)  
+[Trailor](https://youtu.be/uClh8eequVQ?feature=shared)  
+[Press Kit](PressKit.md)  
 [Proposal](https://docs.google.com/document/d/1M7M3UT2rDdXSgoVlukvLziJDm2PqogjL-ExfxdbDmNA/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
@@ -73,12 +73,51 @@ I personally worked on levels 6-10 of our game, where this would be the latter h
 
 One of the key parts of our game are the puzzles that were implemented, and I had worked on one of the two puzzles after coming up with the idea for a creative puzzle that fit the narrative of our story. This was found in level 7, where this would include a fireplace that initially only had firewood in it. The theory was to have the player pick up a set of matches as an interactable item from a previous level, where they would use these matches in the fireplace. This would play an animation that showed the firewood burning, followed by a new sprite showing that the fireplace now had a hole in it that was before blocked by the firewood. This would allow the entry into the next room, which would be an ominous hallway leading to the boss room. Initially, I wanted to have it so you needed the item and interacted with the fireplace, where you could have a choice to light it or not once in possession of the matches. However, it was implemented as a switch, and in the same room such that you could see the fire and the animation occur. There wasn't a sprite for the fireplace , but I found and [replicated](https://www.megavoxels.com/learn/how-to-make-a-pixel-art-fireplace/) a pixel art of the fireplace that Jose would later animate and alter to create a firewood sprite as well. I implemented the animation for the fireplace, and sprite transition to make the burning wood look sequentially sound. 
 
-## User Interface and Input
+## User Interface and Input - Elmer Leon
+### UI Scene
+![pic](ProjectImages/uinode.png)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
+The UI is implemented in a manner that there is a main UI scene that has all the different UI elements together to allow for an easier way to manage them. With this UI scene I'm able to disable certain UI aspects during a menu screen or have a pause screen through its script. 
 
-**Add an entry for each platform or input style your project supports.**
+
+### Main Menu
+![pic](ProjectImages/game2.png)
+
+Upon running the game you are presented with the main menu. The main menu consists of the title screen with two buttons start and exit. Pressing start loads the game up and you begin to play the game. Clicking on Exit takes you out of the game. The actual main menu consists of a control node, panel, VBoxContainer, and a label. The VBoxContainer has buttons for start and Exit. Each has a [signal](https://github.com/dot411/ECS-179-Final-Project/blob/e06404920cf12e699d4d66f7d7b971793ccc7c4c/UI/Main%20Menu/main_menu.gd) to allow the functionality of beginning and exiting the game. The buttons have a hover and on click change of color in order for the user too see if they are on the right button
+
+![pic](ProjectImages/mainmenunode.png)
+
+### Pause Menu
+![pic](ProjectImages/pausescreen.png)
+
+![pic](ProjectImages/pasuenode.png)
+
+The Pause menu is implemented in almost the same manner as the game menu with the differennce being the buttons. [Resume](https://github.com/dot411/ECS-179-Final-Project/blob/e06404920cf12e699d4d66f7d7b971793ccc7c4c/UI/ui.gd) sets pause menu to false and other elements true allowing the player to continue the game
+
+### Inventory
+![pic](ProjectImages/invselect.png)
+
+![pic](ProjectImages/invenode.png)
+
+The inventory is a grid system where the player is able to select the item via keyboard or cursor. Once the item is selected it notifies other parts of the game what item is in their hand. The inventory is setup so that stacking items is allowed but if we pass a cerain number a new slot is given for the rest of the items. If the item runs out the item is no longer in the inventory. The inventory is built so the user can toggle it on or off to keep less things on the screen. The actual implementation of the inventory involves an array to hold the itmes. We have different functions for all aspects of the inventory. For example we have [add_items](https://github.com/dot411/ECS-179-Final-Project/blob/a422e1290986e896719250b0c1cf5dc9c7731617/UI/Inventory%20Interface/inventory_interface.gd) which simply appends the item. We also update the slots themselves and as for getting the item images we read it from a folder that holds all the images. Keybinds were added in the project settings. 
+
+### Game Message 
+![pic](ProjectImages/gamemessagenode.png)
+
+![pic](ProjectImages/game5.png)
+
+The Game Message Manager is the text box at the bottom of the screen. I decided to go with a rpg style way text box to give the user information throughot the game. We again continue to use control nodes and its children such as labels and panels. We can call this in the ui.gd or in any other part of the code using [Utility](https://github.com/dot411/ECS-179-Final-Project/blob/a422e1290986e896719250b0c1cf5dc9c7731617/Main/Utility/utility.gd). The actual implementation us using a queue where we append messages to the queue. Using game message we input the text followed by the seconds we want it to stay up. We then create a timer and finally [clear](https://github.com/dot411/ECS-179-Final-Project/blob/dba50feb5157991778a7e377730f2a62c416c6a9/UI/ui.gd) the messages. 
+
+### Health and Fatigue Bar
+
+The health and fatigue as shown at the top left of other UI images, are a simple mechanic that tracks your health and lowers and raises the bar depedning on each variable. Health decreases as you get hit and increases as you heal with bandages. Fatigue accumlates the longer you run. They both use a textture progress bar and have different colors to distinguish the two. 
+
+### UI Resources
+- [creating a health bar](https://youtu.be/UEJcUnq2dfU?feature=shared)
+
+- [learning ui nodes](https://youtu.be/5Hog6a0EYa0?feature=shared)
+
+- [link to asset pack for health bar](https://makertech.itch.io/additional-art-for-godot-4-tutorial)
 
 ## Movement/Physics
 
@@ -154,10 +193,12 @@ Many parts of the story could have been conveyed better, and with improvements s
 
 
 ## Press Kit and Trailer
+[Link to Press Kit](PressKit.md)
 
-**Include links to your presskit materials and trailer.**
+[Link to Trailer](https://youtu.be/uClh8eequVQ)
 
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+I showcased my work in a way that resembles a brochure of sorts lisitng details that a consumer would want to know before purchasing a product. I explained the game and gave details regarding what to expect playing. The screen shots included showcase the game and different parts of the maps. I didn't want to show all room or items but just enough to get someone interested in the game. Regarding the trailer I wanted a spooky and suspsenful atmosphere in the trailer. I went with panels that quickly shift to the gameplay and back to another panel. The panels explain game mechanics such as "find items" or "solve puzzles". SHowing pieces of the game to create suspense and at the same time show off the different game mechanics. I ended up with a question to the audience to challenge them to beat the game. The music is again to create this scary vibe. 
+
 
 ## Game Feel and Polish - Noah Chang
 
