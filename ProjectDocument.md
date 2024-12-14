@@ -174,6 +174,73 @@ Lastly, we only have basic items, abilities, interactions in the actual game bec
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
+Assets that I used
+
+https://nadiapixel.itch.io/victorian-interior-asset-pack
+
+License
+
+  - You can not modify the assets.
+
+  - You can not redistribute or resale.
+
+  - You can only use these assets in non-commercial projects. 
+
+Made by https://nadiapixel.itch.io/
+
+
+https://maranza.itch.io/assets
+
+License
+
+Feel free to use in your own way.
+
+Made by https://maranza.itch.io/
+
+
+
+https://cuddle-bug.itch.io/apocalypse
+
+This asset pack is available for both commercial and non-commercial use.
+Modifications are allowed but redistribution or resale of the asset pack is prohibited even if modified.
+
+Made by https://cuddle-bug.itch.io/
+
+
+
+I had a lot to think about when trying to image how the game would look like. We had envisioned some sort of mansion, where the player would wander around. I made some original assets that we used for the main
+background, with the victorian interior asset pack being used to enhance the environment, such as the edges of the map to give it better depth. I used Aseprite to make the sprites, as well as to edit any other sprites
+that were needed. I went with a darker color scheme to make the game appear a little more scary and serious. This would also fit better show the dangerous mansion we wanted to create. I wanted the game to feel closer to
+"realistic" than "cartoony". I did have issues with this since I'm not an artist and didn't really have the skill to do so. This is why any assets I made look a lot more blocky and flat, since I wasn't very experienced
+with the work of adding shading and detail, especially with pixel art that is much more limited.
+
+![pic](ProjectImages/ProjectImagesForAnimation/OriginalSprites.PNG)
+
+![pic](ProjectImages/ProjectImagesForAnimation/MixSprites.PNG)
+
+![pic](ProjectImages/ProjectImagesForAnimation/DeskSprites.PNG)
+
+
+
+Working with Aseprite was interesting since I've never used it before. I ended up buying it since it was on sale and it worked really well. I messed around with it at the start and got used to it over time. It was the only
+software I used to make and edit sprites. If I needed to find other assets I went to itchio for all the assets and modified those that I was allowed to to better fit the game. Some examples of this are the main character and
+the attack animations for the enemies. The MC originally had a backpack which I ended up removing since it didn't fit into the environment. We're in a mansion, not an apocalypse. There weren't a lot of assets online that fit
+the environment and have animations. I found a couple of enemies that I thought were cool as the original enemies were zombies but instead now they're more like insane regular humans with a smidge of zombie in them.
+Since all of the enemies were initialized as a unit and the animations were being played through a function that Sween had made, I was more limited in what the animations could look like since they needed to be the exact same
+amount for each enemy. This ended up being around 4 frames for all enemies, except for our eyeball enemy, which has an attack animation of 8 frames. I also added a swing animation to all attacks to make it better match the hitbox
+it was given.
+
+Video of zombies
+
+Video of Spitter
+
+
+I also ended up making a lot of sprites that didn't make it into the final build. These are just some of them. This was due to time constraints and trying to get a working build with as little bugs as possible for "release".
+
+
+
+
+
 ## Game Logic - Noah Chang
 
 Before starting any implementations, I collaborated with the Producer Andrew Lov to design the layout of each level, ensuring that all planned features, such as enemies, weapons, and puzzles, were displayed in each room. We focused on creating a cohesive flow between levels, balancing tight corridors for suspense with open spaces for strategic encounters. Our planning emphasized how gameplay elements, like resource placement and puzzle-solving, would interact with the environment to challenge the player while maintaining an immersive, eerie atmosphere. To reflect all of this, I drew a map which can be seen in Andrew's section above. This detailed map ensured that every room would serve a purpose, blending visuals, mechanics, and progression into a seamless gameplay experience.
