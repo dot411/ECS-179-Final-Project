@@ -46,26 +46,7 @@ func preload_item_icons():
 	else:
 		print("cannot open sprite folder:", sprite_folder)
 
-#func add_item(item: ItemData) -> bool:
-	## First try to stack with an identical existing item if stackable
-	#for i in range(inventory.size()):
-		#var existing_item = inventory[i]
-		#if existing_item.name == item.name and existing_item.amount < existing_item.stack_limit:
-			#var remaining_space = existing_item.stack_limit - existing_item.amount
-			#var to_add = min(item.amount, remaining_space)
-			#existing_item.amount += to_add
-			#item.amount -= to_add
-			#update_slot_visual(i)
-			#inventory_updated.emit()
-			#if item.amount <= 0:
-				## All added
-				#return true
-	## If there's still some left, add as a new entry if possible
 
-	#inventory.append(item.duplicate(true))
-	#update_inventory_visuals()
-	#inventory_updated.emit()
-	#return true
 func add_item(item: ItemData) -> bool:
 	print("add_item called with:", item.name, "Amount:", item.amount)
 	inventory.append(item.duplicate(true))
