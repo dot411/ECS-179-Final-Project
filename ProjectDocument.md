@@ -107,7 +107,8 @@ One of the key parts of our game are the puzzles that were implemented, and I ha
 ## Gameplay Testing - Andrew Lov
 
 **Add a link to the full results of your gameplay tests.**
-The [folder](ECS-179-Final-Project/TestFeedback) called TestFeedback in our repository has the documents that were used to find feedback for our game. Both Jose and Elmer additionally helped me gather feedback, but we were in total unable to come up with 10 tests due to being able to test only on the last day, when our game felt polished enough to showcase to others.
+
+The [folder](TestFeedback) called TestFeedback in our repository has the documents that were used to find feedback for our game. Both Jose and Elmer additionally helped me gather feedback, but we were in total unable to come up with 10 tests due to being able to test only on the last day, when our game felt polished enough to showcase to others.
 
 **Summarize the key findings from your gameplay tests.**
 
