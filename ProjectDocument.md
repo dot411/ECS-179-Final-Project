@@ -304,7 +304,11 @@ Made by https://freesound.org/people/PNMCarrieRailfan/
 
 Attribution NonCommercial 4.0 License
 
-(Missing gun sound. Need to find link)
+https://freesound.org/people/Xenonn/sounds/128296/
+
+Made by https://freesound.org/people/Xenonn/
+
+Creative Commons License
 
 I honestly didn't put as much time into this compared to the animations and art I did. All I really ended up doing was finding free use sounds online and then handing them over to Noah so he could script them in. I wish I found more sounds to use, such as footsetps and sounds for attacks and when interacting with things. We wanted there it to be creepy so we found the ambience that plays when you aren't being chased by anything to make it creepy. Then when an enemy sports you the rave music starts to play, which should make the player be more aware that something has seen them and that the chase is on. Overall it's nothing very complicated.
 
